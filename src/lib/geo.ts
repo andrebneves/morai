@@ -33,3 +33,11 @@ export function formatDistance(meters: number): string {
   if (meters < 1000) return `${Math.round(meters)} m`;
   return `${(meters / 1000).toFixed(meters < 10000 ? 1 : 0)} km`;
 }
+
+/** Versão "falada" da distância, para texto-pra-fala (Modo Passeio) — "m"/"km" soam estranhos
+ * numa síntese de voz, então aqui escrevemos "metros"/"quilômetros" por extenso. */
+export function formatDistanceFalada(meters: number): string {
+  if (meters < 1000) return `${Math.round(meters)} metros`;
+  const km = Math.round((meters / 1000) * 10) / 10;
+  return `${km.toLocaleString("pt-BR")} quilômetros`;
+}

@@ -24,6 +24,23 @@ export function formatCompactPrice(value: number): string {
   return formatBRL(value);
 }
 
+/**
+ * Versão "falada" do preço, para texto-pra-fala (Modo Passeio). Síntese de voz costuma ler mal
+ * símbolos/abreviações como "R$" e "mi" — por isso aqui escrevemos tudo por extenso
+ * ("406 mil reais", "1,7 milhão de reais") em vez de reusar `formatCompactPrice`.
+ */
+export function formatPrecoFalado(value: number): string {
+  if (value >= 1_000_000) {
+    const milhoes = Math.round((value / 1_000_000) * 10) / 10;
+    const unidade = milhoes === 1 ? "milhão" : "milhões";
+    return `${milhoes.toLocaleString("pt-BR")} ${unidade} de reais`;
+  }
+  if (value >= 1000) {
+    return `${Math.round(value / 1000)} mil reais`;
+  }
+  return `${Math.round(value)} reais`;
+}
+
 export function formatArea(m2: number): string {
   return `${m2.toLocaleString("pt-BR")} m²`;
 }

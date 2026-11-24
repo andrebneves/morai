@@ -11,6 +11,7 @@ import { PropertyPreviewSheet } from "@/components/property/PropertyPreviewSheet
 import { ModoPasseioSheet } from "@/components/passeio/ModoPasseioSheet";
 import { BottomSheet } from "@/components/ui/BottomSheet";
 import { BottomNav } from "@/components/layout/BottomNav";
+import { SplashScreen, useSplashGate } from "@/components/splash/SplashScreen";
 import { Logo } from "@/components/icons/Logo";
 import { useAppStore } from "@/lib/store/useAppStore";
 import { useGeolocation } from "@/lib/hooks/useGeolocation";
@@ -38,6 +39,7 @@ export default function MapaPage() {
   const { position, requestOnce } = useGeolocation();
   const radarById = useRadarMap(properties);
   const passeio = useModoPasseio(properties);
+  const { show: showSplash, fading: splashFading } = useSplashGate(!loading);
 
   useEffect(() => {
     if (!onboarded) {
@@ -57,6 +59,16 @@ export default function MapaPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // A ideia central do Moraí é o GPS de descoberta (Modo Passeio) — ele liga sozinho ao abrir
+  // o mapa em vez de ficar escondido atrás de um botão, pra ser a experiência padrão.
+  const passeioAutoIniciado = useRef(false);
+  useEffect(() => {
+    if (passeioAutoIniciado.current || loading) return;
+    passeioAutoIniciado.current = true;
+    passeio.start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading]);
+
   const filtered = applyFilters(properties, filters, radarById);
   const selected = properties.find((p) => p.id === selectedId) ?? null;
   const activeUserPosition = passeio.active ? passeio.position : position;
@@ -68,6 +80,7 @@ export default function MapaPage() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-background">
+      {showSplash && <SplashScreen fadingOut={splashFading} />}
       <MapView
         ref={mapRef}
         properties={filtered}
@@ -96,6 +109,11 @@ export default function MapaPage() {
         <div className="pointer-events-auto">
           <PurposeToggle value={filters.finalidade} onChange={(v) => setFilters({ finalidade: v })} />
         </div>
+        {passeio.permission === "denied" && (
+          <div className="pointer-events-auto rounded-xl bg-danger/90 px-4 py-2.5 text-xs font-medium text-off-white shadow-[var(--shadow-float)]">
+            Localização não autorizada — ative o acesso à localização do Safari para o GPS do Moraí funcionar.
+          </div>
+        )}
       </div>
 
       {/* Right controls */}

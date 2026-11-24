@@ -3,8 +3,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Property } from "@/lib/types";
 import { useGeolocation } from "@/lib/hooks/useGeolocation";
-import { haversineMeters, formatDistance } from "@/lib/geo";
-import { formatCompactPrice } from "@/lib/format";
+import { haversineMeters, formatDistanceFalada } from "@/lib/geo";
+import { formatPrecoFalado } from "@/lib/format";
 
 export type RaioPasseio = 100 | 250 | 500 | 1000 | 2000;
 export type ModoDeslocamento = "pe" | "carro";
@@ -30,10 +30,44 @@ export function useModoPasseio(properties: Property[]) {
     (texto: string) => {
       if (!somAtivo) return;
       if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-      const utter = new SpeechSynthesisUtterance(texto);
-      utter.lang = "pt-BR";
-      utter.rate = 1;
-      window.speechSynthesis.speak(utter);
+      const synth = window.speechSynthesis;
+
+      const speak = () => {
+        const utter = new SpeechSynthesisUtterance(texto);
+        utter.lang = "pt-BR";
+        utter.rate = 0.95;
+        // Em alguns navegadores (Safari/iOS) a `lang` sozinha não garante a voz certa —
+        // sem escolher explicitamente uma voz pt-BR, pode cair numa voz padrão (geralmente
+        // em inglês) que lê o português de forma estranha/errada.
+        const vozes = synth.getVoices();
+        const vozPt =
+          vozes.find((v) => v.lang === "pt-BR") ??
+          vozes.find((v) => v.lang?.toLowerCase().startsWith("pt")) ??
+          null;
+        if (vozPt) utter.voice = vozPt;
+        synth.speak(utter);
+      };
+
+      if (synth.getVoices().length > 0) {
+        speak();
+        return;
+      }
+      // A lista de vozes às vezes só fica disponível de forma assíncrona (evento
+      // "voiceschanged"), especialmente na primeira vez que a página usa fala.
+      let jaFalou = false;
+      const aoCarregarVozes = () => {
+        if (jaFalou) return;
+        jaFalou = true;
+        synth.removeEventListener("voiceschanged", aoCarregarVozes);
+        speak();
+      };
+      synth.addEventListener("voiceschanged", aoCarregarVozes);
+      setTimeout(() => {
+        if (jaFalou) return;
+        jaFalou = true;
+        synth.removeEventListener("voiceschanged", aoCarregarVozes);
+        speak();
+      }, 300);
     },
     [somAtivo],
   );
@@ -60,8 +94,9 @@ export function useModoPasseio(properties: Property[]) {
       announced.current.set(novo.property.id, now);
       setUltimoAlerta(novo);
       const finalidade = novo.property.finalidade === "venda" ? "à venda" : "para alugar";
+      const porMes = novo.property.finalidade === "aluguel" ? " por mês" : "";
       falar(
-        `Imóvel ${finalidade} a ${formatDistance(novo.distanciaMetros)} de você, por ${formatCompactPrice(novo.property.preco)}.`,
+        `Imóvel ${finalidade} a ${formatDistanceFalada(novo.distanciaMetros)} de você, por ${formatPrecoFalado(novo.property.preco)}${porMes}.`,
       );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
