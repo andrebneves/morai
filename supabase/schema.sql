@@ -112,3 +112,15 @@ create policy "property_photos_public_read" on storage.objects
 
 create policy "property_photos_authenticated_upload" on storage.objects
   for insert with check (bucket_id = 'property-photos' and auth.uid() is not null);
+
+-- =========================================================
+-- GRANTS — necessário nos projetos novos do Supabase (API keys v2):
+-- "Grant API access to new tables automatically" vem desmarcado por padrão,
+-- então uma tabela criada via SQL (em vez do Table Editor) não fica exposta
+-- aos papéis anon/authenticated sem este GRANT explícito. RLS continua sendo
+-- a camada que decide quais linhas cada papel pode ver.
+-- =========================================================
+grant usage on schema public to anon, authenticated;
+grant select, insert, update, delete on public.properties to anon, authenticated;
+grant select, insert, update, delete on public.admins to anon, authenticated;
+grant select, insert, update, delete on public.feedback to anon, authenticated;

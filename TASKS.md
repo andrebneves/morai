@@ -34,14 +34,24 @@ Checklist do que foi feito e do que falta para esta fase (desenvolvimento + publ
 - [x] Documentação (README, ROADMAP, TASKS, ARCHITECTURE, DESIGN_SYSTEM, DATABASE, CLAUDE.md)
 - [x] `git init` + commit inicial
 
-## Pendente (depende de decisões/credenciais do usuário)
+## Concluído nesta sessão (publicação)
 
-- [ ] Criar projeto no Supabase e configurar `.env.local` (ver [DATABASE.md](DATABASE.md)) — necessário
-      para banco de dados compartilhado entre todos os usuários
-- [ ] Criar repositório no GitHub e dar push
-- [ ] Criar conta na Vercel e conectar o repositório para deploy
-- [ ] Rodar `npm run seed:push` contra o projeto Supabase real
-- [ ] Gerar QR code da URL pública final
+- [x] Criar repositório no GitHub e dar push (`andrebneves/morai`)
+- [x] Criar conta na Vercel e conectar o repositório para deploy → https://morai-rho.vercel.app/
+- [x] Criar projeto no Supabase (`andrebneves's Org` / `morai`, região São Paulo) e configurar
+      `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` na Vercel
+- [x] Rodar `supabase/schema.sql` no projeto real (tabelas, RLS, bucket de fotos)
+- [x] Corrigir bug de permissão: projetos novos do Supabase (API keys v2) não expõem tabelas criadas
+      via SQL aos papéis `anon`/`authenticated` por padrão — adicionados `GRANT`s explícitos (ver
+      `supabase/schema.sql` e [DATABASE.md](DATABASE.md))
+- [x] Gerar QR code da URL pública final
+- [x] Redeploy em produção confirmado com as variáveis do Supabase
+
+## Pendente (depende do usuário)
+
+- [ ] Rodar `npm run seed:push` localmente (opcional) para popular o banco real com os 100 imóveis
+      demonstrativos — hoje a tabela `properties` está vazia no Supabase; o app continua funcionando
+      normalmente porque cai de volta para o seed local quando a consulta remota não traz nenhuma linha
 - [ ] **Testar a instalação física no iPhone 13** — não realizado pelo assistente (sem acesso a
       dispositivo físico); precisa ser feito pelo usuário após o deploy
 - [ ] Compartilhar com amigos para teste de rua em Olinda
