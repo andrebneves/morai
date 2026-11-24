@@ -1,12 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, Scale, BedDouble, Bath, Car, Ruler, ChevronRight } from "lucide-react";
+import { Heart, Scale, BedDouble, Bath, Car, Ruler, ChevronRight, Navigation } from "lucide-react";
 import type { Property, RadarResult } from "@/lib/types";
 import { formatCompactPrice, labelTipo } from "@/lib/format";
 import { RADAR_LABELS, RADAR_AVISO, isOportunidade } from "@/lib/radar";
 import { useAppStore } from "@/lib/store/useAppStore";
+import { RouteButtons } from "@/components/property/RouteButtons";
+import { BottomSheet } from "@/components/ui/BottomSheet";
 import clsx from "clsx";
 
 interface PropertyPreviewSheetProps {
@@ -21,6 +24,7 @@ export function PropertyPreviewSheet({ property, radar }: PropertyPreviewSheetPr
   const toggleCompare = useAppStore((s) => s.toggleCompare);
   const inCompare = compareList.includes(property.id);
   const oportunidade = radar ? isOportunidade(radar) : false;
+  const [routeOpen, setRouteOpen] = useState(false);
 
   return (
     <div className="px-4 pb-4">
@@ -91,6 +95,21 @@ export function PropertyPreviewSheet({ property, radar }: PropertyPreviewSheetPr
           Comparar
         </button>
       </div>
+
+      <button
+        onClick={() => setRouteOpen(true)}
+        className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-emerald py-2.5 text-sm font-bold text-dark-green"
+      >
+        <Navigation className="h-4 w-4" />
+        Dirigir até lá
+      </button>
+
+      <BottomSheet open={routeOpen} onClose={() => setRouteOpen(false)} maxHeightVh={45}>
+        <div className="px-5 pb-6 pt-2">
+          <h2 className="mb-3 text-lg font-bold">Como chegar</h2>
+          <RouteButtons lat={property.lat} lng={property.lng} titulo={property.titulo} />
+        </div>
+      </BottomSheet>
     </div>
   );
 }
