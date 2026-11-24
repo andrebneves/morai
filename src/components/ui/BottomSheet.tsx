@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, PanInfo } from "framer-motion";
+import { AnimatePresence, motion, PanInfo, useDragControls } from "framer-motion";
 import { useCallback } from "react";
 
 interface BottomSheetProps {
@@ -21,6 +21,12 @@ export function BottomSheet({
   maxHeightVh = 86,
   showHandle = true,
 }: BottomSheetProps) {
+  // `dragListener={false}` + iniciar o arrasto só a partir da alcinha (pelo onPointerDown
+  // abaixo) é importante: com `drag="y"` ouvindo o corpo inteiro da folha, um toque real num
+  // botão lá dentro (ex.: "Dirigir até lá") podia ser interpretado como o início de um arrasto
+  // no celular, e o clique nunca chegava a disparar — bug visto num iPhone real.
+  const dragControls = useDragControls();
+
   const handleDragEnd = useCallback(
     (_: unknown, info: PanInfo) => {
       if (info.offset.y > 120 || info.velocity.y > 600) {
@@ -51,12 +57,18 @@ export function BottomSheet({
             exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 32, stiffness: 320 }}
             drag="y"
+            dragListener={false}
+            dragControls={dragControls}
             dragConstraints={{ top: 0, bottom: 0 }}
             dragElastic={{ top: 0, bottom: 0.4 }}
             onDragEnd={handleDragEnd}
           >
             {showHandle && (
-              <div className="flex justify-center pt-2.5 pb-1">
+              <div
+                className="flex justify-center pt-2.5 pb-1"
+                onPointerDown={(e) => dragControls.start(e)}
+                style={{ touchAction: "none" }}
+              >
                 <div className="h-1.5 w-10 rounded-full bg-border-subtle" />
               </div>
             )}
