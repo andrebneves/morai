@@ -105,8 +105,10 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
   const followingRef = useRef(true);
   const followHeadingRef = useRef(followHeading);
   const onFollowPausedChangeRef = useRef(onFollowPausedChange);
+  const userPositionRef = useRef(userPosition);
   followHeadingRef.current = followHeading;
   onFollowPausedChangeRef.current = onFollowPausedChange;
+  userPositionRef.current = userPosition;
 
   const setFollowing = (value: boolean) => {
     if (followingRef.current === value) return;
@@ -119,7 +121,22 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
       mapRef.current?.flyTo({ center: [lng, lat], zoom, essential: true, duration: 900 });
     },
     getMap: () => mapRef.current,
-    resumeFollow: () => setFollowing(true),
+    // Recentraliza na hora com a última posição conhecida, em vez de só religar a bandeira e
+    // esperar a próxima atualização do GPS chegar (que pode demorar alguns segundos e dar a
+    // impressão de que o botão "Recentralizar" não fez nada).
+    resumeFollow: () => {
+      setFollowing(true);
+      const map = mapRef.current;
+      const pos = userPositionRef.current;
+      if (map && pos) {
+        map.easeTo({
+          center: [pos.lng, pos.lat],
+          bearing: followHeadingRef.current ? (pos.heading ?? map.getBearing()) : map.getBearing(),
+          duration: 500,
+          easing: (t) => t,
+        });
+      }
+    },
   }));
 
   // reinicia o acompanhamento sempre que o modo GPS é (re)ativado
@@ -269,29 +286,29 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
             ? `
             <div style="transform:${selected ? "scale(1.1)" : "scale(1)"};transition:transform .15s ease;animation:morai-pin-pop .35s cubic-bezier(.34,1.56,.64,1);">
               <div style="
-                display:flex;align-items:center;gap:5px;
+                display:flex;align-items:center;gap:3px;
                 background:${selected ? "#00E58A" : "#003D32"};
                 color:${selected ? "#003D32" : "#F5F7F2"};
-                padding:5px 10px 5px 6px;border-radius:999px;
-                font-weight:700;font-size:12.5px;white-space:nowrap;
-                box-shadow:0 6px 16px rgba(6,42,36,0.28), 0 0 0 2px rgba(255,255,255,0.55);
-                border:2px solid ${opportunity ? "#C5FF35" : "transparent"};
+                padding:3px 8px 3px 4px;border-radius:999px;
+                font-weight:700;font-size:11px;white-space:nowrap;
+                box-shadow:0 4px 10px rgba(6,42,36,0.25);
+                border:1.5px solid ${opportunity ? "#C5FF35" : "transparent"};
               ">
                 <span style="
                   display:flex;align-items:center;justify-content:center;
-                  width:18px;height:18px;border-radius:999px;flex-shrink:0;
+                  width:13px;height:13px;border-radius:999px;flex-shrink:0;
                   background:${selected ? "rgba(0,61,50,0.14)" : "rgba(197,255,53,0.9)"};
                   color:${selected ? "#003D32" : "#003D32"};
                 ">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 11.5L12 4l9 7.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M5.5 10v8.5a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V10" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 11.5L12 4l9 7.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5.5 10v8.5a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </span>
-                ${opportunity ? '<span style="width:6px;height:6px;border-radius:999px;background:#C5FF35;display:inline-block;"></span>' : ""}
+                ${opportunity ? '<span style="width:5px;height:5px;border-radius:999px;background:#C5FF35;display:inline-block;"></span>' : ""}
                 <span>${formatCompactPrice(property.preco)}${property.finalidade === "aluguel" ? "/mês" : ""}</span>
               </div>
-              <div style="width:0;height:0;margin:0 auto;border-left:6px solid transparent;border-right:6px solid transparent;border-top:7px solid ${selected ? "#00E58A" : "#003D32"};"></div>
+              <div style="width:0;height:0;margin:0 auto;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid ${selected ? "#00E58A" : "#003D32"};"></div>
             </div>
           `
             : `
