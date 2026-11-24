@@ -7,7 +7,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { Map as MapLibreMap, Marker, NavigationControl, setWorkerUrl } from "maplibre-gl";
+import { Map as MapLibreMap, Marker, NavigationControl, setWorkerUrl, type GeoJSONSource } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import Supercluster from "supercluster";
 import type { Feature, Point } from "geojson";
@@ -48,7 +48,11 @@ interface MapViewProps {
    */
   followHeading?: boolean;
   onFollowPausedChange?: (paused: boolean) => void;
+  /** Linha da rota real (pelas ruas) até o imóvel escolhido no Modo Passeio, já em [lng, lat]. */
+  routeCoordinates?: [number, number][] | null;
 }
+
+const ROUTE_SOURCE_ID = "morai-route";
 
 interface PointProps {
   propertyId: string;
@@ -93,6 +97,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
     initialZoom,
     followHeading,
     onFollowPausedChange,
+    routeCoordinates,
   },
   ref,
 ) {
@@ -428,6 +433,47 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
       map.easeTo({ pitch: BROWSE_PITCH, duration: 600 });
     }
   }, [followHeading]);
+
+  // Linha da rota real (pelas ruas) do Modo Passeio — some sozinha quando `routeCoordinates`
+  // fica nulo/vazio (destino cancelado ou rota ainda não calculada). Precisa ser refeita depois
+  // de qualquer `setStyle` (troca de satélite/ruas apaga fontes e camadas customizadas).
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !styleLoaded) return;
+
+    const hasCoords = !!routeCoordinates && routeCoordinates.length > 1;
+    const source = map.getSource(ROUTE_SOURCE_ID) as GeoJSONSource | undefined;
+
+    if (source) {
+      source.setData({
+        type: "Feature",
+        properties: {},
+        geometry: { type: "LineString", coordinates: routeCoordinates ?? [] },
+      });
+      return;
+    }
+
+    if (!hasCoords) return;
+
+    map.addSource(ROUTE_SOURCE_ID, {
+      type: "geojson",
+      data: { type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: routeCoordinates! } },
+    });
+    map.addLayer({
+      id: "morai-route-casing",
+      type: "line",
+      source: ROUTE_SOURCE_ID,
+      layout: { "line-join": "round", "line-cap": "round" },
+      paint: { "line-color": "#003D32", "line-width": 7, "line-opacity": 0.55 },
+    });
+    map.addLayer({
+      id: "morai-route-line",
+      type: "line",
+      source: ROUTE_SOURCE_ID,
+      layout: { "line-join": "round", "line-cap": "round" },
+      paint: { "line-color": "#00E58A", "line-width": 4 },
+    });
+  }, [routeCoordinates, styleLoaded]);
 
   return <div ref={containerRef} className="h-full w-full" />;
 });

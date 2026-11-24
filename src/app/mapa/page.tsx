@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Locate, Layers, Navigation, Loader2, X, CheckCircle2 } from "lucide-react";
+import { Locate, Layers, Navigation, Loader2, X, CheckCircle2, CornerUpRight, CornerUpLeft, ArrowUp } from "lucide-react";
 import { MapView, type MapViewHandle } from "@/components/map/MapView";
 import { PurposeToggle } from "@/components/map/PurposeToggle";
 import { SearchBar } from "@/components/map/SearchBar";
@@ -21,6 +21,14 @@ import { getAllProperties } from "@/lib/data/properties";
 import { applyFilters, countActiveFilters } from "@/lib/applyFilters";
 import { formatDistance } from "@/lib/geo";
 import type { Property } from "@/lib/types";
+
+/** Ícone da manobra atual da rota (ou uma seta genérica quando ainda não há rota calculada). */
+function iconeManobra(tipo: string, modificador: string | null) {
+  if (tipo === "arrive") return CheckCircle2;
+  if (modificador?.includes("right")) return CornerUpRight;
+  if (modificador?.includes("left")) return CornerUpLeft;
+  return ArrowUp;
+}
 
 export default function MapaPage() {
   const router = useRouter();
@@ -103,6 +111,7 @@ export default function MapaPage() {
         satellite={satellite}
         followHeading={passeio.active}
         onFollowPausedChange={setFollowPaused}
+        routeCoordinates={passeio.rota?.coordenadas ?? null}
       />
 
       {/* Top overlay */}
@@ -127,29 +136,44 @@ export default function MapaPage() {
             Localização não autorizada — ative o acesso à localização do Safari para o GPS do Moraí funcionar.
           </div>
         )}
-        {passeio.destino && (
-          <div className="pointer-events-auto relative z-30 flex items-center gap-2.5 rounded-xl bg-dark-green py-2.5 pl-3.5 pr-14 text-off-white shadow-[var(--shadow-float)]">
-            {passeio.chegouDestino ? (
-              <CheckCircle2 className="h-5 w-5 shrink-0 text-lime" />
-            ) : (
-              <Navigation
-                className="h-5 w-5 shrink-0 text-lime transition-transform"
-                style={rumoRelativo !== null ? { transform: `rotate(${rumoRelativo}deg)` } : undefined}
-              />
-            )}
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-xs font-bold">
-                {passeio.chegouDestino ? "Você chegou perto do imóvel" : passeio.destino.titulo}
-              </p>
-              {!passeio.chegouDestino && passeio.distanciaDestino !== null && (
-                <p className="text-[11px] text-off-white/65">{formatDistance(passeio.distanciaDestino)} · siga a seta</p>
+        {passeio.destino && (() => {
+          const IconeManobra = passeio.passoAtual ? iconeManobra(passeio.passoAtual.tipo, passeio.passoAtual.modificador) : null;
+          return (
+            <div className="pointer-events-auto relative z-30 flex items-center gap-2.5 rounded-xl bg-dark-green py-2.5 pl-3.5 pr-14 text-off-white shadow-[var(--shadow-float)]">
+              {passeio.chegouDestino ? (
+                <CheckCircle2 className="h-5 w-5 shrink-0 text-lime" />
+              ) : IconeManobra ? (
+                <IconeManobra className="h-5 w-5 shrink-0 text-lime" />
+              ) : (
+                <Navigation
+                  className="h-5 w-5 shrink-0 text-lime transition-transform"
+                  style={rumoRelativo !== null ? { transform: `rotate(${rumoRelativo}deg)` } : undefined}
+                />
               )}
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-xs font-bold">
+                  {passeio.chegouDestino
+                    ? "Você chegou perto do imóvel"
+                    : (passeio.passoAtual?.instrucao ?? passeio.destino.titulo)}
+                </p>
+                <p className="truncate text-[11px] text-off-white/65">
+                  {passeio.chegouDestino
+                    ? passeio.destino.titulo
+                    : passeio.passoAtual && passeio.distanciaProximoPasso !== null
+                      ? `${formatDistance(passeio.distanciaProximoPasso)} · ${passeio.destino.titulo}`
+                      : passeio.rotaCarregando
+                        ? "Calculando rota pelas ruas…"
+                        : passeio.distanciaDestino !== null
+                          ? `${formatDistance(passeio.distanciaDestino)} · siga a seta`
+                          : passeio.destino.titulo}
+                </p>
+              </div>
+              <button onClick={() => passeio.setDestino(null)} aria-label="Cancelar destino" className="shrink-0 p-1">
+                <X className="h-4 w-4 text-off-white/60" />
+              </button>
             </div>
-            <button onClick={() => passeio.setDestino(null)} aria-label="Cancelar destino" className="shrink-0 p-1">
-              <X className="h-4 w-4 text-off-white/60" />
-            </button>
-          </div>
-        )}
+          );
+        })()}
       </div>
 
       {/* Right controls */}

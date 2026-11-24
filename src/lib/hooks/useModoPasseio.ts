@@ -5,9 +5,14 @@ import type { Property } from "@/lib/types";
 import { useGeolocation } from "@/lib/hooks/useGeolocation";
 import { haversineMeters, bearingDegrees, formatDistanceFalada } from "@/lib/geo";
 import { formatPrecoFalado } from "@/lib/format";
+import { buscarRota, type ResultadoRota } from "@/lib/routing";
 
 /** Abaixo desta distância consideramos que o usuário chegou ao destino escolhido. */
 const RAIO_CHEGADA_METROS = 30;
+/** Avisa a manobra em voz alta quando faltar essa distância pra ela. */
+const RAIO_PRE_AVISO_METROS = 150;
+/** Considera a manobra "feita" e passa pra próxima quando chegar perto assim dela. */
+const RAIO_PASSO_CONCLUIDO_METROS = 20;
 
 export type RaioPasseio = 100 | 250 | 500 | 1000 | 2000;
 export type ModoDeslocamento = "pe" | "carro";
@@ -26,10 +31,15 @@ export function useModoPasseio(properties: Property[]) {
   const [somAtivo, setSomAtivo] = useState(true);
   const [ultimoAlerta, setUltimoAlerta] = useState<ImovelProximo | null>(null);
   const [destino, setDestinoState] = useState<Property | null>(null);
+  const [rota, setRota] = useState<ResultadoRota | null>(null);
+  const [rotaCarregando, setRotaCarregando] = useState(false);
+  const [passoIndex, setPassoIndex] = useState(0);
 
   const { position, permission, requestOnce } = useGeolocation({ watch: active });
   const announced = useRef<Map<string, number>>(new Map());
   const chegadaAnunciada = useRef<string | null>(null);
+  const rotaChaveRef = useRef<string | null>(null);
+  const passoPreAvisadoRef = useRef<Set<number>>(new Set());
 
   const falar = useCallback(
     (texto: string) => {
@@ -120,15 +130,18 @@ export function useModoPasseio(properties: Property[]) {
     falar("Este é um alerta de teste do modo passeio do Moraí.");
   }, [falar]);
 
-  // Guia o usuário até um imóvel escolhido usando o próprio GPS do Moraí (distância + rumo em
-  // linha reta), sem depender de um app de navegação externo — "o navegador é o app".
-  const setDestino = useCallback(
-    (property: Property | null) => {
-      chegadaAnunciada.current = null;
-      setDestinoState(property);
-    },
-    [],
-  );
+  // Guia o usuário até um imóvel escolhido usando o próprio GPS do Moraí — distância + rumo em
+  // linha reta como ponto de partida, e uma rota real pelas ruas (com instruções por voz)
+  // assim que a posição atual estiver disponível. "O navegador é o app": nunca manda abrir um
+  // app de navegação externo.
+  const setDestino = useCallback((property: Property | null) => {
+    chegadaAnunciada.current = null;
+    rotaChaveRef.current = null;
+    passoPreAvisadoRef.current = new Set();
+    setPassoIndex(0);
+    setRota(null);
+    setDestinoState(property);
+  }, []);
 
   const distanciaDestino = useMemo(
     () => (position && destino ? haversineMeters(position, { lat: destino.lat, lng: destino.lng }) : null),
@@ -148,6 +161,44 @@ export function useModoPasseio(properties: Property[]) {
     chegadaAnunciada.current = destino.id;
     falar(`Você chegou perto de ${destino.titulo}.`);
   }, [destino, chegouDestino, falar]);
+
+  // Busca a rota real pelas ruas (OSRM) uma vez por destino/modo de deslocamento — não refaz a
+  // cada atualização de GPS pra não bater demais no servidor público gratuito. Se falhar (rede,
+  // servidor fora do ar), fica sem rota e a UI cai de volta pro guia em linha reta.
+  useEffect(() => {
+    if (!destino || !position) return;
+    const chave = `${destino.id}:${modo}`;
+    if (rotaChaveRef.current === chave) return;
+    rotaChaveRef.current = chave;
+    passoPreAvisadoRef.current = new Set();
+    setPassoIndex(0);
+    setRotaCarregando(true);
+    buscarRota(position, { lat: destino.lat, lng: destino.lng }, modo)
+      .then((resultado) => setRota(resultado))
+      .finally(() => setRotaCarregando(false));
+  }, [destino, position, modo]);
+
+  const passoAtual = rota && passoIndex < rota.passos.length ? rota.passos[passoIndex] : null;
+
+  const distanciaProximoPasso = useMemo(
+    () => (passoAtual && position ? haversineMeters(position, passoAtual.local) : null),
+    [passoAtual, position],
+  );
+
+  // Avança de passo em passo conforme o usuário se aproxima de cada manobra, avisando em voz
+  // alta com antecedência — igual ao "em 150 metros, vire à direita" de um GPS de verdade.
+  useEffect(() => {
+    if (!active || !passoAtual || distanciaProximoPasso === null) return;
+
+    if (!passoPreAvisadoRef.current.has(passoIndex) && distanciaProximoPasso <= RAIO_PRE_AVISO_METROS) {
+      passoPreAvisadoRef.current.add(passoIndex);
+      falar(`Em ${formatDistanceFalada(distanciaProximoPasso)}, ${passoAtual.instrucao}.`);
+    }
+
+    if (distanciaProximoPasso <= RAIO_PASSO_CONCLUIDO_METROS && rota && passoIndex < rota.passos.length - 1) {
+      setPassoIndex((i) => i + 1);
+    }
+  }, [active, passoAtual, passoIndex, distanciaProximoPasso, rota, falar]);
 
   return {
     active,
@@ -169,5 +220,9 @@ export function useModoPasseio(properties: Property[]) {
     distanciaDestino,
     rumoDestino,
     chegouDestino,
+    rota,
+    rotaCarregando,
+    passoAtual,
+    distanciaProximoPasso,
   };
 }
