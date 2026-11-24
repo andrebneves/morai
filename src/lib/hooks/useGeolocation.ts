@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { bearingDegrees, haversineMeters } from "@/lib/geo";
 
 export interface GeoPosition {
   lat: number;
@@ -23,13 +24,30 @@ export function useGeolocation({ watch = false, enableHighAccuracy = true }: Use
   const [permission, setPermission] = useState<GeoPermissionState>("idle");
   const [error, setError] = useState<string | null>(null);
   const watchIdRef = useRef<number | null>(null);
+  const lastFixRef = useRef<{ lat: number; lng: number } | null>(null);
+  const lastHeadingRef = useRef<number | null>(null);
 
   const handleSuccess = useCallback((pos: GeolocationPosition) => {
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
+
+    // iOS/Android costumam devolver coords.heading = null quando parado ou em baixa
+    // velocidade. Nesses casos, estimamos o rumo pela diferença entre as duas últimas
+    // posições (como um GPS de navegação faria) e mantemos o último rumo conhecido
+    // em vez de voltar para null, pra não fazer a seta "piscar" pra direção nenhuma.
+    let heading = pos.coords.heading;
+    if ((heading === null || Number.isNaN(heading)) && lastFixRef.current) {
+      const moved = haversineMeters(lastFixRef.current, { lat, lng });
+      heading = moved > 4 ? bearingDegrees(lastFixRef.current, { lat, lng }) : lastHeadingRef.current;
+    }
+    if (heading !== null) lastHeadingRef.current = heading;
+    lastFixRef.current = { lat, lng };
+
     setPosition({
-      lat: pos.coords.latitude,
-      lng: pos.coords.longitude,
+      lat,
+      lng,
       accuracy: pos.coords.accuracy,
-      heading: pos.coords.heading,
+      heading,
       speed: pos.coords.speed,
       timestamp: pos.timestamp,
     });

@@ -26,6 +26,8 @@ if (typeof window !== "undefined") {
 export interface MapViewHandle {
   flyTo: (lat: number, lng: number, zoom?: number) => void;
   getMap: () => MapLibreMap | null;
+  /** Retoma o acompanhamento automático da posição/direção (ex.: botão "Recentralizar"). */
+  resumeFollow: () => void;
 }
 
 interface MapViewProps {
@@ -39,6 +41,13 @@ interface MapViewProps {
   onMapClick?: (lat: number, lng: number) => void;
   initialCenter?: { lat: number; lng: number };
   initialZoom?: number;
+  /**
+   * Modo "GPS tipo Waze": a câmera acompanha a posição e gira para manter a direção de
+   * deslocamento sempre "pra cima" na tela, em vez do norte fixo. Pausa automaticamente se o
+   * usuário arrastar o mapa manualmente (ver `onFollowPausedChange`/`resumeFollow`).
+   */
+  followHeading?: boolean;
+  onFollowPausedChange?: (paused: boolean) => void;
 }
 
 interface PointProps {
@@ -70,6 +79,8 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
     onMapClick,
     initialCenter,
     initialZoom,
+    followHeading,
+    onFollowPausedChange,
   },
   ref,
 ) {
@@ -79,13 +90,31 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
   const userMarkerRef = useRef<Marker | null>(null);
   const clusterIndexRef = useRef<Supercluster<PointProps, ClusterProps> | null>(null);
   const [styleLoaded, setStyleLoaded] = useState(false);
+  const followingRef = useRef(true);
+  const followHeadingRef = useRef(followHeading);
+  const onFollowPausedChangeRef = useRef(onFollowPausedChange);
+  followHeadingRef.current = followHeading;
+  onFollowPausedChangeRef.current = onFollowPausedChange;
+
+  const setFollowing = (value: boolean) => {
+    if (followingRef.current === value) return;
+    followingRef.current = value;
+    onFollowPausedChangeRef.current?.(!value);
+  };
 
   useImperativeHandle(ref, () => ({
     flyTo: (lat, lng, zoom = 16) => {
       mapRef.current?.flyTo({ center: [lng, lat], zoom, essential: true, duration: 900 });
     },
     getMap: () => mapRef.current,
+    resumeFollow: () => setFollowing(true),
   }));
+
+  // reinicia o acompanhamento sempre que o modo GPS é (re)ativado
+  useEffect(() => {
+    if (followHeading) setFollowing(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [followHeading]);
 
   // init map
   useEffect(() => {
@@ -106,6 +135,17 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
       setStyleLoaded(true);
       onMapReady?.();
     });
+
+    // Se o usuário arrastar/girar o mapa manualmente durante o modo GPS, paramos de forçar a
+    // câmera pra ele poder olhar em volta — "Recentralizar" (resumeFollow) retoma. Importante:
+    // só conta como "manual" quando o evento tem `originalEvent` (veio de mouse/touch de
+    // verdade) — nosso próprio `easeTo({ bearing })` do modo GPS também dispara "rotatestart",
+    // mas sem originalEvent, e não deve se autodetectar como um arraste do usuário.
+    const handleManualOverride = (e: { originalEvent?: unknown }) => {
+      if (followHeadingRef.current && e.originalEvent) setFollowing(false);
+    };
+    map.on("dragstart", handleManualOverride);
+    map.on("rotatestart", handleManualOverride);
 
     if (onMapClick) {
       map.on("click", (e) => onMapClick(e.lngLat.lat, e.lngLat.lng));
@@ -263,7 +303,8 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
     };
   }, [properties, radarById, selectedId, onSelectProperty, styleLoaded]);
 
-  // user position marker
+  // user position marker — seta direcional (tipo GPS de navegação) quando sabemos o rumo,
+  // ponto simples quando ainda não temos direção de deslocamento
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !styleLoaded) return;
@@ -274,20 +315,59 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
       return;
     }
 
+    const heading = userPosition.heading ?? null;
+    // Em modo "câmera acompanha a direção" (followHeading), é o MAPA que gira pra alinhar o
+    // rumo com "pra cima" na tela — a seta fica sempre apontando pra cima, como no Waze.
+    // Sem esse modo, é a seta que gira sobre o mapa fixo (norte sempre pra cima).
+    const arrowRotation = followHeading ? 0 : (heading ?? 0);
+
     if (!userMarkerRef.current) {
       const el = document.createElement("div");
       el.className = "relative flex items-center justify-center";
-      el.innerHTML = `
-        <div class="absolute h-10 w-10 rounded-full bg-emerald/30 animate-pulse-ring"></div>
-        <div class="relative h-4 w-4 rounded-full bg-emerald border-2 border-white shadow-md"></div>
-      `;
       userMarkerRef.current = new Marker({ element: el, anchor: "center" })
         .setLngLat([userPosition.lng, userPosition.lat])
         .addTo(map);
     } else {
       userMarkerRef.current.setLngLat([userPosition.lng, userPosition.lat]);
     }
-  }, [userPosition, styleLoaded]);
+
+    const el = userMarkerRef.current.getElement();
+    el.innerHTML =
+      heading === null
+        ? `
+          <div class="absolute h-10 w-10 rounded-full bg-emerald/30 animate-pulse-ring"></div>
+          <div class="relative h-4 w-4 rounded-full bg-emerald border-2 border-white shadow-md"></div>
+        `
+        : `
+          <div class="absolute h-12 w-12 rounded-full bg-emerald/25 animate-pulse-ring"></div>
+          <div style="transform:rotate(${arrowRotation}deg);transition:transform .2s linear;">
+            <svg width="30" height="30" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10.5" fill="#00E58A" stroke="white" stroke-width="2"/>
+              <path d="M12 5.5 L16.5 15.5 L12 13 L7.5 15.5 Z" fill="white"/>
+            </svg>
+          </div>
+        `;
+  }, [userPosition, styleLoaded, followHeading]);
+
+  // câmera "modo GPS": segue a posição e gira pra manter a direção de deslocamento pra cima
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !styleLoaded || !userPosition || !followHeading || !followingRef.current) return;
+
+    map.easeTo({
+      center: [userPosition.lng, userPosition.lat],
+      bearing: userPosition.heading ?? map.getBearing(),
+      duration: 500,
+      easing: (t) => t,
+    });
+  }, [userPosition, styleLoaded, followHeading]);
+
+  // ao sair do modo GPS, volta suavemente pro norte fixo
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || followHeading) return;
+    map.resetNorth({ duration: 600 });
+  }, [followHeading]);
 
   return <div ref={containerRef} className="h-full w-full" />;
 });

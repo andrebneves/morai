@@ -32,6 +32,7 @@ export default function MapaPage() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [satellite, setSatellite] = useState(false);
   const [passeioOpen, setPasseioOpen] = useState(false);
+  const [followPaused, setFollowPaused] = useState(false);
 
   const mapRef = useRef<MapViewHandle>(null);
   const { position, requestOnce } = useGeolocation();
@@ -75,6 +76,8 @@ export default function MapaPage() {
         onSelectProperty={setSelectedId}
         userPosition={activeUserPosition}
         satellite={satellite}
+        followHeading={passeio.active}
+        onFollowPausedChange={setFollowPaused}
       />
 
       {/* Top overlay */}
@@ -100,6 +103,17 @@ export default function MapaPage() {
         <ControlButton icon={<Layers className="h-5 w-5" />} onClick={() => setSatellite((s) => !s)} active={satellite} />
         <ControlButton icon={<Locate className="h-5 w-5" />} onClick={handleLocate} />
       </div>
+
+      {/* Recentralizar (modo GPS pausado por arraste manual) */}
+      {passeio.active && followPaused && (
+        <button
+          onClick={() => mapRef.current?.resumeFollow()}
+          className="absolute bottom-[calc(132px+env(safe-area-inset-bottom))] left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full bg-emerald px-4 py-2.5 text-sm font-bold text-dark-green shadow-[var(--shadow-float)] active:scale-95 transition-transform"
+        >
+          <Locate className="h-4 w-4" />
+          Recentralizar
+        </button>
+      )}
 
       {/* Modo Passeio FAB */}
       <button
