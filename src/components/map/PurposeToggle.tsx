@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import clsx from "clsx";
+import { Plus } from "lucide-react";
 import type { ListingPurpose } from "@/lib/types";
 
 interface PurposeToggleProps {
@@ -9,35 +10,43 @@ interface PurposeToggleProps {
   onChange: (v: ListingPurpose) => void;
 }
 
+/** Comprar = esmeralda, Alugar = lima — as duas cores de destaque da marca, pra dar pra
+ * diferenciar o modo num relance (pedido do usuário). "Anunciar" não é um estado do toggle
+ * (sempre leva pra outra tela), por isso tem um visual mais discreto, com ícone de "+". */
 export function PurposeToggle({ value, onChange }: PurposeToggleProps) {
   const router = useRouter();
 
-  const items: { key: ListingPurpose | "anunciar"; label: string }[] = [
-    { key: "venda", label: "Comprar" },
-    { key: "aluguel", label: "Alugar" },
-    { key: "anunciar", label: "Anunciar" },
-  ];
-
   return (
-    <div className="flex items-center gap-2 rounded-full bg-surface p-1 shadow-[var(--shadow-float)]">
-      {items.map((item) => {
-        const active = item.key === value;
-        return (
-          <button
-            key={item.key}
-            onClick={() => {
-              if (item.key === "anunciar") router.push("/anunciar");
-              else onChange(item.key);
-            }}
-            className={clsx(
-              "rounded-full px-3.5 py-2 text-sm font-semibold transition-colors whitespace-nowrap",
-              active ? "bg-lime text-dark-green" : "text-foreground",
-            )}
-          >
-            {item.label}
-          </button>
-        );
-      })}
+    <div className="flex items-center gap-1.5 rounded-full bg-dark-green p-1.5 shadow-[var(--shadow-float)]">
+      <button
+        onClick={() => onChange("venda")}
+        className={clsx(
+          "rounded-full px-4 py-2 text-sm font-extrabold tracking-tight whitespace-nowrap transition-all active:scale-95",
+          value === "venda"
+            ? "bg-emerald text-dark-green shadow-[0_3px_0_rgba(0,61,50,0.35)]"
+            : "text-off-white/55",
+        )}
+      >
+        Comprar
+      </button>
+      <button
+        onClick={() => onChange("aluguel")}
+        className={clsx(
+          "rounded-full px-4 py-2 text-sm font-extrabold tracking-tight whitespace-nowrap transition-all active:scale-95",
+          value === "aluguel"
+            ? "bg-lime text-dark-green shadow-[0_3px_0_rgba(0,61,50,0.35)]"
+            : "text-off-white/55",
+        )}
+      >
+        Alugar
+      </button>
+      <button
+        onClick={() => router.push("/anunciar")}
+        className="flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-bold text-off-white/55 whitespace-nowrap active:scale-95 transition-transform"
+      >
+        <Plus className="h-3.5 w-3.5" />
+        Anunciar
+      </button>
     </div>
   );
 }

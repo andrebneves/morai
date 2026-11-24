@@ -2,7 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Search, SlidersHorizontal, X } from "lucide-react";
+import clsx from "clsx";
 import { OLINDA_BAIRROS } from "@/lib/data/olinda-bairros";
+import type { ListingPurpose } from "@/lib/types";
 
 interface SearchResult {
   label: string;
@@ -15,11 +17,15 @@ interface SearchBarProps {
   onSelectResult: (result: SearchResult) => void;
   onOpenFilters: () => void;
   activeFilterCount: number;
+  /** Tinge o ícone de busca e o contorno com a mesma cor do modo ativo (Comprar/Alugar),
+   * pra dar pra saber de relance em qual modo você está. */
+  purpose: ListingPurpose;
 }
 
 const OLINDA_VIEWBOX = "-34.92,-8.04,-34.80,-7.95"; // lonMin,latMin,lonMax,latMax aprox.
 
-export function SearchBar({ onSelectResult, onOpenFilters, activeFilterCount }: SearchBarProps) {
+export function SearchBar({ onSelectResult, onOpenFilters, activeFilterCount, purpose }: SearchBarProps) {
+  const isAluguel = purpose === "aluguel";
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const [remoteResults, setRemoteResults] = useState<SearchResult[]>([]);
@@ -72,8 +78,20 @@ export function SearchBar({ onSelectResult, onOpenFilters, activeFilterCount }: 
 
   return (
     <div className="relative">
-      <div className="flex items-center gap-2 rounded-full bg-surface px-4 py-2.5 shadow-[var(--shadow-float)]">
-        <Search className="h-4 w-4 shrink-0 text-text-muted" />
+      <div
+        className={clsx(
+          "flex items-center gap-2.5 rounded-full bg-surface py-2 pl-2 pr-2.5 shadow-[var(--shadow-float)] ring-2 transition-colors",
+          isAluguel ? "ring-lime/60" : "ring-emerald/60",
+        )}
+      >
+        <span
+          className={clsx(
+            "flex h-8 w-8 shrink-0 items-center justify-center rounded-full",
+            isAluguel ? "bg-lime" : "bg-emerald",
+          )}
+        >
+          <Search className="h-4 w-4 text-dark-green" strokeWidth={2.6} />
+        </span>
         <input
           value={query}
           onChange={(e) => {
@@ -82,7 +100,7 @@ export function SearchBar({ onSelectResult, onOpenFilters, activeFilterCount }: 
           }}
           onFocus={() => setOpen(true)}
           placeholder="Buscar endereço, bairro ou imóvel"
-          className="w-full bg-transparent text-sm outline-none placeholder:text-text-muted"
+          className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-text-muted placeholder:font-normal"
         />
         {query && (
           <button onClick={() => setQuery("")} aria-label="Limpar busca">
@@ -91,12 +109,12 @@ export function SearchBar({ onSelectResult, onOpenFilters, activeFilterCount }: 
         )}
         <button
           onClick={onOpenFilters}
-          className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface-muted"
+          className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-dark-green text-off-white"
           aria-label="Filtros"
         >
           <SlidersHorizontal className="h-4 w-4" />
           {activeFilterCount > 0 && (
-            <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-lime text-[9px] font-bold text-dark-green">
+            <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-lime text-[9px] font-bold text-dark-green ring-2 ring-surface">
               {activeFilterCount}
             </span>
           )}

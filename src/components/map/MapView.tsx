@@ -70,6 +70,11 @@ type ClusterFeature = Feature<Point, PointProps | ClusterProps>;
 const BROWSE_PITCH = 54;
 const FOLLOW_PITCH = 30;
 
+/** Abaixo deste zoom, os imóveis aparecem como um pin pequeno (sem o preço escrito) — do
+ * contrário as etiquetas com preço se sobrepõem e poluem o mapa quando há muitos imóveis
+ * próximos uns dos outros. Zoom mais próximo revela a etiqueta completa com o preço. */
+const PRICE_LABEL_MIN_ZOOM = 16;
+
 function isClusterProps(props: PointProps | ClusterProps): props is ClusterProps {
   return (props as ClusterProps).cluster === true;
 }
@@ -204,7 +209,9 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
         bounds.getEast(),
         bounds.getNorth(),
       ];
-      const zoom = Math.floor(current.getZoom());
+      const exactZoom = current.getZoom();
+      const zoom = Math.floor(exactZoom);
+      const showPriceLabel = exactZoom >= PRICE_LABEL_MIN_ZOOM;
       const clusters = index.getClusters(bbox, zoom) as ClusterFeature[];
 
       const nextKeys = new Set<string>();
@@ -258,7 +265,8 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
           // propriedade no elemento raiz do marcador para posicioná-lo no mapa.
           // Qualquer escala/transform visual deve ficar num wrapper filho.
           el.className = "cursor-pointer select-none";
-          el.innerHTML = `
+          el.innerHTML = showPriceLabel
+            ? `
             <div style="transform:${selected ? "scale(1.1)" : "scale(1)"};transition:transform .15s ease;animation:morai-pin-pop .35s cubic-bezier(.34,1.56,.64,1);">
               <div style="
                 display:flex;align-items:center;gap:5px;
@@ -284,6 +292,23 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
                 <span>${formatCompactPrice(property.preco)}${property.finalidade === "aluguel" ? "/mês" : ""}</span>
               </div>
               <div style="width:0;height:0;margin:0 auto;border-left:6px solid transparent;border-right:6px solid transparent;border-top:7px solid ${selected ? "#00E58A" : "#003D32"};"></div>
+            </div>
+          `
+            : `
+            <div style="transform:${selected ? "scale(1.15)" : "scale(1)"};transition:transform .15s ease;animation:morai-pin-pop .35s cubic-bezier(.34,1.56,.64,1);display:flex;flex-direction:column;align-items:center;">
+              <div style="
+                display:flex;align-items:center;justify-content:center;
+                width:22px;height:22px;border-radius:999px;
+                background:${selected ? "#00E58A" : "#003D32"};
+                border:2px solid ${opportunity ? "#C5FF35" : "rgba(245,247,242,0.75)"};
+                box-shadow:0 4px 10px rgba(6,42,36,0.3);
+              ">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 11.5L12 4l9 7.5" stroke="${selected ? "#003D32" : "#F5F7F2"}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M5.5 10v8.5a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V10" stroke="${selected ? "#003D32" : "#F5F7F2"}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div style="width:0;height:0;margin-top:-1px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid ${selected ? "#00E58A" : "#003D32"};"></div>
             </div>
           `;
           el.onclick = (e) => {

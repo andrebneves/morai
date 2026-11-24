@@ -104,6 +104,7 @@ export default function MapaPage() {
             onSelectResult={(r) => mapRef.current?.flyTo(r.lat, r.lng, r.zoom)}
             onOpenFilters={() => setFiltersOpen(true)}
             activeFilterCount={countActiveFilters(filters)}
+            purpose={filters.finalidade}
           />
         </div>
         <div className="pointer-events-auto">
