@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Locate, Layers, Navigation, Loader2 } from "lucide-react";
+import { Locate, Layers, Navigation, Loader2, X, CheckCircle2 } from "lucide-react";
 import { MapView, type MapViewHandle } from "@/components/map/MapView";
 import { PurposeToggle } from "@/components/map/PurposeToggle";
 import { SearchBar } from "@/components/map/SearchBar";
@@ -19,6 +19,7 @@ import { useRadarMap } from "@/lib/hooks/useRadarMap";
 import { useModoPasseio } from "@/lib/hooks/useModoPasseio";
 import { getAllProperties } from "@/lib/data/properties";
 import { applyFilters, countActiveFilters } from "@/lib/applyFilters";
+import { formatDistance } from "@/lib/geo";
 import type { Property } from "@/lib/types";
 
 export default function MapaPage() {
@@ -78,6 +79,17 @@ export default function MapaPage() {
     if (position) mapRef.current?.flyTo(position.lat, position.lng, 16);
   };
 
+  // "Dirigir até lá" é o próprio GPS do Moraí guiando por distância/rumo em linha reta — não
+  // abre um app de navegação externo (pedido explícito: "a navegação deveria ser dele próprio").
+  const handleDirigir = (property: Property) => {
+    if (!passeio.active) passeio.start();
+    passeio.setDestino(property);
+    setSelectedId(null);
+  };
+
+  const rumoRelativo =
+    passeio.rumoDestino !== null ? (passeio.rumoDestino - (activeUserPosition?.heading ?? 0) + 360) % 360 : null;
+
   return (
     <div className="relative h-screen w-full overflow-hidden bg-background">
       {showSplash && <SplashScreen fadingOut={splashFading} />}
@@ -115,6 +127,29 @@ export default function MapaPage() {
             Localização não autorizada — ative o acesso à localização do Safari para o GPS do Moraí funcionar.
           </div>
         )}
+        {passeio.destino && (
+          <div className="pointer-events-auto relative z-30 flex items-center gap-2.5 rounded-xl bg-dark-green py-2.5 pl-3.5 pr-14 text-off-white shadow-[var(--shadow-float)]">
+            {passeio.chegouDestino ? (
+              <CheckCircle2 className="h-5 w-5 shrink-0 text-lime" />
+            ) : (
+              <Navigation
+                className="h-5 w-5 shrink-0 text-lime transition-transform"
+                style={rumoRelativo !== null ? { transform: `rotate(${rumoRelativo}deg)` } : undefined}
+              />
+            )}
+            <div className="min-w-0 flex-1">
+              <p className="truncate text-xs font-bold">
+                {passeio.chegouDestino ? "Você chegou perto do imóvel" : passeio.destino.titulo}
+              </p>
+              {!passeio.chegouDestino && passeio.distanciaDestino !== null && (
+                <p className="text-[11px] text-off-white/65">{formatDistance(passeio.distanciaDestino)} · siga a seta</p>
+              )}
+            </div>
+            <button onClick={() => passeio.setDestino(null)} aria-label="Cancelar destino" className="shrink-0 p-1">
+              <X className="h-4 w-4 text-off-white/60" />
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Right controls */}
@@ -144,7 +179,9 @@ export default function MapaPage() {
       </button>
 
       <BottomSheet open={Boolean(selected)} onClose={() => setSelectedId(null)} maxHeightVh={55}>
-        {selected && <PropertyPreviewSheet property={selected} radar={radarById[selected.id]} />}
+        {selected && (
+          <PropertyPreviewSheet property={selected} radar={radarById[selected.id]} onDirigir={handleDirigir} />
+        )}
       </BottomSheet>
 
       <FiltersSheet open={filtersOpen} onClose={() => setFiltersOpen(false)} resultCount={filtered.length} />

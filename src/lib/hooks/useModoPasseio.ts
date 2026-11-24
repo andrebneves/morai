@@ -3,8 +3,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Property } from "@/lib/types";
 import { useGeolocation } from "@/lib/hooks/useGeolocation";
-import { haversineMeters, formatDistanceFalada } from "@/lib/geo";
+import { haversineMeters, bearingDegrees, formatDistanceFalada } from "@/lib/geo";
 import { formatPrecoFalado } from "@/lib/format";
+
+/** Abaixo desta distância consideramos que o usuário chegou ao destino escolhido. */
+const RAIO_CHEGADA_METROS = 30;
 
 export type RaioPasseio = 100 | 250 | 500 | 1000 | 2000;
 export type ModoDeslocamento = "pe" | "carro";
@@ -22,9 +25,11 @@ export function useModoPasseio(properties: Property[]) {
   const [modo, setModo] = useState<ModoDeslocamento>("pe");
   const [somAtivo, setSomAtivo] = useState(true);
   const [ultimoAlerta, setUltimoAlerta] = useState<ImovelProximo | null>(null);
+  const [destino, setDestinoState] = useState<Property | null>(null);
 
   const { position, permission, requestOnce } = useGeolocation({ watch: active });
   const announced = useRef<Map<string, number>>(new Map());
+  const chegadaAnunciada = useRef<string | null>(null);
 
   const falar = useCallback(
     (texto: string) => {
@@ -115,6 +120,35 @@ export function useModoPasseio(properties: Property[]) {
     falar("Este é um alerta de teste do modo passeio do Moraí.");
   }, [falar]);
 
+  // Guia o usuário até um imóvel escolhido usando o próprio GPS do Moraí (distância + rumo em
+  // linha reta), sem depender de um app de navegação externo — "o navegador é o app".
+  const setDestino = useCallback(
+    (property: Property | null) => {
+      chegadaAnunciada.current = null;
+      setDestinoState(property);
+    },
+    [],
+  );
+
+  const distanciaDestino = useMemo(
+    () => (position && destino ? haversineMeters(position, { lat: destino.lat, lng: destino.lng }) : null),
+    [position, destino],
+  );
+
+  const rumoDestino = useMemo(
+    () => (position && destino ? bearingDegrees(position, { lat: destino.lat, lng: destino.lng }) : null),
+    [position, destino],
+  );
+
+  const chegouDestino = distanciaDestino !== null && distanciaDestino <= RAIO_CHEGADA_METROS;
+
+  useEffect(() => {
+    if (!destino || !chegouDestino) return;
+    if (chegadaAnunciada.current === destino.id) return;
+    chegadaAnunciada.current = destino.id;
+    falar(`Você chegou perto de ${destino.titulo}.`);
+  }, [destino, chegouDestino, falar]);
+
   return {
     active,
     start,
@@ -130,5 +164,10 @@ export function useModoPasseio(properties: Property[]) {
     nearby,
     ultimoAlerta,
     testarAlerta,
+    destino,
+    setDestino,
+    distanciaDestino,
+    rumoDestino,
+    chegouDestino,
   };
 }

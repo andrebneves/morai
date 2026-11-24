@@ -281,12 +281,16 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
           // Importante: nunca definir el.style.transform aqui — o MapLibre usa essa
           // propriedade no elemento raiz do marcador para posicioná-lo no mapa.
           // Qualquer escala/transform visual deve ficar num wrapper filho.
-          el.className = "cursor-pointer select-none";
+          // inline-block: garante que a "caixa" do marcador encolha pro tamanho do conteúdo —
+          // sem isso, se o MapLibre não tiver aplicado seu posicionamento absoluto ainda no
+          // momento do innerHTML, o pin vira uma barra esticada na largura inteira do mapa
+          // (bug visto num iPhone real: etiqueta de preço virou uma faixa cobrindo a tela toda).
+          el.className = "inline-block cursor-pointer select-none";
           el.innerHTML = showPriceLabel
             ? `
-            <div style="transform:${selected ? "scale(1.1)" : "scale(1)"};transition:transform .15s ease;animation:morai-pin-pop .35s cubic-bezier(.34,1.56,.64,1);">
+            <div style="display:inline-block;transform:${selected ? "scale(1.1)" : "scale(1)"};transition:transform .15s ease;animation:morai-pin-pop .35s cubic-bezier(.34,1.56,.64,1);">
               <div style="
-                display:flex;align-items:center;gap:3px;
+                display:inline-flex;align-items:center;gap:3px;
                 background:${selected ? "#00E58A" : "#003D32"};
                 color:${selected ? "#003D32" : "#F5F7F2"};
                 padding:3px 8px 3px 4px;border-radius:999px;
@@ -312,7 +316,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
             </div>
           `
             : `
-            <div style="transform:${selected ? "scale(1.15)" : "scale(1)"};transition:transform .15s ease;animation:morai-pin-pop .35s cubic-bezier(.34,1.56,.64,1);display:flex;flex-direction:column;align-items:center;">
+            <div style="transform:${selected ? "scale(1.15)" : "scale(1)"};transition:transform .15s ease;animation:morai-pin-pop .35s cubic-bezier(.34,1.56,.64,1);display:inline-flex;flex-direction:column;align-items:center;">
               <div style="
                 display:flex;align-items:center;justify-content:center;
                 width:22px;height:22px;border-radius:999px;
