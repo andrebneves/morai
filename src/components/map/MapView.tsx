@@ -63,6 +63,13 @@ interface ClusterProps {
 
 type ClusterFeature = Feature<Point, PointProps | ClusterProps>;
 
+/** Inclinação da câmera: mais alta no modo de exploração livre (mapa "parado"), pra revelar
+ * os prédios extrudados e dar a sensação de maquete/diorama tipo The Sims; mais baixa durante
+ * o Modo Passeio (GPS seguindo a direção), pra manter a leitura clara andando/dirigindo sem
+ * perder de vez o efeito 3D (o Waze de verdade também inclina um pouco durante a navegação). */
+const BROWSE_PITCH = 54;
+const FOLLOW_PITCH = 30;
+
 function isClusterProps(props: PointProps | ClusterProps): props is ClusterProps {
   return (props as ClusterProps).cluster === true;
 }
@@ -125,6 +132,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
       style: STREETS_STYLE,
       center: [initialCenter?.lng ?? OLINDA_CENTER.lng, initialCenter?.lat ?? OLINDA_CENTER.lat],
       zoom: initialZoom ?? 14,
+      pitch: followHeading ? FOLLOW_PITCH : BROWSE_PITCH,
       attributionControl: { compact: true },
       pitchWithRotate: false,
     });
@@ -362,11 +370,17 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
     });
   }, [userPosition, styleLoaded, followHeading]);
 
-  // ao sair do modo GPS, volta suavemente pro norte fixo
+  // ao sair do modo GPS, volta suavemente pro norte fixo e inclina a câmera (visual de maquete);
+  // ao entrar, achata pra visão de cima (mais clara pra andar/dirigir)
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || followHeading) return;
-    map.resetNorth({ duration: 600 });
+    if (!map) return;
+    if (followHeading) {
+      map.easeTo({ pitch: FOLLOW_PITCH, duration: 600 });
+    } else {
+      map.resetNorth({ duration: 600 });
+      map.easeTo({ pitch: BROWSE_PITCH, duration: 600 });
+    }
   }, [followHeading]);
 
   return <div ref={containerRef} className="h-full w-full" />;

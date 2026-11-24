@@ -131,10 +131,83 @@ function jitterCoord(lat, lng, raioKm) {
   return { lat: lat + dLat, lng: lng + dLng };
 }
 
-function gerarFotos(id, n) {
-  const fotos = [];
-  for (let i = 1; i <= n; i++) {
-    fotos.push(`https://picsum.photos/seed/morai-${id}-${i}/960/720`);
+// Fotos reais de banco gratuito (Unsplash License — uso livre, sem exigência de atribuição),
+// organizadas por cômodo/tipo. São ilustrativas: os imóveis do seed são demonstrativos
+// (`demo: true`), não correspondem a endereços reais fotografados.
+const FOTO_POOL = {
+  exterior_casa: [
+    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1777947151071-f985c78f7070?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1757361653037-dbf0d0a820ae?auto=format&fit=crop&w=960&h=720&q=80",
+  ],
+  exterior_predio: [
+    "https://images.unsplash.com/photo-1781204516306-18eab1d08e7e?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1627799048600-ab328d27f853?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1759352642019-dc5510982676?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1760894492960-5b0a2da0676d?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1766321258844-6541b34b2940?auto=format&fit=crop&w=960&h=720&q=80",
+  ],
+  sala: [
+    "https://images.unsplash.com/photo-1746517757473-7c88850e539b?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1541616138747-f4a42c7f0668?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1616137356540-b13b2a04a507?auto=format&fit=crop&w=960&h=720&q=80",
+  ],
+  quarto: [
+    "https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1528908929486-dfaa209c6986?auto=format&fit=crop&w=960&h=720&q=80",
+  ],
+  cozinha: [
+    "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1641823911769-c55f23c25143?auto=format&fit=crop&w=960&h=720&q=80",
+  ],
+  banheiro: [
+    "https://images.unsplash.com/photo-1613849925594-415a32298f54?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1648631478953-1334ce24a24c?auto=format&fit=crop&w=960&h=720&q=80",
+  ],
+  varanda_vista: [
+    "https://images.unsplash.com/photo-1722339141645-b0a1d4eaad50?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1677258523144-a659ca521a07?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1718953585022-ca7ce7fcf23b?auto=format&fit=crop&w=960&h=720&q=80",
+  ],
+  terreno: [
+    "https://images.unsplash.com/photo-1706982803887-82f929f5faa3?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1593978223426-590610a97a06?auto=format&fit=crop&w=960&h=720&q=80",
+  ],
+  comercial: [
+    "https://images.unsplash.com/photo-1672697435797-db092ae0fbd9?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1658843913345-1b92bd88ad6a?auto=format&fit=crop&w=960&h=720&q=80",
+    "https://images.unsplash.com/photo-1548688086-f6e309e9690e?auto=format&fit=crop&w=960&h=720&q=80",
+  ],
+};
+
+function gerarFotos(tipo, n) {
+  let capaPool;
+  let extraPool;
+
+  if (tipo === "terreno") {
+    capaPool = FOTO_POOL.terreno;
+    extraPool = FOTO_POOL.terreno;
+  } else if (tipo === "comercial") {
+    capaPool = FOTO_POOL.comercial;
+    extraPool = [...FOTO_POOL.comercial, ...FOTO_POOL.exterior_predio];
+  } else {
+    const exterior = ["apartamento", "cobertura", "kitnet"].includes(tipo)
+      ? FOTO_POOL.exterior_predio
+      : FOTO_POOL.exterior_casa;
+    const interiores = [...FOTO_POOL.sala, ...FOTO_POOL.quarto, ...FOTO_POOL.cozinha, ...FOTO_POOL.banheiro];
+    const vista = tipo === "cobertura" ? FOTO_POOL.varanda_vista : [];
+    capaPool = exterior;
+    extraPool = [...exterior, ...interiores, ...vista];
+  }
+
+  // primeira foto (capa) sempre uma fachada/exterior (ou terreno/fachada comercial) — como um
+  // anúncio real; as demais completam embaralhadas do pool, sem repetir a capa
+  const capa = pick(capaPool);
+  const resto = extraPool.filter((f) => f !== capa);
+  const fotos = [capa];
+  while (fotos.length < n && resto.length) {
+    const idx = Math.floor(rand() * resto.length);
+    fotos.push(resto.splice(idx, 1)[0]);
   }
   return fotos;
 }
@@ -233,7 +306,7 @@ for (const bairro of BAIRROS) {
       endereco,
       lat: Math.round(coords.lat * 1e6) / 1e6,
       lng: Math.round(coords.lng * 1e6) / 1e6,
-      fotos: gerarFotos(id, intBetween(4, 6)),
+      fotos: gerarFotos(tipo, intBetween(4, 6)),
       caracteristicas,
       dataPublicacao,
       historicoPrecos: gerarHistoricoPrecos(preco, dataPublicacao),

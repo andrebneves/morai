@@ -17,11 +17,11 @@ const TOY_PAINT_OVERRIDES: Record<string, Record<string, unknown>> = {
   natural_earth: { "raster-opacity": 0 },
 
   park: {
-    "fill-color": "#BFE08A",
-    "fill-opacity": 0.9,
-    "fill-outline-color": "rgba(255,255,255,0.5)",
+    "fill-color": "#A9DD78",
+    "fill-opacity": 0.92,
+    "fill-outline-color": "rgba(255,255,255,0.6)",
   },
-  park_outline: { "line-color": "rgba(255,255,255,0.5)" },
+  park_outline: { "line-color": "rgba(255,255,255,0.6)" },
 
   landuse_residential: {
     "fill-color": [
@@ -34,8 +34,8 @@ const TOY_PAINT_OVERRIDES: Record<string, Record<string, unknown>> = {
       "hsla(35,60%,90%,0.45)",
     ],
   },
-  landcover_wood: { "fill-color": "hsla(100,55%,55%,0.55)", "fill-opacity": 0.5 },
-  landcover_grass: { "fill-color": "rgba(175,224,140,1)", "fill-opacity": 0.55 },
+  landcover_wood: { "fill-color": "hsla(100,62%,42%,0.65)", "fill-opacity": 0.55 },
+  landcover_grass: { "fill-color": "rgba(150,214,110,1)", "fill-opacity": 0.6 },
   landcover_ice: { "fill-color": "rgba(224,245,250,1)" },
   landuse_pitch: { "fill-color": "#CFF0A0" },
   landuse_track: { "fill-color": "#F0DDA0" },
@@ -44,10 +44,12 @@ const TOY_PAINT_OVERRIDES: Record<string, Record<string, unknown>> = {
   landuse_school: { "fill-color": "#FDEFAE" },
   landcover_sand: { "fill-color": "#F6E3B0" },
 
-  water: { "fill-color": "#6FC7E8" },
+  water: {
+    "fill-color": ["interpolate", ["linear"], ["zoom"], 10, "#4FB8D8", 16, "#2E9FC9"],
+  },
 
   building: {
-    "fill-color": "#F3B88A",
+    "fill-color": "#F6C49A",
     "fill-outline-color": [
       "interpolate",
       ["linear"],
@@ -58,7 +60,22 @@ const TOY_PAINT_OVERRIDES: Record<string, Record<string, unknown>> = {
       "hsl(20,55%,50%)",
     ],
   },
-  "building-3d": { "fill-extrusion-color": "#F3B88A" },
+  // Pequena variação de tom pela altura do prédio (render_height) — dá uma sensação de
+  // "maquete"/diorama em vez de blocos idênticos, igual às casinhas do The Sims.
+  "building-3d": {
+    "fill-extrusion-color": [
+      "interpolate",
+      ["linear"],
+      ["get", "render_height"],
+      0,
+      "#FBDBB4",
+      8,
+      "#F6C49A",
+      25,
+      "#E09C68",
+    ],
+    "fill-extrusion-opacity": 0.95,
+  },
 
   road_minor_casing: { "line-color": "#D9C79A" },
   road_secondary_tertiary_casing: { "line-color": "#E0A868" },
@@ -92,6 +109,15 @@ function buildToyStyle(base: unknown): StyleSpecification {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (layer as any).paint = { ...(layer as any).paint, ...overrides };
   }
+  // Luz quente e um pouco mais intensa que o padrão do MapLibre — acentua o sombreado das
+  // faces dos prédios extrudados (building-3d), reforçando a leitura de "maquete" quando o
+  // mapa está inclinado (ver BROWSE_PITCH em MapView.tsx).
+  style.light = {
+    anchor: "viewport",
+    color: "hsl(38, 85%, 92%)",
+    intensity: 0.6,
+    position: [1.2, 200, 42],
+  };
   return style;
 }
 

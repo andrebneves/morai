@@ -36,8 +36,9 @@ export default function PrivacidadePage() {
         </p>
         <h2 className="font-semibold text-foreground">Dados de terceiros</h2>
         <p>
-          Usamos dados abertos do OpenStreetMap (mapas e pontos de interesse) e imagens de demonstração
-          (picsum.photos) apenas para fins ilustrativos nesta versão beta.
+          Usamos dados abertos do OpenStreetMap (mapas e pontos de interesse) e fotos de banco de imagens
+          gratuito (Unsplash, sob a Unsplash License) nos imóveis demonstrativos, apenas para fins
+          ilustrativos nesta versão beta — essas fotos não retratam os endereços fictícios do seed.
         </p>
         <h2 className="font-semibold text-foreground">LGPD</h2>
         <p>
