@@ -13,13 +13,16 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={clsx(
-          "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all active:scale-[0.97] disabled:opacity-40 disabled:active:scale-100",
+          "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all disabled:opacity-40 disabled:active:translate-y-0 disabled:active:scale-100",
           {
-            "bg-emerald text-dark-green shadow-sm hover:brightness-105": variant === "primary",
-            "bg-surface-muted text-foreground": variant === "secondary",
-            "bg-transparent text-foreground": variant === "ghost",
-            "border border-border-subtle bg-transparent text-foreground": variant === "outline",
-            "bg-danger text-white": variant === "danger",
+            "bg-emerald text-dark-green shadow-[0_4px_0_0_#00a868] hover:brightness-105 active:translate-y-1 active:shadow-none":
+              variant === "primary",
+            "bg-surface-muted text-foreground active:scale-[0.97]": variant === "secondary",
+            "bg-transparent text-foreground active:scale-[0.97]": variant === "ghost",
+            "border border-border-subtle bg-transparent text-foreground active:scale-[0.97]":
+              variant === "outline",
+            "bg-danger text-white shadow-[0_4px_0_0_#a01818] active:translate-y-1 active:shadow-none":
+              variant === "danger",
           },
           {
             "h-9 px-4 text-sm": size === "sm",

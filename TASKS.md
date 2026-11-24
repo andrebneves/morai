@@ -47,6 +47,14 @@ Checklist do que foi feito e do que falta para esta fase (desenvolvimento + publ
 - [x] Gerar QR code da URL pública final
 - [x] Redeploy em produção confirmado com as variáveis do Supabase
 
+## Concluído nesta sessão (visual "Moraí Toy")
+
+- [x] Novo estilo de mapa com cores vivas estilo jogo de simulação (SimCity/The Sims) em vez do visual
+      fotorrealista padrão — ver [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md#estilo-visual-do-mapa--moraí-toy)
+- [x] Marcadores de imóvel com ícone de casinha e animação de "pop" ao aparecer
+- [x] Botões primário/perigo com efeito "3D de jogo" (sombra sólida que some ao pressionar)
+- [x] Cards de imóvel com cantos mais arredondados e feedback de toque
+
 ## Pendente (depende do usuário)
 
 - [ ] Rodar `npm run seed:push` localmente (opcional) para popular o banco real com os 100 imóveis

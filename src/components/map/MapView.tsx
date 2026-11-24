@@ -15,7 +15,7 @@ import type { Property, RadarResult } from "@/lib/types";
 import { formatCompactPrice } from "@/lib/format";
 import { isOportunidade } from "@/lib/radar";
 import { OLINDA_CENTER } from "@/lib/data/olinda-bairros";
-import { STREETS_STYLE_URL, SATELLITE_STYLE } from "@/components/map/mapStyles";
+import { STREETS_STYLE, SATELLITE_STYLE } from "@/components/map/mapStyles";
 
 // O auto-bundling do worker do MapLibre não resolve sob o Turbopack dev-server;
 // usamos o bundle oficial copiado para /public (ver scripts/copy-maplibre-worker.mjs).
@@ -93,7 +93,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
 
     const map = new MapLibreMap({
       container: containerRef.current,
-      style: STREETS_STYLE_URL,
+      style: STREETS_STYLE,
       center: [initialCenter?.lng ?? OLINDA_CENTER.lng, initialCenter?.lat ?? OLINDA_CENTER.lat],
       zoom: initialZoom ?? 14,
       attributionControl: { compact: true },
@@ -125,7 +125,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
     const map = mapRef.current;
     if (!map) return;
     setStyleLoaded(false);
-    map.setStyle(satellite ? SATELLITE_STYLE : STREETS_STYLE_URL);
+    map.setStyle(satellite ? SATELLITE_STYLE : STREETS_STYLE);
     map.once("styledata", () => setStyleLoaded(true));
   }, [satellite]);
 
@@ -211,16 +211,27 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
           // Qualquer escala/transform visual deve ficar num wrapper filho.
           el.className = "cursor-pointer select-none";
           el.innerHTML = `
-            <div style="transform:${selected ? "scale(1.08)" : "scale(1)"};transition:transform .15s ease;">
+            <div style="transform:${selected ? "scale(1.1)" : "scale(1)"};transition:transform .15s ease;animation:morai-pin-pop .35s cubic-bezier(.34,1.56,.64,1);">
               <div style="
-                display:flex;align-items:center;gap:4px;
+                display:flex;align-items:center;gap:5px;
                 background:${selected ? "#00E58A" : "#003D32"};
                 color:${selected ? "#003D32" : "#F5F7F2"};
-                padding:6px 10px;border-radius:999px;
+                padding:5px 10px 5px 6px;border-radius:999px;
                 font-weight:700;font-size:12.5px;white-space:nowrap;
-                box-shadow:0 6px 16px rgba(6,42,36,0.28);
+                box-shadow:0 6px 16px rgba(6,42,36,0.28), 0 0 0 2px rgba(255,255,255,0.55);
                 border:2px solid ${opportunity ? "#C5FF35" : "transparent"};
               ">
+                <span style="
+                  display:flex;align-items:center;justify-content:center;
+                  width:18px;height:18px;border-radius:999px;flex-shrink:0;
+                  background:${selected ? "rgba(0,61,50,0.14)" : "rgba(197,255,53,0.9)"};
+                  color:${selected ? "#003D32" : "#003D32"};
+                ">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 11.5L12 4l9 7.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5.5 10v8.5a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V10" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
                 ${opportunity ? '<span style="width:6px;height:6px;border-radius:999px;background:#C5FF35;display:inline-block;"></span>' : ""}
                 <span>${formatCompactPrice(property.preco)}${property.finalidade === "aluguel" ? "/mês" : ""}</span>
               </div>

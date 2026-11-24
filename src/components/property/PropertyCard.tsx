@@ -23,7 +23,7 @@ export function PropertyCard({ property, radar, compact }: PropertyCardProps) {
   return (
     <Link
       href={`/imovel/${property.id}`}
-      className="block overflow-hidden rounded-2xl bg-surface shadow-[var(--shadow-float)]"
+      className="block overflow-hidden rounded-[28px] bg-surface shadow-[var(--shadow-float)] transition-transform active:scale-[0.98]"
     >
       <div className={clsx("relative w-full", compact ? "h-36" : "h-44")}>
         <Image
