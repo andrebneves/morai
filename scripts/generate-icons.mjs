@@ -45,6 +45,35 @@ async function renderSquare(svg, outPath, sizePx) {
     .toFile(outPath);
 }
 
+/**
+ * Ícone com fundo sólido em canvas verdadeiramente quadrado: o símbolo (que tem proporção
+ * 1:1.15, mais alto que largo) é renderizado à parte, mantendo sua proporção original, e
+ * depois centralizado sobre um quadrado 100% preenchido com `bg`. Evita o bug de usar
+ * `fit: "contain"` direto num SVG não-quadrado com fundo — isso deixava faixas transparentes
+ * nas laterais e o símbolo cortado/desalinhado (apple-touch-icon ficava torto no iPhone).
+ */
+async function renderSquareWithBg(outPath, sizePx, { bg, markScale, markHeightRatio }) {
+  const markSvg = pinSvg({ markScale });
+  const markHeightPx = Math.round(sizePx * markHeightRatio);
+  const markWidthPx = Math.round(markHeightPx / 1.15);
+  const markBuf = await sharp(Buffer.from(markSvg), { density: 400 })
+    .resize(markWidthPx, markHeightPx)
+    .png()
+    .toBuffer();
+
+  const bgSvg = `<svg width="${sizePx}" height="${sizePx}" xmlns="http://www.w3.org/2000/svg"><rect width="${sizePx}" height="${sizePx}" fill="${bg}" /></svg>`;
+  await sharp(Buffer.from(bgSvg))
+    .composite([
+      {
+        input: markBuf,
+        left: Math.round((sizePx - markWidthPx) / 2),
+        top: Math.round((sizePx - markHeightPx) / 2),
+      },
+    ])
+    .png()
+    .toFile(outPath);
+}
+
 async function main() {
   // Ícones padrão (transparentes)
   const transparentSvg = pinSvg({ markScale: 0.92 });
@@ -53,14 +82,26 @@ async function main() {
   await renderSquare(transparentSvg, path.join(ICONS_DIR, "favicon-32.png"), 32);
   await renderSquare(transparentSvg, path.join(ICONS_DIR, "favicon-16.png"), 16);
 
-  // Ícones maskable (fundo sólido, símbolo centralizado com margem de segurança)
-  const maskableSvg = pinSvg({ bg: DEEP_GREEN, markScale: 0.6 });
-  await renderSquare(maskableSvg, path.join(ICONS_DIR, "icon-maskable-192.png"), 192);
-  await renderSquare(maskableSvg, path.join(ICONS_DIR, "icon-maskable-512.png"), 512);
+  // Ícones maskable (fundo sólido, símbolo centralizado com margem de segurança — a "zona
+  // segura" do Android é um círculo de ~80% do quadrado, por isso a marca ocupa só ~55% da
+  // altura total)
+  await renderSquareWithBg(path.join(ICONS_DIR, "icon-maskable-192.png"), 192, {
+    bg: DEEP_GREEN,
+    markScale: 0.92,
+    markHeightRatio: 0.55,
+  });
+  await renderSquareWithBg(path.join(ICONS_DIR, "icon-maskable-512.png"), 512, {
+    bg: DEEP_GREEN,
+    markScale: 0.92,
+    markHeightRatio: 0.55,
+  });
 
-  // Apple touch icon (iOS não suporta transparência — fundo sólido)
-  const appleSvg = pinSvg({ bg: DEEP_GREEN, markScale: 0.68 });
-  await renderSquare(appleSvg, path.join(ICONS_DIR, "apple-touch-icon.png"), 180);
+  // Apple touch icon (iOS não suporta transparência — fundo sólido, canvas quadrado de verdade)
+  await renderSquareWithBg(path.join(ICONS_DIR, "apple-touch-icon.png"), 180, {
+    bg: DEEP_GREEN,
+    markScale: 0.92,
+    markHeightRatio: 0.78,
+  });
 
   // favicon.ico simples a partir do png 32
   const png32 = await sharp(Buffer.from(transparentSvg), { density: 400 })

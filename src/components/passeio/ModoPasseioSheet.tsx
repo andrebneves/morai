@@ -119,7 +119,14 @@ export function ModoPasseioSheet({ open, onClose, passeio }: ModoPasseioSheetPro
 
         <div className="flex gap-3">
           {!active ? (
-            <Button fullWidth size="lg" onClick={start}>
+            <Button
+              fullWidth
+              size="lg"
+              onClick={() => {
+                start();
+                onClose();
+              }}
+            >
               Iniciar Modo Passeio
             </Button>
           ) : (
