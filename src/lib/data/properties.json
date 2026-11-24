@@ -1,0 +1,5022 @@
+[
+  {
+    "id": "morai-demo-001",
+    "demo": true,
+    "titulo": "Terreno de esquina em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo terreno com 508 m², localizado no bairro Bairro Novo, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "terreno",
+    "preco": 4750,
+    "condominio": 0,
+    "iptuMensal": 678,
+    "area": 508,
+    "precoM2": 9.35,
+    "quartos": 0,
+    "suites": 0,
+    "banheiros": 0,
+    "vagas": 0,
+    "bairro": "Bairro Novo",
+    "endereco": "Rua do Bonsucesso, 1146 - Bairro Novo, Olinda - PE",
+    "lat": -8.007438,
+    "lng": -34.843348,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-001-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-001-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-001-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-001-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-001-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-11-04",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-04",
+        "price": 4765
+      },
+      {
+        "date": "2026-11-24",
+        "price": 4710
+      },
+      {
+        "date": "2026-11-24",
+        "price": 4750
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-002",
+    "demo": true,
+    "titulo": "Apartamento compacto em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 89 m², localizado no bairro Bairro Novo, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 3300,
+    "condominio": 730,
+    "iptuMensal": 185,
+    "area": 89,
+    "precoM2": 37.08,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 1,
+    "bairro": "Bairro Novo",
+    "endereco": "Rua Nova, 1221 - Bairro Novo, Olinda - PE",
+    "lat": -7.997568,
+    "lng": -34.847953,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-002-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-002-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-002-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-002-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-08",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-08",
+        "price": 3462
+      },
+      {
+        "date": "2026-09-26",
+        "price": 3327
+      },
+      {
+        "date": "2026-10-24",
+        "price": 3300
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-003",
+    "demo": true,
+    "titulo": "Kitnet mobiliada em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo kitnet com 32 m², localizado no bairro Bairro Novo, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "aluguel",
+    "tipo": "kitnet",
+    "preco": 1200,
+    "condominio": 0,
+    "iptuMensal": 53,
+    "area": 32,
+    "precoM2": 37.5,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 2,
+    "bairro": "Bairro Novo",
+    "endereco": "Alameda das Mangueiras, 1014 - Bairro Novo, Olinda - PE",
+    "lat": -8.000598,
+    "lng": -34.838942,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-003-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-003-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-003-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-003-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-07",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-07",
+        "price": 1188
+      },
+      {
+        "date": "2026-11-01",
+        "price": 1161
+      },
+      {
+        "date": "2026-11-22",
+        "price": 1200
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-004",
+    "demo": true,
+    "titulo": "Casa de vila em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo casa com 165 m², localizado no bairro Bairro Novo, próximo à praia e a restaurantes locais.",
+    "finalidade": "aluguel",
+    "tipo": "casa",
+    "preco": 4700,
+    "condominio": 0,
+    "iptuMensal": 103,
+    "area": 165,
+    "precoM2": 28.48,
+    "quartos": 4,
+    "suites": 1,
+    "banheiros": 4,
+    "vagas": 0,
+    "bairro": "Bairro Novo",
+    "endereco": "Rua do Carmo, 1327 - Bairro Novo, Olinda - PE",
+    "lat": -8.006735,
+    "lng": -34.8379,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-004-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-004-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-004-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-004-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-29",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-29",
+        "price": 4700
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-005",
+    "demo": true,
+    "titulo": "Apartamento arejado em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 94 m², localizado no bairro Bairro Novo, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 2250,
+    "condominio": 290,
+    "iptuMensal": 100,
+    "area": 94,
+    "precoM2": 23.94,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 3,
+    "bairro": "Bairro Novo",
+    "endereco": "Travessa da Paz, 1230 - Bairro Novo, Olinda - PE",
+    "lat": -8.003281,
+    "lng": -34.842286,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-005-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-005-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-005-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-005-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-005-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-09",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-09",
+        "price": 2250
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-006",
+    "demo": true,
+    "titulo": "Apartamento arejado em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 102 m², localizado no bairro Bairro Novo, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 3400,
+    "condominio": 680,
+    "iptuMensal": 109,
+    "area": 102,
+    "precoM2": 33.33,
+    "quartos": 3,
+    "suites": 1,
+    "banheiros": 3,
+    "vagas": 2,
+    "bairro": "Bairro Novo",
+    "endereco": "Rua da Matriz, 284 - Bairro Novo, Olinda - PE",
+    "lat": -8.007826,
+    "lng": -34.847102,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-006-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-006-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-006-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-006-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-006-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-08",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-08",
+        "price": 3376
+      },
+      {
+        "date": "2026-09-28",
+        "price": 3361
+      },
+      {
+        "date": "2026-10-28",
+        "price": 3400
+      }
+    ],
+    "status": "reservado"
+  },
+  {
+    "id": "morai-demo-007",
+    "demo": true,
+    "titulo": "Cobertura com terraço gourmet em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 206 m², localizado no bairro Bairro Novo, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "cobertura",
+    "preco": 7700,
+    "condominio": 540,
+    "iptuMensal": 290,
+    "area": 206,
+    "precoM2": 37.38,
+    "quartos": 5,
+    "suites": 2,
+    "banheiros": 4,
+    "vagas": 3,
+    "bairro": "Bairro Novo",
+    "endereco": "Rua Nova, 474 - Bairro Novo, Olinda - PE",
+    "lat": -8.002365,
+    "lng": -34.841162,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-007-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-007-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-007-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-007-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-17",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-17",
+        "price": 7700
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-008",
+    "demo": true,
+    "titulo": "Cobertura com terraço gourmet em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 213 m², localizado no bairro Bairro Novo, próximo à praia e a restaurantes locais.",
+    "finalidade": "venda",
+    "tipo": "cobertura",
+    "preco": 1661000,
+    "condominio": 720,
+    "iptuMensal": 301,
+    "area": 213,
+    "precoM2": 7798.12,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 2,
+    "bairro": "Bairro Novo",
+    "endereco": "Rua Prudente de Moraes, 469 - Bairro Novo, Olinda - PE",
+    "lat": -7.997068,
+    "lng": -34.848578,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-008-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-008-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-008-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-008-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-008-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-008-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-09-24",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-24",
+        "price": 1657777
+      },
+      {
+        "date": "2026-11-03",
+        "price": 1661000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-009",
+    "demo": true,
+    "titulo": "Terreno plano em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo terreno com 409 m², localizado no bairro Bairro Novo, em bairro residencial e familiar.",
+    "finalidade": "venda",
+    "tipo": "terreno",
+    "preco": 573000,
+    "condominio": 0,
+    "iptuMensal": 388,
+    "area": 409,
+    "precoM2": 1400.98,
+    "quartos": 0,
+    "suites": 0,
+    "banheiros": 0,
+    "vagas": 0,
+    "bairro": "Bairro Novo",
+    "endereco": "Alameda das Mangueiras, 1088 - Bairro Novo, Olinda - PE",
+    "lat": -8.009898,
+    "lng": -34.840582,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-009-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-009-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-009-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-009-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-009-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-009-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-07",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-07",
+        "price": 573000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-010",
+    "demo": true,
+    "titulo": "Apartamento com vista em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 108 m², localizado no bairro Bairro Novo, a poucos minutos do Sítio Histórico de Olinda.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 673000,
+    "condominio": 320,
+    "iptuMensal": 105,
+    "area": 108,
+    "precoM2": 6231.48,
+    "quartos": 2,
+    "suites": 1,
+    "banheiros": 1,
+    "vagas": 3,
+    "bairro": "Bairro Novo",
+    "endereco": "Rua do Amparo, 1193 - Bairro Novo, Olinda - PE",
+    "lat": -8.005944,
+    "lng": -34.84536,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-010-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-010-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-010-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-010-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-13",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-13",
+        "price": 673000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-011",
+    "demo": true,
+    "titulo": "Casa espaçosa em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo casa com 234 m², localizado no bairro Bairro Novo, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "casa",
+    "preco": 616000,
+    "condominio": 0,
+    "iptuMensal": 138,
+    "area": 234,
+    "precoM2": 2632.48,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 3,
+    "bairro": "Bairro Novo",
+    "endereco": "Alameda das Mangueiras, 304 - Bairro Novo, Olinda - PE",
+    "lat": -8.000376,
+    "lng": -34.842428,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-011-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-011-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-011-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-011-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-011-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": true,
+      "piscina": true,
+      "varanda": true,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-26",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-26",
+        "price": 606327
+      },
+      {
+        "date": "2026-10-29",
+        "price": 616000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-012",
+    "demo": true,
+    "titulo": "Apartamento arejado em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 79 m², localizado no bairro Bairro Novo, em bairro residencial e familiar.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 495000,
+    "condominio": 510,
+    "iptuMensal": 167,
+    "area": 79,
+    "precoM2": 6265.82,
+    "quartos": 5,
+    "suites": 2,
+    "banheiros": 4,
+    "vagas": 1,
+    "bairro": "Bairro Novo",
+    "endereco": "Rua Nova, 1255 - Bairro Novo, Olinda - PE",
+    "lat": -8.003758,
+    "lng": -34.841289,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-012-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-012-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-012-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-012-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-012-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-012-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": true,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-16",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-16",
+        "price": 473866
+      },
+      {
+        "date": "2026-11-09",
+        "price": 482290
+      },
+      {
+        "date": "2026-11-24",
+        "price": 495000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-013",
+    "demo": true,
+    "titulo": "Ponto comercial em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo comercial com 236 m², localizado no bairro Bairro Novo, próximo à orla e a pontos de comércio local.",
+    "finalidade": "venda",
+    "tipo": "comercial",
+    "preco": 969000,
+    "condominio": 0,
+    "iptuMensal": 310,
+    "area": 236,
+    "precoM2": 4105.93,
+    "quartos": 0,
+    "suites": 0,
+    "banheiros": 3,
+    "vagas": 3,
+    "bairro": "Bairro Novo",
+    "endereco": "Rua Direita, 628 - Bairro Novo, Olinda - PE",
+    "lat": -7.996174,
+    "lng": -34.840791,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-013-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-013-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-013-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-013-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-19",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-19",
+        "price": 963135
+      },
+      {
+        "date": "2026-11-13",
+        "price": 969000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-014",
+    "demo": true,
+    "titulo": "Apartamento compacto em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 89 m², localizado no bairro Bairro Novo, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 388000,
+    "condominio": 260,
+    "iptuMensal": 82,
+    "area": 89,
+    "precoM2": 4359.55,
+    "quartos": 3,
+    "suites": 2,
+    "banheiros": 3,
+    "vagas": 0,
+    "bairro": "Bairro Novo",
+    "endereco": "Rua do Varadouro, 1069 - Bairro Novo, Olinda - PE",
+    "lat": -7.996026,
+    "lng": -34.847425,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-014-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-014-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-014-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-014-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-014-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": true,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-22",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-22",
+        "price": 388000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-015",
+    "demo": true,
+    "titulo": "Casa em condomínio fechado em Bairro Novo",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 215 m², localizado no bairro Bairro Novo, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "venda",
+    "tipo": "casa_condominio",
+    "preco": 1189000,
+    "condominio": 350,
+    "iptuMensal": 167,
+    "area": 215,
+    "precoM2": 5530.23,
+    "quartos": 3,
+    "suites": 2,
+    "banheiros": 2,
+    "vagas": 1,
+    "bairro": "Bairro Novo",
+    "endereco": "Rua Nova, 69 - Bairro Novo, Olinda - PE",
+    "lat": -8.005086,
+    "lng": -34.849265,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-015-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-015-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-015-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-015-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-015-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": true,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-28",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-28",
+        "price": 1214870
+      },
+      {
+        "date": "2026-09-18",
+        "price": 1189000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-016",
+    "demo": true,
+    "titulo": "Terreno plano em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo terreno com 386 m², localizado no bairro Casa Caiada, próximo à orla e a pontos de comércio local.",
+    "finalidade": "venda",
+    "tipo": "terreno",
+    "preco": 543000,
+    "condominio": 0,
+    "iptuMensal": 513,
+    "area": 386,
+    "precoM2": 1406.74,
+    "quartos": 0,
+    "suites": 0,
+    "banheiros": 0,
+    "vagas": 0,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua do Farol, 278 - Casa Caiada, Olinda - PE",
+    "lat": -7.981088,
+    "lng": -34.836751,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-016-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-016-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-016-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-016-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-016-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-07-29",
+    "historicoPrecos": [
+      {
+        "date": "2026-07-29",
+        "price": 553682
+      },
+      {
+        "date": "2026-09-03",
+        "price": 543000
+      }
+    ],
+    "status": "reservado"
+  },
+  {
+    "id": "morai-demo-017",
+    "demo": true,
+    "titulo": "Apartamento compacto em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 46 m², localizado no bairro Casa Caiada, próximo à orla e a pontos de comércio local.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 238000,
+    "condominio": 530,
+    "iptuMensal": 48,
+    "area": 46,
+    "precoM2": 5173.91,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 2,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua do Amparo, 91 - Casa Caiada, Olinda - PE",
+    "lat": -7.98254,
+    "lng": -34.836878,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-017-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-017-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-017-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-017-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-017-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-017-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-25",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-25",
+        "price": 238000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-018",
+    "demo": true,
+    "titulo": "Apartamento com vista em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 89 m², localizado no bairro Casa Caiada, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 406000,
+    "condominio": 570,
+    "iptuMensal": 237,
+    "area": 89,
+    "precoM2": 4561.8,
+    "quartos": 5,
+    "suites": 0,
+    "banheiros": 5,
+    "vagas": 1,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua do Amparo, 800 - Casa Caiada, Olinda - PE",
+    "lat": -7.982326,
+    "lng": -34.841088,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-018-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-018-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-018-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-018-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": true,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-13",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-13",
+        "price": 406000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-019",
+    "demo": true,
+    "titulo": "Apartamento reformado em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 120 m², localizado no bairro Casa Caiada, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 3050,
+    "condominio": 470,
+    "iptuMensal": 223,
+    "area": 120,
+    "precoM2": 25.42,
+    "quartos": 5,
+    "suites": 1,
+    "banheiros": 4,
+    "vagas": 0,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua dos Coqueiros, 1301 - Casa Caiada, Olinda - PE",
+    "lat": -7.982644,
+    "lng": -34.837437,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-019-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-019-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-019-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-019-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-019-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-25",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-25",
+        "price": 3050
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-020",
+    "demo": true,
+    "titulo": "Casa charmosa em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo casa com 141 m², localizado no bairro Casa Caiada, próximo à praia e a restaurantes locais.",
+    "finalidade": "aluguel",
+    "tipo": "casa",
+    "preco": 2500,
+    "condominio": 0,
+    "iptuMensal": 291,
+    "area": 141,
+    "precoM2": 17.73,
+    "quartos": 4,
+    "suites": 2,
+    "banheiros": 4,
+    "vagas": 3,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua da Praia, 1125 - Casa Caiada, Olinda - PE",
+    "lat": -7.977974,
+    "lng": -34.839532,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-020-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-020-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-020-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-020-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-020-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-020-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-13",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-13",
+        "price": 2588
+      },
+      {
+        "date": "2026-09-18",
+        "price": 2500
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-021",
+    "demo": true,
+    "titulo": "Kitnet mobiliada em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo kitnet com 30 m², localizado no bairro Casa Caiada, com fácil acesso a transporte público e mercados.",
+    "finalidade": "aluguel",
+    "tipo": "kitnet",
+    "preco": 900,
+    "condominio": 0,
+    "iptuMensal": 147,
+    "area": 30,
+    "precoM2": 30,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 1,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua Direita, 151 - Casa Caiada, Olinda - PE",
+    "lat": -7.984046,
+    "lng": -34.84492,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-021-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-021-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-021-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-021-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-021-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-021-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-09-10",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-10",
+        "price": 945
+      },
+      {
+        "date": "2026-09-27",
+        "price": 935
+      },
+      {
+        "date": "2026-10-24",
+        "price": 900
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-022",
+    "demo": true,
+    "titulo": "Casa em condomínio fechado em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 146 m², localizado no bairro Casa Caiada, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "casa_condominio",
+    "preco": 3750,
+    "condominio": 550,
+    "iptuMensal": 47,
+    "area": 146,
+    "precoM2": 25.68,
+    "quartos": 4,
+    "suites": 2,
+    "banheiros": 4,
+    "vagas": 1,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua do Varadouro, 523 - Casa Caiada, Olinda - PE",
+    "lat": -7.984135,
+    "lng": -34.836409,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-022-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-022-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-022-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-022-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-022-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-022-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": true,
+      "piscina": true,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-23",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-23",
+        "price": 3917
+      },
+      {
+        "date": "2026-11-24",
+        "price": 3750
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-023",
+    "demo": true,
+    "titulo": "Terreno plano em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo terreno com 497 m², localizado no bairro Casa Caiada, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "terreno",
+    "preco": 3650,
+    "condominio": 0,
+    "iptuMensal": 649,
+    "area": 497,
+    "precoM2": 7.34,
+    "quartos": 0,
+    "suites": 0,
+    "banheiros": 0,
+    "vagas": 0,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua do Farol, 117 - Casa Caiada, Olinda - PE",
+    "lat": -7.984555,
+    "lng": -34.84402,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-023-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-023-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-023-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-023-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-023-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-30",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-30",
+        "price": 3650
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-024",
+    "demo": true,
+    "titulo": "Casa em condomínio fechado em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 251 m², localizado no bairro Casa Caiada, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "aluguel",
+    "tipo": "casa_condominio",
+    "preco": 7100,
+    "condominio": 620,
+    "iptuMensal": 138,
+    "area": 251,
+    "precoM2": 28.29,
+    "quartos": 4,
+    "suites": 1,
+    "banheiros": 4,
+    "vagas": 0,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua do Sítio, 547 - Casa Caiada, Olinda - PE",
+    "lat": -7.985254,
+    "lng": -34.844609,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-024-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-024-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-024-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-024-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-024-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": true,
+      "piscina": true,
+      "varanda": true,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-14",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-14",
+        "price": 7428
+      },
+      {
+        "date": "2026-11-24",
+        "price": 7371
+      },
+      {
+        "date": "2026-11-24",
+        "price": 7100
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-025",
+    "demo": true,
+    "titulo": "Cobertura com terraço gourmet em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 260 m², localizado no bairro Casa Caiada, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "cobertura",
+    "preco": 8200,
+    "condominio": 830,
+    "iptuMensal": 160,
+    "area": 260,
+    "precoM2": 31.54,
+    "quartos": 3,
+    "suites": 2,
+    "banheiros": 3,
+    "vagas": 2,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua Direita, 1123 - Casa Caiada, Olinda - PE",
+    "lat": -7.986988,
+    "lng": -34.832323,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-025-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-025-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-025-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-025-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-025-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-025-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-25",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-25",
+        "price": 8269
+      },
+      {
+        "date": "2026-10-16",
+        "price": 8041
+      },
+      {
+        "date": "2026-11-24",
+        "price": 8200
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-026",
+    "demo": true,
+    "titulo": "Casa aconchegante em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo casa com 146 m², localizado no bairro Casa Caiada, a poucos minutos do Sítio Histórico de Olinda.",
+    "finalidade": "aluguel",
+    "tipo": "casa",
+    "preco": 3400,
+    "condominio": 0,
+    "iptuMensal": 239,
+    "area": 146,
+    "precoM2": 23.29,
+    "quartos": 2,
+    "suites": 1,
+    "banheiros": 1,
+    "vagas": 3,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua do Farol, 169 - Casa Caiada, Olinda - PE",
+    "lat": -7.982171,
+    "lng": -34.842158,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-026-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-026-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-026-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-026-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-026-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-08-06",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-06",
+        "price": 3400
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-027",
+    "demo": true,
+    "titulo": "Casa em condomínio com lazer completo em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 151 m², localizado no bairro Casa Caiada, próximo à praia e a restaurantes locais.",
+    "finalidade": "aluguel",
+    "tipo": "casa_condominio",
+    "preco": 3550,
+    "condominio": 870,
+    "iptuMensal": 241,
+    "area": 151,
+    "precoM2": 23.51,
+    "quartos": 4,
+    "suites": 2,
+    "banheiros": 4,
+    "vagas": 3,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua da Matriz, 445 - Casa Caiada, Olinda - PE",
+    "lat": -7.985977,
+    "lng": -34.835032,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-027-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-027-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-027-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-027-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-027-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-027-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": true,
+      "piscina": true,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-06",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-06",
+        "price": 3698
+      },
+      {
+        "date": "2026-11-24",
+        "price": 3550
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-028",
+    "demo": true,
+    "titulo": "Casa aconchegante em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo casa com 104 m², localizado no bairro Casa Caiada, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "venda",
+    "tipo": "casa",
+    "preco": 398000,
+    "condominio": 0,
+    "iptuMensal": 269,
+    "area": 104,
+    "precoM2": 3826.92,
+    "quartos": 4,
+    "suites": 0,
+    "banheiros": 3,
+    "vagas": 3,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua das Flores, 1032 - Casa Caiada, Olinda - PE",
+    "lat": -7.990154,
+    "lng": -34.841253,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-028-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-028-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-028-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-028-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": true,
+      "piscina": true,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-01",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-01",
+        "price": 398000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-029",
+    "demo": true,
+    "titulo": "Apartamento compacto em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 104 m², localizado no bairro Casa Caiada, com fácil acesso a transporte público e mercados.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 691000,
+    "condominio": 570,
+    "iptuMensal": 197,
+    "area": 104,
+    "precoM2": 6644.23,
+    "quartos": 2,
+    "suites": 1,
+    "banheiros": 1,
+    "vagas": 2,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua Prudente de Moraes, 773 - Casa Caiada, Olinda - PE",
+    "lat": -7.981144,
+    "lng": -34.83335,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-029-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-029-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-029-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-029-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-28",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-28",
+        "price": 691000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-030",
+    "demo": true,
+    "titulo": "Cobertura com terraço gourmet em Casa Caiada",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 180 m², localizado no bairro Casa Caiada, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "venda",
+    "tipo": "cobertura",
+    "preco": 827000,
+    "condominio": 330,
+    "iptuMensal": 308,
+    "area": 180,
+    "precoM2": 4594.44,
+    "quartos": 4,
+    "suites": 2,
+    "banheiros": 3,
+    "vagas": 3,
+    "bairro": "Casa Caiada",
+    "endereco": "Rua Nova, 1029 - Casa Caiada, Olinda - PE",
+    "lat": -7.979797,
+    "lng": -34.841817,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-030-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-030-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-030-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-030-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-030-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": true,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-11",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-11",
+        "price": 806193
+      },
+      {
+        "date": "2026-11-12",
+        "price": 827000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-031",
+    "demo": true,
+    "titulo": "Casa de vila em Jardim Atlântico",
+    "descricao": "Imóvel demonstrativo do tipo casa com 115 m², localizado no bairro Jardim Atlântico, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "casa",
+    "preco": 392000,
+    "condominio": 0,
+    "iptuMensal": 92,
+    "area": 115,
+    "precoM2": 3408.7,
+    "quartos": 3,
+    "suites": 2,
+    "banheiros": 2,
+    "vagas": 2,
+    "bairro": "Jardim Atlântico",
+    "endereco": "Rua do Amparo, 195 - Jardim Atlântico, Olinda - PE",
+    "lat": -7.974976,
+    "lng": -34.85057,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-031-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-031-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-031-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-031-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-031-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-07",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-07",
+        "price": 392000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-032",
+    "demo": true,
+    "titulo": "Casa espaçosa em Jardim Atlântico",
+    "descricao": "Imóvel demonstrativo do tipo casa com 91 m², localizado no bairro Jardim Atlântico, próximo à praia e a restaurantes locais.",
+    "finalidade": "venda",
+    "tipo": "casa",
+    "preco": 315000,
+    "condominio": 0,
+    "iptuMensal": 272,
+    "area": 91,
+    "precoM2": 3461.54,
+    "quartos": 5,
+    "suites": 0,
+    "banheiros": 4,
+    "vagas": 0,
+    "bairro": "Jardim Atlântico",
+    "endereco": "Rua do Veneza, 503 - Jardim Atlântico, Olinda - PE",
+    "lat": -7.978255,
+    "lng": -34.848438,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-032-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-032-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-032-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-032-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-11",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-11",
+        "price": 315000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-033",
+    "demo": true,
+    "titulo": "Cobertura com terraço gourmet em Jardim Atlântico",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 150 m², localizado no bairro Jardim Atlântico, próximo à praia e a restaurantes locais.",
+    "finalidade": "venda",
+    "tipo": "cobertura",
+    "preco": 1132000,
+    "condominio": 510,
+    "iptuMensal": 304,
+    "area": 150,
+    "precoM2": 7546.67,
+    "quartos": 3,
+    "suites": 2,
+    "banheiros": 2,
+    "vagas": 3,
+    "bairro": "Jardim Atlântico",
+    "endereco": "Rua Prudente de Moraes, 1188 - Jardim Atlântico, Olinda - PE",
+    "lat": -7.979102,
+    "lng": -34.84439,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-033-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-033-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-033-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-033-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-28",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-28",
+        "price": 1132000
+      }
+    ],
+    "status": "reservado"
+  },
+  {
+    "id": "morai-demo-034",
+    "demo": true,
+    "titulo": "Studio compacto em Jardim Atlântico",
+    "descricao": "Imóvel demonstrativo do tipo kitnet com 31 m², localizado no bairro Jardim Atlântico, próximo à praia e a restaurantes locais.",
+    "finalidade": "venda",
+    "tipo": "kitnet",
+    "preco": 176000,
+    "condominio": 0,
+    "iptuMensal": 266,
+    "area": 31,
+    "precoM2": 5677.42,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 3,
+    "bairro": "Jardim Atlântico",
+    "endereco": "Rua do Sítio, 644 - Jardim Atlântico, Olinda - PE",
+    "lat": -7.980115,
+    "lng": -34.844503,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-034-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-034-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-034-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-034-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-034-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-09-11",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-11",
+        "price": 170251
+      },
+      {
+        "date": "2026-10-20",
+        "price": 176000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-035",
+    "demo": true,
+    "titulo": "Terreno de esquina em Jardim Atlântico",
+    "descricao": "Imóvel demonstrativo do tipo terreno com 224 m², localizado no bairro Jardim Atlântico, a poucos minutos do Sítio Histórico de Olinda.",
+    "finalidade": "venda",
+    "tipo": "terreno",
+    "preco": 437000,
+    "condominio": 0,
+    "iptuMensal": 292,
+    "area": 224,
+    "precoM2": 1950.89,
+    "quartos": 0,
+    "suites": 0,
+    "banheiros": 0,
+    "vagas": 0,
+    "bairro": "Jardim Atlântico",
+    "endereco": "Rua do Carmo, 917 - Jardim Atlântico, Olinda - PE",
+    "lat": -7.977279,
+    "lng": -34.847831,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-035-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-035-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-035-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-035-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-035-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-035-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-10",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-10",
+        "price": 443734
+      },
+      {
+        "date": "2026-10-19",
+        "price": 437000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-036",
+    "demo": true,
+    "titulo": "Casa espaçosa em Jardim Atlântico",
+    "descricao": "Imóvel demonstrativo do tipo casa com 227 m², localizado no bairro Jardim Atlântico, próximo à orla e a pontos de comércio local.",
+    "finalidade": "venda",
+    "tipo": "casa",
+    "preco": 916000,
+    "condominio": 0,
+    "iptuMensal": 156,
+    "area": 227,
+    "precoM2": 4035.24,
+    "quartos": 2,
+    "suites": 0,
+    "banheiros": 2,
+    "vagas": 1,
+    "bairro": "Jardim Atlântico",
+    "endereco": "Rua dos Coqueiros, 1120 - Jardim Atlântico, Olinda - PE",
+    "lat": -7.972555,
+    "lng": -34.848661,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-036-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-036-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-036-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-036-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-036-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-036-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-27",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-27",
+        "price": 905954
+      },
+      {
+        "date": "2026-11-06",
+        "price": 938136
+      },
+      {
+        "date": "2026-11-24",
+        "price": 916000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-037",
+    "demo": true,
+    "titulo": "Apartamento arejado em Jardim Atlântico",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 92 m², localizado no bairro Jardim Atlântico, com fácil acesso a transporte público e mercados.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 408000,
+    "condominio": 380,
+    "iptuMensal": 57,
+    "area": 92,
+    "precoM2": 4434.78,
+    "quartos": 3,
+    "suites": 2,
+    "banheiros": 2,
+    "vagas": 2,
+    "bairro": "Jardim Atlântico",
+    "endereco": "Rua das Flores, 116 - Jardim Atlântico, Olinda - PE",
+    "lat": -7.972679,
+    "lng": -34.842287,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-037-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-037-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-037-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-037-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-037-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-037-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": true,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-11-17",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-17",
+        "price": 408000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-038",
+    "demo": true,
+    "titulo": "Casa reformada em Jardim Atlântico",
+    "descricao": "Imóvel demonstrativo do tipo casa com 203 m², localizado no bairro Jardim Atlântico, próximo à orla e a pontos de comércio local.",
+    "finalidade": "venda",
+    "tipo": "casa",
+    "preco": 755000,
+    "condominio": 0,
+    "iptuMensal": 69,
+    "area": 203,
+    "precoM2": 3719.21,
+    "quartos": 4,
+    "suites": 0,
+    "banheiros": 3,
+    "vagas": 2,
+    "bairro": "Jardim Atlântico",
+    "endereco": "Rua do Sol, 495 - Jardim Atlântico, Olinda - PE",
+    "lat": -7.976189,
+    "lng": -34.839765,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-038-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-038-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-038-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-038-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-038-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-038-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-03",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-03",
+        "price": 758932
+      },
+      {
+        "date": "2026-09-18",
+        "price": 755000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-039",
+    "demo": true,
+    "titulo": "Apartamento com vista em Jardim Atlântico",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 69 m², localizado no bairro Jardim Atlântico, a poucos minutos do Sítio Histórico de Olinda.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 1300,
+    "condominio": 310,
+    "iptuMensal": 59,
+    "area": 69,
+    "precoM2": 18.84,
+    "quartos": 2,
+    "suites": 1,
+    "banheiros": 2,
+    "vagas": 2,
+    "bairro": "Jardim Atlântico",
+    "endereco": "Rua da Matriz, 668 - Jardim Atlântico, Olinda - PE",
+    "lat": -7.977734,
+    "lng": -34.846725,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-039-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-039-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-039-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-039-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-039-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-039-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-06",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-06",
+        "price": 1300
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-040",
+    "demo": true,
+    "titulo": "Studio compacto em Jardim Atlântico",
+    "descricao": "Imóvel demonstrativo do tipo kitnet com 39 m², localizado no bairro Jardim Atlântico, próximo à orla e a pontos de comércio local.",
+    "finalidade": "aluguel",
+    "tipo": "kitnet",
+    "preco": 1100,
+    "condominio": 0,
+    "iptuMensal": 226,
+    "area": 39,
+    "precoM2": 28.21,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 3,
+    "bairro": "Jardim Atlântico",
+    "endereco": "Rua da Praia, 941 - Jardim Atlântico, Olinda - PE",
+    "lat": -7.974399,
+    "lng": -34.847424,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-040-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-040-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-040-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-040-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-040-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-040-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-10-23",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-23",
+        "price": 1150
+      },
+      {
+        "date": "2026-11-23",
+        "price": 1129
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1100
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-041",
+    "demo": true,
+    "titulo": "Casa de vila em Jardim Atlântico",
+    "descricao": "Imóvel demonstrativo do tipo casa com 203 m², localizado no bairro Jardim Atlântico, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "aluguel",
+    "tipo": "casa",
+    "preco": 3100,
+    "condominio": 0,
+    "iptuMensal": 237,
+    "area": 203,
+    "precoM2": 15.27,
+    "quartos": 4,
+    "suites": 0,
+    "banheiros": 4,
+    "vagas": 1,
+    "bairro": "Jardim Atlântico",
+    "endereco": "Rua Nova, 1395 - Jardim Atlântico, Olinda - PE",
+    "lat": -7.970369,
+    "lng": -34.849274,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-041-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-041-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-041-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-041-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-07-27",
+    "historicoPrecos": [
+      {
+        "date": "2026-07-27",
+        "price": 3100
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-042",
+    "demo": true,
+    "titulo": "Casa espaçosa em Jardim Atlântico",
+    "descricao": "Imóvel demonstrativo do tipo casa com 109 m², localizado no bairro Jardim Atlântico, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "aluguel",
+    "tipo": "casa",
+    "preco": 1700,
+    "condominio": 0,
+    "iptuMensal": 277,
+    "area": 109,
+    "precoM2": 15.6,
+    "quartos": 4,
+    "suites": 1,
+    "banheiros": 4,
+    "vagas": 1,
+    "bairro": "Jardim Atlântico",
+    "endereco": "Rua do Sol, 1051 - Jardim Atlântico, Olinda - PE",
+    "lat": -7.972056,
+    "lng": -34.846629,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-042-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-042-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-042-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-042-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-042-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-03",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-03",
+        "price": 1700
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-043",
+    "demo": true,
+    "titulo": "Casa reformada em Rio Doce",
+    "descricao": "Imóvel demonstrativo do tipo casa com 114 m², localizado no bairro Rio Doce, próximo à orla e a pontos de comércio local.",
+    "finalidade": "aluguel",
+    "tipo": "casa",
+    "preco": 1500,
+    "condominio": 0,
+    "iptuMensal": 272,
+    "area": 114,
+    "precoM2": 13.16,
+    "quartos": 2,
+    "suites": 0,
+    "banheiros": 2,
+    "vagas": 1,
+    "bairro": "Rio Doce",
+    "endereco": "Alameda das Mangueiras, 716 - Rio Doce, Olinda - PE",
+    "lat": -7.965176,
+    "lng": -34.83778,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-043-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-043-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-043-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-043-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-043-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-043-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-11-09",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-09",
+        "price": 1542
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1571
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1500
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-044",
+    "demo": true,
+    "titulo": "Casa aconchegante em Rio Doce",
+    "descricao": "Imóvel demonstrativo do tipo casa com 240 m², localizado no bairro Rio Doce, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "aluguel",
+    "tipo": "casa",
+    "preco": 6350,
+    "condominio": 0,
+    "iptuMensal": 144,
+    "area": 240,
+    "precoM2": 26.46,
+    "quartos": 3,
+    "suites": 0,
+    "banheiros": 2,
+    "vagas": 3,
+    "bairro": "Rio Doce",
+    "endereco": "Rua do Farol, 144 - Rio Doce, Olinda - PE",
+    "lat": -7.968973,
+    "lng": -34.830278,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-044-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-044-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-044-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-044-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-26",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-26",
+        "price": 6350
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-045",
+    "demo": true,
+    "titulo": "Terreno plano em Rio Doce",
+    "descricao": "Imóvel demonstrativo do tipo terreno com 254 m², localizado no bairro Rio Doce, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "terreno",
+    "preco": 1900,
+    "condominio": 0,
+    "iptuMensal": 235,
+    "area": 254,
+    "precoM2": 7.48,
+    "quartos": 0,
+    "suites": 0,
+    "banheiros": 0,
+    "vagas": 0,
+    "bairro": "Rio Doce",
+    "endereco": "Rua do Bonsucesso, 533 - Rio Doce, Olinda - PE",
+    "lat": -7.964629,
+    "lng": -34.830194,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-045-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-045-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-045-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-045-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-045-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-31",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-31",
+        "price": 1841
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1884
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1900
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-046",
+    "demo": true,
+    "titulo": "Apartamento reformado em Rio Doce",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 110 m², localizado no bairro Rio Doce, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 3650,
+    "condominio": 440,
+    "iptuMensal": 179,
+    "area": 110,
+    "precoM2": 33.18,
+    "quartos": 5,
+    "suites": 2,
+    "banheiros": 4,
+    "vagas": 3,
+    "bairro": "Rio Doce",
+    "endereco": "Rua do Sol, 495 - Rio Doce, Olinda - PE",
+    "lat": -7.971776,
+    "lng": -34.831011,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-046-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-046-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-046-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-046-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-046-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-046-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-19",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-19",
+        "price": 3782
+      },
+      {
+        "date": "2026-10-11",
+        "price": 3650
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-047",
+    "demo": true,
+    "titulo": "Cobertura com terraço gourmet em Rio Doce",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 209 m², localizado no bairro Rio Doce, próximo à praia e a restaurantes locais.",
+    "finalidade": "aluguel",
+    "tipo": "cobertura",
+    "preco": 6050,
+    "condominio": 600,
+    "iptuMensal": 169,
+    "area": 209,
+    "precoM2": 28.95,
+    "quartos": 2,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 3,
+    "bairro": "Rio Doce",
+    "endereco": "Rua do Varadouro, 1359 - Rio Doce, Olinda - PE",
+    "lat": -7.959662,
+    "lng": -34.83549,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-047-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-047-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-047-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-047-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-047-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-08-02",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-02",
+        "price": 5859
+      },
+      {
+        "date": "2026-08-20",
+        "price": 6050
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-048",
+    "demo": true,
+    "titulo": "Apartamento reformado em Rio Doce",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 81 m², localizado no bairro Rio Doce, a poucos minutos do Sítio Histórico de Olinda.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 368000,
+    "condominio": 390,
+    "iptuMensal": 269,
+    "area": 81,
+    "precoM2": 4543.21,
+    "quartos": 4,
+    "suites": 0,
+    "banheiros": 3,
+    "vagas": 1,
+    "bairro": "Rio Doce",
+    "endereco": "Rua Nova, 683 - Rio Doce, Olinda - PE",
+    "lat": -7.964922,
+    "lng": -34.82595,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-048-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-048-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-048-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-048-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-08-18",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-18",
+        "price": 361226
+      },
+      {
+        "date": "2026-09-11",
+        "price": 368000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-049",
+    "demo": true,
+    "titulo": "Casa de vila em Rio Doce",
+    "descricao": "Imóvel demonstrativo do tipo casa com 203 m², localizado no bairro Rio Doce, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "casa",
+    "preco": 468000,
+    "condominio": 0,
+    "iptuMensal": 155,
+    "area": 203,
+    "precoM2": 2305.42,
+    "quartos": 3,
+    "suites": 0,
+    "banheiros": 2,
+    "vagas": 0,
+    "bairro": "Rio Doce",
+    "endereco": "Rua do Farol, 407 - Rio Doce, Olinda - PE",
+    "lat": -7.97119,
+    "lng": -34.82808,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-049-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-049-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-049-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-049-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-049-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-30",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-30",
+        "price": 468000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-050",
+    "demo": true,
+    "titulo": "Apartamento arejado em Rio Doce",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 82 m², localizado no bairro Rio Doce, próximo à orla e a pontos de comércio local.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 443000,
+    "condominio": 400,
+    "iptuMensal": 149,
+    "area": 82,
+    "precoM2": 5402.44,
+    "quartos": 5,
+    "suites": 1,
+    "banheiros": 5,
+    "vagas": 0,
+    "bairro": "Rio Doce",
+    "endereco": "Avenida Beira Mar, 787 - Rio Doce, Olinda - PE",
+    "lat": -7.970174,
+    "lng": -34.82958,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-050-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-050-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-050-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-050-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-050-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-21",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-21",
+        "price": 453770
+      },
+      {
+        "date": "2026-11-24",
+        "price": 443000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-051",
+    "demo": true,
+    "titulo": "Apartamento arejado em Rio Doce",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 94 m², localizado no bairro Rio Doce, com fácil acesso a transporte público e mercados.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 631000,
+    "condominio": 260,
+    "iptuMensal": 221,
+    "area": 94,
+    "precoM2": 6712.77,
+    "quartos": 2,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 3,
+    "bairro": "Rio Doce",
+    "endereco": "Rua Nova, 1163 - Rio Doce, Olinda - PE",
+    "lat": -7.968298,
+    "lng": -34.8338,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-051-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-051-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-051-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-051-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-16",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-16",
+        "price": 660934
+      },
+      {
+        "date": "2026-11-24",
+        "price": 631000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-052",
+    "demo": true,
+    "titulo": "Cobertura com terraço gourmet em Rio Doce",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 212 m², localizado no bairro Rio Doce, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "venda",
+    "tipo": "cobertura",
+    "preco": 1567000,
+    "condominio": 850,
+    "iptuMensal": 185,
+    "area": 212,
+    "precoM2": 7391.51,
+    "quartos": 2,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 1,
+    "bairro": "Rio Doce",
+    "endereco": "Rua Prudente de Moraes, 122 - Rio Doce, Olinda - PE",
+    "lat": -7.967069,
+    "lng": -34.837094,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-052-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-052-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-052-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-052-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-052-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-20",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-20",
+        "price": 1698090
+      },
+      {
+        "date": "2026-10-16",
+        "price": 1632015
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1567000
+      }
+    ],
+    "status": "reservado"
+  },
+  {
+    "id": "morai-demo-053",
+    "demo": true,
+    "titulo": "Casa espaçosa em Carmo",
+    "descricao": "Imóvel demonstrativo do tipo casa com 200 m², localizado no bairro Carmo, próximo à praia e a restaurantes locais.",
+    "finalidade": "venda",
+    "tipo": "casa",
+    "preco": 794000,
+    "condominio": 0,
+    "iptuMensal": 170,
+    "area": 200,
+    "precoM2": 3970,
+    "quartos": 5,
+    "suites": 2,
+    "banheiros": 5,
+    "vagas": 0,
+    "bairro": "Carmo",
+    "endereco": "Rua do Carmo, 1376 - Carmo, Olinda - PE",
+    "lat": -8.015068,
+    "lng": -34.845257,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-053-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-053-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-053-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-053-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-053-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-053-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-10",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-10",
+        "price": 823288
+      },
+      {
+        "date": "2026-11-24",
+        "price": 794000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-054",
+    "demo": true,
+    "titulo": "Casa em condomínio fechado em Carmo",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 169 m², localizado no bairro Carmo, próximo à praia e a restaurantes locais.",
+    "finalidade": "venda",
+    "tipo": "casa_condominio",
+    "preco": 954000,
+    "condominio": 870,
+    "iptuMensal": 279,
+    "area": 169,
+    "precoM2": 5644.97,
+    "quartos": 5,
+    "suites": 0,
+    "banheiros": 4,
+    "vagas": 1,
+    "bairro": "Carmo",
+    "endereco": "Rua do Sítio, 515 - Carmo, Olinda - PE",
+    "lat": -8.01764,
+    "lng": -34.844963,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-054-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-054-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-054-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-054-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-054-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-054-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": true,
+      "piscina": true,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-19",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-19",
+        "price": 973419
+      },
+      {
+        "date": "2026-11-24",
+        "price": 954000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-055",
+    "demo": true,
+    "titulo": "Apartamento arejado em Carmo",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 102 m², localizado no bairro Carmo, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 379000,
+    "condominio": 270,
+    "iptuMensal": 297,
+    "area": 102,
+    "precoM2": 3715.69,
+    "quartos": 5,
+    "suites": 1,
+    "banheiros": 5,
+    "vagas": 0,
+    "bairro": "Carmo",
+    "endereco": "Rua da Praia, 484 - Carmo, Olinda - PE",
+    "lat": -8.019046,
+    "lng": -34.85188,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-055-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-055-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-055-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-055-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-055-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-19",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-19",
+        "price": 370546
+      },
+      {
+        "date": "2026-10-25",
+        "price": 370951
+      },
+      {
+        "date": "2026-11-24",
+        "price": 379000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-056",
+    "demo": true,
+    "titulo": "Apartamento reformado em Carmo",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 100 m², localizado no bairro Carmo, próximo à orla e a pontos de comércio local.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 444000,
+    "condominio": 870,
+    "iptuMensal": 273,
+    "area": 100,
+    "precoM2": 4440,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 3,
+    "bairro": "Carmo",
+    "endereco": "Rua do Amparo, 383 - Carmo, Olinda - PE",
+    "lat": -8.012644,
+    "lng": -34.849731,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-056-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-056-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-056-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-056-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-11-05",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-05",
+        "price": 465491
+      },
+      {
+        "date": "2026-11-24",
+        "price": 444000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-057",
+    "demo": true,
+    "titulo": "Casa aconchegante em Carmo",
+    "descricao": "Imóvel demonstrativo do tipo casa com 197 m², localizado no bairro Carmo, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "casa",
+    "preco": 631000,
+    "condominio": 0,
+    "iptuMensal": 294,
+    "area": 197,
+    "precoM2": 3203.05,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 2,
+    "bairro": "Carmo",
+    "endereco": "Rua do Carmo, 356 - Carmo, Olinda - PE",
+    "lat": -8.013883,
+    "lng": -34.846454,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-057-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-057-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-057-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-057-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-057-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-16",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-16",
+        "price": 636737
+      },
+      {
+        "date": "2026-09-02",
+        "price": 661905
+      },
+      {
+        "date": "2026-10-23",
+        "price": 631000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-058",
+    "demo": true,
+    "titulo": "Casa em condomínio fechado em Carmo",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 104 m², localizado no bairro Carmo, próximo à praia e a restaurantes locais.",
+    "finalidade": "venda",
+    "tipo": "casa_condominio",
+    "preco": 544000,
+    "condominio": 270,
+    "iptuMensal": 201,
+    "area": 104,
+    "precoM2": 5230.77,
+    "quartos": 4,
+    "suites": 2,
+    "banheiros": 3,
+    "vagas": 3,
+    "bairro": "Carmo",
+    "endereco": "Rua Prudente de Moraes, 316 - Carmo, Olinda - PE",
+    "lat": -8.017758,
+    "lng": -34.853445,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-058-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-058-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-058-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-058-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": true,
+      "piscina": true,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-27",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-27",
+        "price": 564516
+      },
+      {
+        "date": "2026-11-15",
+        "price": 544000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-059",
+    "demo": true,
+    "titulo": "Apartamento reformado em Carmo",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 49 m², localizado no bairro Carmo, com fácil acesso a transporte público e mercados.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 1100,
+    "condominio": 340,
+    "iptuMensal": 262,
+    "area": 49,
+    "precoM2": 22.45,
+    "quartos": 2,
+    "suites": 1,
+    "banheiros": 2,
+    "vagas": 1,
+    "bairro": "Carmo",
+    "endereco": "Rua das Flores, 14 - Carmo, Olinda - PE",
+    "lat": -8.018069,
+    "lng": -34.850387,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-059-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-059-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-059-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-059-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-059-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-14",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-14",
+        "price": 1135
+      },
+      {
+        "date": "2026-09-20",
+        "price": 1154
+      },
+      {
+        "date": "2026-10-23",
+        "price": 1100
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-060",
+    "demo": true,
+    "titulo": "Apartamento compacto em Carmo",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 136 m², localizado no bairro Carmo, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 5150,
+    "condominio": 740,
+    "iptuMensal": 116,
+    "area": 136,
+    "precoM2": 37.87,
+    "quartos": 2,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 0,
+    "bairro": "Carmo",
+    "endereco": "Rua Direita, 390 - Carmo, Olinda - PE",
+    "lat": -8.018401,
+    "lng": -34.85128,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-060-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-060-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-060-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-060-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-060-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-060-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-21",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-21",
+        "price": 5138
+      },
+      {
+        "date": "2026-11-24",
+        "price": 5161
+      },
+      {
+        "date": "2026-11-24",
+        "price": 5150
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-061",
+    "demo": true,
+    "titulo": "Kitnet mobiliada em Bonsucesso",
+    "descricao": "Imóvel demonstrativo do tipo kitnet com 38 m², localizado no bairro Bonsucesso, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "kitnet",
+    "preco": 1250,
+    "condominio": 0,
+    "iptuMensal": 294,
+    "area": 38,
+    "precoM2": 32.89,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 1,
+    "bairro": "Bonsucesso",
+    "endereco": "Rua do Varadouro, 921 - Bonsucesso, Olinda - PE",
+    "lat": -8.009538,
+    "lng": -34.855787,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-061-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-061-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-061-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-061-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-11",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-11",
+        "price": 1250
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-062",
+    "demo": true,
+    "titulo": "Kitnet mobiliada em Bonsucesso",
+    "descricao": "Imóvel demonstrativo do tipo kitnet com 43 m², localizado no bairro Bonsucesso, com fácil acesso a transporte público e mercados.",
+    "finalidade": "aluguel",
+    "tipo": "kitnet",
+    "preco": 1250,
+    "condominio": 0,
+    "iptuMensal": 152,
+    "area": 43,
+    "precoM2": 29.07,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 3,
+    "bairro": "Bonsucesso",
+    "endereco": "Avenida Beira Mar, 1163 - Bonsucesso, Olinda - PE",
+    "lat": -8.013372,
+    "lng": -34.853605,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-062-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-062-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-062-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-062-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-26",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-26",
+        "price": 1276
+      },
+      {
+        "date": "2026-11-17",
+        "price": 1250
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-063",
+    "demo": true,
+    "titulo": "Kitnet mobiliada em Bonsucesso",
+    "descricao": "Imóvel demonstrativo do tipo kitnet com 45 m², localizado no bairro Bonsucesso, próximo à praia e a restaurantes locais.",
+    "finalidade": "aluguel",
+    "tipo": "kitnet",
+    "preco": 1300,
+    "condominio": 0,
+    "iptuMensal": 86,
+    "area": 45,
+    "precoM2": 28.89,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 1,
+    "bairro": "Bonsucesso",
+    "endereco": "Rua do Sítio, 1186 - Bonsucesso, Olinda - PE",
+    "lat": -8.006749,
+    "lng": -34.854442,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-063-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-063-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-063-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-063-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-063-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-063-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": true,
+      "piscina": true,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-09-23",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-23",
+        "price": 1254
+      },
+      {
+        "date": "2026-10-27",
+        "price": 1298
+      },
+      {
+        "date": "2026-11-04",
+        "price": 1300
+      }
+    ],
+    "status": "reservado"
+  },
+  {
+    "id": "morai-demo-064",
+    "demo": true,
+    "titulo": "Casa aconchegante em Bonsucesso",
+    "descricao": "Imóvel demonstrativo do tipo casa com 166 m², localizado no bairro Bonsucesso, com fácil acesso a transporte público e mercados.",
+    "finalidade": "aluguel",
+    "tipo": "casa",
+    "preco": 4400,
+    "condominio": 0,
+    "iptuMensal": 82,
+    "area": 166,
+    "precoM2": 26.51,
+    "quartos": 2,
+    "suites": 1,
+    "banheiros": 1,
+    "vagas": 0,
+    "bairro": "Bonsucesso",
+    "endereco": "Rua do Carmo, 752 - Bonsucesso, Olinda - PE",
+    "lat": -8.009095,
+    "lng": -34.852495,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-064-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-064-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-064-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-064-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-064-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-064-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-04",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-04",
+        "price": 4298
+      },
+      {
+        "date": "2026-11-04",
+        "price": 4278
+      },
+      {
+        "date": "2026-11-24",
+        "price": 4400
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-065",
+    "demo": true,
+    "titulo": "Apartamento arejado em Bonsucesso",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 83 m², localizado no bairro Bonsucesso, próximo à orla e a pontos de comércio local.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 2050,
+    "condominio": 400,
+    "iptuMensal": 151,
+    "area": 83,
+    "precoM2": 24.7,
+    "quartos": 3,
+    "suites": 0,
+    "banheiros": 2,
+    "vagas": 1,
+    "bairro": "Bonsucesso",
+    "endereco": "Rua Nova, 807 - Bonsucesso, Olinda - PE",
+    "lat": -8.012928,
+    "lng": -34.856038,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-065-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-065-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-065-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-065-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-065-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-10",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-10",
+        "price": 2032
+      },
+      {
+        "date": "2026-11-09",
+        "price": 2050
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-066",
+    "demo": true,
+    "titulo": "Kitnet mobiliada em Bonsucesso",
+    "descricao": "Imóvel demonstrativo do tipo kitnet com 33 m², localizado no bairro Bonsucesso, próximo à orla e a pontos de comércio local.",
+    "finalidade": "aluguel",
+    "tipo": "kitnet",
+    "preco": 950,
+    "condominio": 0,
+    "iptuMensal": 168,
+    "area": 33,
+    "precoM2": 28.79,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 3,
+    "bairro": "Bonsucesso",
+    "endereco": "Rua do Amparo, 540 - Bonsucesso, Olinda - PE",
+    "lat": -8.007076,
+    "lng": -34.855116,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-066-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-066-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-066-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-066-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-066-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-09-25",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-25",
+        "price": 978
+      },
+      {
+        "date": "2026-10-12",
+        "price": 982
+      },
+      {
+        "date": "2026-11-08",
+        "price": 950
+      }
+    ],
+    "status": "reservado"
+  },
+  {
+    "id": "morai-demo-067",
+    "demo": true,
+    "titulo": "Casa em condomínio fechado em Amparo",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 102 m², localizado no bairro Amparo, próximo à orla e a pontos de comércio local.",
+    "finalidade": "aluguel",
+    "tipo": "casa_condominio",
+    "preco": 3650,
+    "condominio": 610,
+    "iptuMensal": 103,
+    "area": 102,
+    "precoM2": 35.78,
+    "quartos": 3,
+    "suites": 1,
+    "banheiros": 3,
+    "vagas": 2,
+    "bairro": "Amparo",
+    "endereco": "Travessa da Paz, 36 - Amparo, Olinda - PE",
+    "lat": -8.013115,
+    "lng": -34.85116,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-067-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-067-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-067-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-067-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-067-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-067-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": true,
+      "piscina": true,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-07-28",
+    "historicoPrecos": [
+      {
+        "date": "2026-07-28",
+        "price": 3463
+      },
+      {
+        "date": "2026-08-25",
+        "price": 3603
+      },
+      {
+        "date": "2026-08-27",
+        "price": 3650
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-068",
+    "demo": true,
+    "titulo": "Cobertura duplex em Amparo",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 274 m², localizado no bairro Amparo, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "venda",
+    "tipo": "cobertura",
+    "preco": 1381000,
+    "condominio": 570,
+    "iptuMensal": 298,
+    "area": 274,
+    "precoM2": 5040.15,
+    "quartos": 5,
+    "suites": 0,
+    "banheiros": 4,
+    "vagas": 2,
+    "bairro": "Amparo",
+    "endereco": "Rua dos Coqueiros, 1344 - Amparo, Olinda - PE",
+    "lat": -8.015345,
+    "lng": -34.854306,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-068-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-068-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-068-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-068-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-068-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-18",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-18",
+        "price": 1407593
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1381000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-069",
+    "demo": true,
+    "titulo": "Casa de vila em Amparo",
+    "descricao": "Imóvel demonstrativo do tipo casa com 185 m², localizado no bairro Amparo, próximo à orla e a pontos de comércio local.",
+    "finalidade": "venda",
+    "tipo": "casa",
+    "preco": 837000,
+    "condominio": 0,
+    "iptuMensal": 284,
+    "area": 185,
+    "precoM2": 4524.32,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 1,
+    "bairro": "Amparo",
+    "endereco": "Rua do Farol, 796 - Amparo, Olinda - PE",
+    "lat": -8.014963,
+    "lng": -34.856069,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-069-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-069-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-069-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-069-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-29",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-29",
+        "price": 839514
+      },
+      {
+        "date": "2026-09-23",
+        "price": 837000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-070",
+    "demo": true,
+    "titulo": "Casa reformada em Amparo",
+    "descricao": "Imóvel demonstrativo do tipo casa com 161 m², localizado no bairro Amparo, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "casa",
+    "preco": 699000,
+    "condominio": 0,
+    "iptuMensal": 285,
+    "area": 161,
+    "precoM2": 4341.61,
+    "quartos": 3,
+    "suites": 2,
+    "banheiros": 3,
+    "vagas": 3,
+    "bairro": "Amparo",
+    "endereco": "Rua dos Coqueiros, 14 - Amparo, Olinda - PE",
+    "lat": -8.015047,
+    "lng": -34.853737,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-070-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-070-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-070-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-070-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-01",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-01",
+        "price": 694032
+      },
+      {
+        "date": "2026-11-24",
+        "price": 700454
+      },
+      {
+        "date": "2026-11-24",
+        "price": 699000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-071",
+    "demo": true,
+    "titulo": "Apartamento reformado em Amparo",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 64 m², localizado no bairro Amparo, em bairro residencial e familiar.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 429000,
+    "condominio": 810,
+    "iptuMensal": 46,
+    "area": 64,
+    "precoM2": 6703.13,
+    "quartos": 3,
+    "suites": 0,
+    "banheiros": 3,
+    "vagas": 0,
+    "bairro": "Amparo",
+    "endereco": "Rua da Matriz, 1111 - Amparo, Olinda - PE",
+    "lat": -8.01452,
+    "lng": -34.851973,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-071-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-071-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-071-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-071-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-071-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-25",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-25",
+        "price": 429000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-072",
+    "demo": true,
+    "titulo": "Apartamento compacto em Varadouro",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 115 m², localizado no bairro Varadouro, próximo à praia e a restaurantes locais.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 429000,
+    "condominio": 670,
+    "iptuMensal": 146,
+    "area": 115,
+    "precoM2": 3730.43,
+    "quartos": 3,
+    "suites": 1,
+    "banheiros": 3,
+    "vagas": 1,
+    "bairro": "Varadouro",
+    "endereco": "Rua da Matriz, 1060 - Varadouro, Olinda - PE",
+    "lat": -8.017067,
+    "lng": -34.852343,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-072-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-072-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-072-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-072-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-072-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-10-20",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-20",
+        "price": 448700
+      },
+      {
+        "date": "2026-11-08",
+        "price": 429000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-073",
+    "demo": true,
+    "titulo": "Casa de vila em Varadouro",
+    "descricao": "Imóvel demonstrativo do tipo casa com 154 m², localizado no bairro Varadouro, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "venda",
+    "tipo": "casa",
+    "preco": 636000,
+    "condominio": 0,
+    "iptuMensal": 122,
+    "area": 154,
+    "precoM2": 4129.87,
+    "quartos": 2,
+    "suites": 1,
+    "banheiros": 2,
+    "vagas": 1,
+    "bairro": "Varadouro",
+    "endereco": "Alameda das Mangueiras, 368 - Varadouro, Olinda - PE",
+    "lat": -8.018548,
+    "lng": -34.858052,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-073-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-073-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-073-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-073-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-073-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-073-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-11",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-11",
+        "price": 630611
+      },
+      {
+        "date": "2026-11-06",
+        "price": 636000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-074",
+    "demo": true,
+    "titulo": "Casa em condomínio com lazer completo em Varadouro",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 256 m², localizado no bairro Varadouro, a poucos minutos do Sítio Histórico de Olinda.",
+    "finalidade": "venda",
+    "tipo": "casa_condominio",
+    "preco": 1286000,
+    "condominio": 660,
+    "iptuMensal": 274,
+    "area": 256,
+    "precoM2": 5023.44,
+    "quartos": 3,
+    "suites": 2,
+    "banheiros": 3,
+    "vagas": 1,
+    "bairro": "Varadouro",
+    "endereco": "Rua do Amparo, 475 - Varadouro, Olinda - PE",
+    "lat": -8.017967,
+    "lng": -34.850534,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-074-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-074-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-074-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-074-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": true,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-11-07",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-07",
+        "price": 1395850
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1340621
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1286000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-075",
+    "demo": true,
+    "titulo": "Apartamento compacto em Varadouro",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 119 m², localizado no bairro Varadouro, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 389000,
+    "condominio": 850,
+    "iptuMensal": 141,
+    "area": 119,
+    "precoM2": 3268.91,
+    "quartos": 4,
+    "suites": 2,
+    "banheiros": 4,
+    "vagas": 2,
+    "bairro": "Varadouro",
+    "endereco": "Travessa da Paz, 494 - Varadouro, Olinda - PE",
+    "lat": -8.015267,
+    "lng": -34.852433,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-075-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-075-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-075-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-075-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-075-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-10-11",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-11",
+        "price": 397452
+      },
+      {
+        "date": "2026-10-26",
+        "price": 396144
+      },
+      {
+        "date": "2026-11-18",
+        "price": 389000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-076",
+    "demo": true,
+    "titulo": "Apartamento reformado em Varadouro",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 65 m², localizado no bairro Varadouro, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 363000,
+    "condominio": 420,
+    "iptuMensal": 258,
+    "area": 65,
+    "precoM2": 5584.62,
+    "quartos": 2,
+    "suites": 1,
+    "banheiros": 2,
+    "vagas": 3,
+    "bairro": "Varadouro",
+    "endereco": "Rua do Veneza, 444 - Varadouro, Olinda - PE",
+    "lat": -8.015647,
+    "lng": -34.85428,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-076-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-076-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-076-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-076-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-076-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-10-03",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-03",
+        "price": 363783
+      },
+      {
+        "date": "2026-10-22",
+        "price": 366929
+      },
+      {
+        "date": "2026-11-06",
+        "price": 363000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-077",
+    "demo": true,
+    "titulo": "Cobertura duplex em Guadalupe",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 185 m², localizado no bairro Guadalupe, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "cobertura",
+    "preco": 1362000,
+    "condominio": 160,
+    "iptuMensal": 141,
+    "area": 185,
+    "precoM2": 7362.16,
+    "quartos": 3,
+    "suites": 0,
+    "banheiros": 3,
+    "vagas": 3,
+    "bairro": "Guadalupe",
+    "endereco": "Avenida Beira Mar, 1268 - Guadalupe, Olinda - PE",
+    "lat": -8.007936,
+    "lng": -34.855431,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-077-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-077-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-077-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-077-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-077-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-29",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-29",
+        "price": 1281284
+      },
+      {
+        "date": "2026-10-16",
+        "price": 1325557
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1362000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-078",
+    "demo": true,
+    "titulo": "Apartamento reformado em Guadalupe",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 120 m², localizado no bairro Guadalupe, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 804000,
+    "condominio": 510,
+    "iptuMensal": 272,
+    "area": 120,
+    "precoM2": 6700,
+    "quartos": 5,
+    "suites": 0,
+    "banheiros": 5,
+    "vagas": 0,
+    "bairro": "Guadalupe",
+    "endereco": "Rua Nova, 340 - Guadalupe, Olinda - PE",
+    "lat": -8.004645,
+    "lng": -34.854955,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-078-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-078-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-078-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-078-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-078-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-078-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": true,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-17",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-17",
+        "price": 794416
+      },
+      {
+        "date": "2026-11-24",
+        "price": 794843
+      },
+      {
+        "date": "2026-11-24",
+        "price": 804000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-079",
+    "demo": true,
+    "titulo": "Apartamento arejado em Guadalupe",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 47 m², localizado no bairro Guadalupe, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 1400,
+    "condominio": 290,
+    "iptuMensal": 138,
+    "area": 47,
+    "precoM2": 29.79,
+    "quartos": 2,
+    "suites": 0,
+    "banheiros": 2,
+    "vagas": 0,
+    "bairro": "Guadalupe",
+    "endereco": "Avenida Beira Mar, 810 - Guadalupe, Olinda - PE",
+    "lat": -8.006652,
+    "lng": -34.853942,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-079-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-079-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-079-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-079-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-079-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-079-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-26",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-26",
+        "price": 1400
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-080",
+    "demo": true,
+    "titulo": "Casa reformada em Guadalupe",
+    "descricao": "Imóvel demonstrativo do tipo casa com 195 m², localizado no bairro Guadalupe, próximo à praia e a restaurantes locais.",
+    "finalidade": "aluguel",
+    "tipo": "casa",
+    "preco": 5500,
+    "condominio": 0,
+    "iptuMensal": 114,
+    "area": 195,
+    "precoM2": 28.21,
+    "quartos": 2,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 0,
+    "bairro": "Guadalupe",
+    "endereco": "Rua Prudente de Moraes, 362 - Guadalupe, Olinda - PE",
+    "lat": -8.007083,
+    "lng": -34.853012,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-080-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-080-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-080-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-080-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-080-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-080-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-07",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-07",
+        "price": 5263
+      },
+      {
+        "date": "2026-09-08",
+        "price": 5446
+      },
+      {
+        "date": "2026-10-12",
+        "price": 5500
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-081",
+    "demo": true,
+    "titulo": "Cobertura com terraço gourmet em Bultrins",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 126 m², localizado no bairro Bultrins, a poucos minutos do Sítio Histórico de Olinda.",
+    "finalidade": "aluguel",
+    "tipo": "cobertura",
+    "preco": 5000,
+    "condominio": 280,
+    "iptuMensal": 217,
+    "area": 126,
+    "precoM2": 39.68,
+    "quartos": 5,
+    "suites": 1,
+    "banheiros": 4,
+    "vagas": 2,
+    "bairro": "Bultrins",
+    "endereco": "Rua do Sol, 1270 - Bultrins, Olinda - PE",
+    "lat": -8.001352,
+    "lng": -34.852505,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-081-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-081-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-081-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-081-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-08-31",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-31",
+        "price": 5010
+      },
+      {
+        "date": "2026-09-24",
+        "price": 5000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-082",
+    "demo": true,
+    "titulo": "Casa espaçosa em Bultrins",
+    "descricao": "Imóvel demonstrativo do tipo casa com 118 m², localizado no bairro Bultrins, com fácil acesso a transporte público e mercados.",
+    "finalidade": "aluguel",
+    "tipo": "casa",
+    "preco": 3050,
+    "condominio": 0,
+    "iptuMensal": 140,
+    "area": 118,
+    "precoM2": 25.85,
+    "quartos": 4,
+    "suites": 2,
+    "banheiros": 3,
+    "vagas": 0,
+    "bairro": "Bultrins",
+    "endereco": "Rua do Farol, 870 - Bultrins, Olinda - PE",
+    "lat": -8.000806,
+    "lng": -34.847944,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-082-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-082-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-082-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-082-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-082-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-27",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-27",
+        "price": 3095
+      },
+      {
+        "date": "2026-09-21",
+        "price": 3112
+      },
+      {
+        "date": "2026-11-13",
+        "price": 3050
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-083",
+    "demo": true,
+    "titulo": "Studio compacto em Bultrins",
+    "descricao": "Imóvel demonstrativo do tipo kitnet com 36 m², localizado no bairro Bultrins, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "aluguel",
+    "tipo": "kitnet",
+    "preco": 750,
+    "condominio": 0,
+    "iptuMensal": 183,
+    "area": 36,
+    "precoM2": 20.83,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 1,
+    "bairro": "Bultrins",
+    "endereco": "Rua das Flores, 837 - Bultrins, Olinda - PE",
+    "lat": -8.001124,
+    "lng": -34.850563,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-083-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-083-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-083-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-083-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-083-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-06",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-06",
+        "price": 750
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-084",
+    "demo": true,
+    "titulo": "Casa em condomínio com lazer completo em Bultrins",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 132 m², localizado no bairro Bultrins, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "aluguel",
+    "tipo": "casa_condominio",
+    "preco": 4400,
+    "condominio": 710,
+    "iptuMensal": 119,
+    "area": 132,
+    "precoM2": 33.33,
+    "quartos": 3,
+    "suites": 2,
+    "banheiros": 2,
+    "vagas": 1,
+    "bairro": "Bultrins",
+    "endereco": "Rua Nova, 754 - Bultrins, Olinda - PE",
+    "lat": -7.997902,
+    "lng": -34.84812,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-084-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-084-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-084-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-084-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": true,
+      "piscina": true,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-13",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-13",
+        "price": 4285
+      },
+      {
+        "date": "2026-11-24",
+        "price": 4400
+      }
+    ],
+    "status": "reservado"
+  },
+  {
+    "id": "morai-demo-085",
+    "demo": true,
+    "titulo": "Apartamento com vista em Fragoso",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 111 m², localizado no bairro Fragoso, com fácil acesso a transporte público e mercados.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 4400,
+    "condominio": 880,
+    "iptuMensal": 199,
+    "area": 111,
+    "precoM2": 39.64,
+    "quartos": 5,
+    "suites": 2,
+    "banheiros": 4,
+    "vagas": 0,
+    "bairro": "Fragoso",
+    "endereco": "Rua Prudente de Moraes, 1144 - Fragoso, Olinda - PE",
+    "lat": -7.987928,
+    "lng": -34.853291,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-085-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-085-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-085-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-085-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-085-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-085-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-08",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-08",
+        "price": 4400
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-086",
+    "demo": true,
+    "titulo": "Casa em condomínio com lazer completo em Fragoso",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 177 m², localizado no bairro Fragoso, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "casa_condominio",
+    "preco": 5650,
+    "condominio": 460,
+    "iptuMensal": 74,
+    "area": 177,
+    "precoM2": 31.92,
+    "quartos": 3,
+    "suites": 1,
+    "banheiros": 2,
+    "vagas": 1,
+    "bairro": "Fragoso",
+    "endereco": "Rua da Praia, 403 - Fragoso, Olinda - PE",
+    "lat": -7.987162,
+    "lng": -34.848591,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-086-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-086-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-086-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-086-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": true,
+      "piscina": true,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-04",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-04",
+        "price": 5481
+      },
+      {
+        "date": "2026-09-26",
+        "price": 5556
+      },
+      {
+        "date": "2026-11-01",
+        "price": 5650
+      }
+    ],
+    "status": "reservado"
+  },
+  {
+    "id": "morai-demo-087",
+    "demo": true,
+    "titulo": "Cobertura duplex em Fragoso",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 273 m², localizado no bairro Fragoso, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "aluguel",
+    "tipo": "cobertura",
+    "preco": 8950,
+    "condominio": 400,
+    "iptuMensal": 108,
+    "area": 273,
+    "precoM2": 32.78,
+    "quartos": 5,
+    "suites": 1,
+    "banheiros": 5,
+    "vagas": 1,
+    "bairro": "Fragoso",
+    "endereco": "Rua das Flores, 560 - Fragoso, Olinda - PE",
+    "lat": -7.984282,
+    "lng": -34.859191,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-087-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-087-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-087-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-087-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-19",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-19",
+        "price": 9371
+      },
+      {
+        "date": "2026-09-12",
+        "price": 8950
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-088",
+    "demo": true,
+    "titulo": "Casa em condomínio com lazer completo em Fragoso",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 249 m², localizado no bairro Fragoso, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "casa_condominio",
+    "preco": 1478000,
+    "condominio": 550,
+    "iptuMensal": 233,
+    "area": 249,
+    "precoM2": 5935.74,
+    "quartos": 3,
+    "suites": 0,
+    "banheiros": 3,
+    "vagas": 3,
+    "bairro": "Fragoso",
+    "endereco": "Rua do Sítio, 685 - Fragoso, Olinda - PE",
+    "lat": -7.982529,
+    "lng": -34.858319,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-088-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-088-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-088-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-088-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-088-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": true,
+      "piscina": true,
+      "varanda": true,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-10",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-10",
+        "price": 1443014
+      },
+      {
+        "date": "2026-11-19",
+        "price": 1427956
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1478000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-089",
+    "demo": true,
+    "titulo": "Casa charmosa em Ouro Preto",
+    "descricao": "Imóvel demonstrativo do tipo casa com 231 m², localizado no bairro Ouro Preto, próximo à orla e a pontos de comércio local.",
+    "finalidade": "venda",
+    "tipo": "casa",
+    "preco": 763000,
+    "condominio": 0,
+    "iptuMensal": 188,
+    "area": 231,
+    "precoM2": 3303.03,
+    "quartos": 3,
+    "suites": 1,
+    "banheiros": 3,
+    "vagas": 3,
+    "bairro": "Ouro Preto",
+    "endereco": "Rua Nova, 929 - Ouro Preto, Olinda - PE",
+    "lat": -8.000258,
+    "lng": -34.860675,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-089-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-089-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-089-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-089-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-089-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-10",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-10",
+        "price": 810449
+      },
+      {
+        "date": "2026-11-14",
+        "price": 792053
+      },
+      {
+        "date": "2026-11-24",
+        "price": 763000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-090",
+    "demo": true,
+    "titulo": "Cobertura duplex em Ouro Preto",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 263 m², localizado no bairro Ouro Preto, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "venda",
+    "tipo": "cobertura",
+    "preco": 1601000,
+    "condominio": 450,
+    "iptuMensal": 218,
+    "area": 263,
+    "precoM2": 6087.45,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 3,
+    "bairro": "Ouro Preto",
+    "endereco": "Rua do Carmo, 1206 - Ouro Preto, Olinda - PE",
+    "lat": -7.988365,
+    "lng": -34.858788,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-090-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-090-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-090-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-090-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-090-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-090-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-19",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-19",
+        "price": 1601000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-091",
+    "demo": true,
+    "titulo": "Ponto comercial em Ouro Preto",
+    "descricao": "Imóvel demonstrativo do tipo comercial com 215 m², localizado no bairro Ouro Preto, em bairro residencial e familiar.",
+    "finalidade": "venda",
+    "tipo": "comercial",
+    "preco": 677000,
+    "condominio": 0,
+    "iptuMensal": 289,
+    "area": 215,
+    "precoM2": 3148.84,
+    "quartos": 0,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 1,
+    "bairro": "Ouro Preto",
+    "endereco": "Rua do Amparo, 1247 - Ouro Preto, Olinda - PE",
+    "lat": -7.990042,
+    "lng": -34.855617,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-091-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-091-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-091-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-091-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-091-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-19",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-19",
+        "price": 650155
+      },
+      {
+        "date": "2026-10-07",
+        "price": 677000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-092",
+    "demo": true,
+    "titulo": "Casa em condomínio com lazer completo em Jardim Brasil",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 245 m², localizado no bairro Jardim Brasil, próximo à praia e a restaurantes locais.",
+    "finalidade": "venda",
+    "tipo": "casa_condominio",
+    "preco": 1409000,
+    "condominio": 500,
+    "iptuMensal": 126,
+    "area": 245,
+    "precoM2": 5751.02,
+    "quartos": 4,
+    "suites": 2,
+    "banheiros": 3,
+    "vagas": 0,
+    "bairro": "Jardim Brasil",
+    "endereco": "Rua Direita, 268 - Jardim Brasil, Olinda - PE",
+    "lat": -8.007245,
+    "lng": -34.865613,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-092-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-092-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-092-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-092-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": true,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-08",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-08",
+        "price": 1460701
+      },
+      {
+        "date": "2026-11-12",
+        "price": 1415480
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1409000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-093",
+    "demo": true,
+    "titulo": "Kitnet mobiliada em Jardim Brasil",
+    "descricao": "Imóvel demonstrativo do tipo kitnet com 26 m², localizado no bairro Jardim Brasil, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "kitnet",
+    "preco": 112000,
+    "condominio": 0,
+    "iptuMensal": 35,
+    "area": 26,
+    "precoM2": 4307.69,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 2,
+    "bairro": "Jardim Brasil",
+    "endereco": "Avenida Beira Mar, 564 - Jardim Brasil, Olinda - PE",
+    "lat": -8.005498,
+    "lng": -34.86484,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-093-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-093-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-093-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-093-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-093-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-23",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-23",
+        "price": 114664
+      },
+      {
+        "date": "2026-09-29",
+        "price": 112000
+      }
+    ],
+    "status": "reservado"
+  },
+  {
+    "id": "morai-demo-094",
+    "demo": true,
+    "titulo": "Apartamento com vista em Jardim Brasil",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 78 m², localizado no bairro Jardim Brasil, próximo à orla e a pontos de comércio local.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 311000,
+    "condominio": 540,
+    "iptuMensal": 286,
+    "area": 78,
+    "precoM2": 3987.18,
+    "quartos": 2,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 1,
+    "bairro": "Jardim Brasil",
+    "endereco": "Avenida Beira Mar, 188 - Jardim Brasil, Olinda - PE",
+    "lat": -8.006499,
+    "lng": -34.872928,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-094-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-094-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-094-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-094-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-01",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-01",
+        "price": 311000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-095",
+    "demo": true,
+    "titulo": "Terreno plano em Peixinhos",
+    "descricao": "Imóvel demonstrativo do tipo terreno com 502 m², localizado no bairro Peixinhos, em bairro residencial e familiar.",
+    "finalidade": "venda",
+    "tipo": "terreno",
+    "preco": 890000,
+    "condominio": 0,
+    "iptuMensal": 452,
+    "area": 502,
+    "precoM2": 1772.91,
+    "quartos": 0,
+    "suites": 0,
+    "banheiros": 0,
+    "vagas": 0,
+    "bairro": "Peixinhos",
+    "endereco": "Rua da Praia, 471 - Peixinhos, Olinda - PE",
+    "lat": -8.009143,
+    "lng": -34.871858,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-095-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-095-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-095-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-095-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-095-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-095-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-08-24",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-24",
+        "price": 930402
+      },
+      {
+        "date": "2026-10-02",
+        "price": 890000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-096",
+    "demo": true,
+    "titulo": "Casa em condomínio fechado em Peixinhos",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 233 m², localizado no bairro Peixinhos, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "venda",
+    "tipo": "casa_condominio",
+    "preco": 1153000,
+    "condominio": 420,
+    "iptuMensal": 177,
+    "area": 233,
+    "precoM2": 4948.5,
+    "quartos": 3,
+    "suites": 1,
+    "banheiros": 2,
+    "vagas": 1,
+    "bairro": "Peixinhos",
+    "endereco": "Avenida Beira Mar, 189 - Peixinhos, Olinda - PE",
+    "lat": -8.016593,
+    "lng": -34.872133,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-096-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-096-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-096-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-096-4/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": true,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-22",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-22",
+        "price": 1185314
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1153000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-097",
+    "demo": true,
+    "titulo": "Ponto comercial em Sítio Novo",
+    "descricao": "Imóvel demonstrativo do tipo comercial com 250 m², localizado no bairro Sítio Novo, a poucos minutos do Sítio Histórico de Olinda.",
+    "finalidade": "venda",
+    "tipo": "comercial",
+    "preco": 1311000,
+    "condominio": 0,
+    "iptuMensal": 105,
+    "area": 250,
+    "precoM2": 5244,
+    "quartos": 0,
+    "suites": 0,
+    "banheiros": 3,
+    "vagas": 0,
+    "bairro": "Sítio Novo",
+    "endereco": "Rua do Bonsucesso, 879 - Sítio Novo, Olinda - PE",
+    "lat": -8.024309,
+    "lng": -34.872251,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-097-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-097-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-097-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-097-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-097-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-097-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-11",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-11",
+        "price": 1315910
+      },
+      {
+        "date": "2026-11-20",
+        "price": 1282371
+      },
+      {
+        "date": "2026-11-24",
+        "price": 1311000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-098",
+    "demo": true,
+    "titulo": "Apartamento arejado em Sítio Novo",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 108 m², localizado no bairro Sítio Novo, próximo à praia e a restaurantes locais.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 641000,
+    "condominio": 650,
+    "iptuMensal": 225,
+    "area": 108,
+    "precoM2": 5935.19,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 0,
+    "bairro": "Sítio Novo",
+    "endereco": "Rua da Praia, 925 - Sítio Novo, Olinda - PE",
+    "lat": -8.030087,
+    "lng": -34.874469,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-098-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-098-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-098-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-098-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-098-5/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-10",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-10",
+        "price": 654241
+      },
+      {
+        "date": "2026-11-10",
+        "price": 669311
+      },
+      {
+        "date": "2026-11-24",
+        "price": 641000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-099",
+    "demo": true,
+    "titulo": "Apartamento reformado em Cidade Tabajara",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 127 m², localizado no bairro Cidade Tabajara, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 2900,
+    "condominio": 570,
+    "iptuMensal": 75,
+    "area": 127,
+    "precoM2": 22.83,
+    "quartos": 5,
+    "suites": 0,
+    "banheiros": 4,
+    "vagas": 2,
+    "bairro": "Cidade Tabajara",
+    "endereco": "Rua do Varadouro, 329 - Cidade Tabajara, Olinda - PE",
+    "lat": -7.978328,
+    "lng": -34.862796,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-099-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-099-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-099-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-099-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-099-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-099-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-08",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-08",
+        "price": 2900
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-100",
+    "demo": true,
+    "titulo": "Apartamento reformado em Águas Compridas",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 100 m², localizado no bairro Águas Compridas, com fácil acesso a transporte público e mercados.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 2250,
+    "condominio": 370,
+    "iptuMensal": 130,
+    "area": 100,
+    "precoM2": 22.5,
+    "quartos": 3,
+    "suites": 2,
+    "banheiros": 3,
+    "vagas": 0,
+    "bairro": "Águas Compridas",
+    "endereco": "Avenida Beira Mar, 1259 - Águas Compridas, Olinda - PE",
+    "lat": -7.991308,
+    "lng": -34.89862,
+    "fotos": [
+      "https://picsum.photos/seed/morai-morai-demo-100-1/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-100-2/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-100-3/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-100-4/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-100-5/960/720",
+      "https://picsum.photos/seed/morai-morai-demo-100-6/960/720"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-29",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-29",
+        "price": 2250
+      }
+    ],
+    "status": "disponivel"
+  }
+]

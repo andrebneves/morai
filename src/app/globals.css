@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+:root {
+  --color-deep-green: #003d32;
+  --color-dark-green: #062a24;
+  --color-emerald: #00e58a;
+  --color-lime: #c5ff35;
+  --color-off-white: #f5f7f2;
+  --color-graphite: #172522;
+
+  --background: var(--color-off-white);
+  --foreground: var(--color-graphite);
+  --surface: #ffffff;
+  --surface-muted: #eef2ec;
+  --border-subtle: rgba(23, 37, 34, 0.1);
+  --text-muted: rgba(23, 37, 34, 0.62);
+  --accent: var(--color-emerald);
+  --accent-contrast: var(--color-dark-green);
+  --accent-lime: var(--color-lime);
+  --danger: #e5484d;
+  --warning: #c98a00;
+
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  --shadow-float: 0 8px 30px rgba(6, 42, 36, 0.14);
+  --shadow-sheet: 0 -8px 32px rgba(6, 42, 36, 0.18);
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-theme="dark"] {
+  --background: var(--color-dark-green);
+  --foreground: var(--color-off-white);
+  --surface: #0c3a31;
+  --surface-muted: #0a2f28;
+  --border-subtle: rgba(245, 247, 242, 0.12);
+  --text-muted: rgba(245, 247, 242, 0.64);
+  --accent: var(--color-emerald);
+  --accent-contrast: #052620;
+  --shadow-float: 0 8px 30px rgba(0, 0, 0, 0.45);
+  --shadow-sheet: 0 -8px 32px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: var(--color-dark-green);
+    --foreground: var(--color-off-white);
+    --surface: #0c3a31;
+    --surface-muted: #0a2f28;
+    --border-subtle: rgba(245, 247, 242, 0.12);
+    --text-muted: rgba(245, 247, 242, 0.64);
+    --accent-contrast: #052620;
+    --shadow-float: 0 8px 30px rgba(0, 0, 0, 0.45);
+    --shadow-sheet: 0 -8px 32px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border-subtle: var(--border-subtle);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-lime: var(--accent-lime);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --color-deep-green: var(--color-deep-green);
+  --color-dark-green: var(--color-dark-green);
+  --color-emerald: var(--color-emerald);
+  --color-lime: var(--color-lime);
+  --color-off-white: var(--color-off-white);
+  --color-graphite: var(--color-graphite);
+  --font-sans: var(--font-manrope), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-manrope), system-ui, sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+  overscroll-behavior-y: none;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.safe-top {
+  padding-top: var(--safe-top);
+}
+.safe-bottom {
+  padding-bottom: var(--safe-bottom);
+}
+.pt-safe {
+  padding-top: calc(var(--safe-top) + 0.75rem);
+}
+.pb-safe {
+  padding-bottom: calc(var(--safe-bottom) + 0.75rem);
+}
+
+.maplibregl-ctrl-attrib {
+  font-size: 10px !important;
+  background: rgba(245, 247, 242, 0.75) !important;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.animate-sheet-up {
+  animation: sheet-up 0.32s var(--ease-standard);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.4s var(--ease-standard);
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+.animate-pulse-ring {
+  animation: pulse-ring 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
