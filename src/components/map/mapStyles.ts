@@ -2,23 +2,26 @@ import type { StyleSpecification } from "maplibre-gl";
 import libertyBase from "@/components/map/libertyBase.json";
 
 /**
- * Paleta "Moraí Toy" — reestiliza o mapa base do OpenFreeMap (esquema OpenMapTiles,
- * estilo "liberty") com cores vivas, estilo jogo de simulação (SimCity/The Sims),
- * em vez do visual fotorrealista padrão. Só sobrescreve propriedades de cor
+ * Paleta "Moraí Classic" — reestiliza o mapa base do OpenFreeMap (esquema OpenMapTiles,
+ * estilo "liberty") com a identidade visual própria do Moraí: mar turquesa, praia em tom
+ * natural de areia, ruas claras e legíveis, construções em bege/pastel com sombra suave —
+ * em vez do visual fotorrealista padrão de mapa. Só sobrescreve propriedades de cor
  * (fill-color, line-color, text-color etc.) — geometria, zoom e espessura das
- * linhas permanecem as originais do estilo base.
+ * linhas permanecem as originais do estilo base. Substitui a paleta anterior ("Moraí Toy",
+ * mais saturada/estilo jogo de simulação), por pedido explícito do briefing de direção de
+ * arte do motor cartográfico — ver seção "Moraí Maps" em DESIGN_SYSTEM.md.
  *
  * `libertyBase.json` é um snapshot de https://tiles.openfreemap.org/styles/liberty
  * (sources/sprite/glyphs apontam para URLs absolutas da OpenFreeMap, então
  * funciona normalmente mesmo sendo servido localmente).
  */
-const TOY_PAINT_OVERRIDES: Record<string, Record<string, unknown>> = {
-  background: { "background-color": "#DCEFC9" },
+const MORAI_CLASSIC_PAINT_OVERRIDES: Record<string, Record<string, unknown>> = {
+  background: { "background-color": "#F3EDDD" },
   natural_earth: { "raster-opacity": 0 },
 
   park: {
-    "fill-color": "#A9DD78",
-    "fill-opacity": 0.92,
+    "fill-color": "#A3D18A",
+    "fill-opacity": 0.85,
     "fill-outline-color": "rgba(255,255,255,0.6)",
   },
   park_outline: { "line-color": "rgba(255,255,255,0.6)" },
@@ -29,104 +32,112 @@ const TOY_PAINT_OVERRIDES: Record<string, Record<string, unknown>> = {
       ["linear"],
       ["zoom"],
       9,
-      "hsla(35,45%,93%,0.55)",
+      "hsla(38,40%,94%,0.5)",
       12,
-      "hsla(35,60%,90%,0.45)",
+      "hsla(38,45%,91%,0.4)",
     ],
   },
-  landcover_wood: { "fill-color": "hsla(100,62%,42%,0.65)", "fill-opacity": 0.55 },
-  landcover_grass: { "fill-color": "rgba(150,214,110,1)", "fill-opacity": 0.6 },
+  landcover_wood: { "fill-color": "hsla(100,38%,46%,0.55)", "fill-opacity": 0.5 },
+  landcover_grass: { "fill-color": "rgba(168,205,140,1)", "fill-opacity": 0.5 },
   landcover_ice: { "fill-color": "rgba(224,245,250,1)" },
-  landuse_pitch: { "fill-color": "#CFF0A0" },
-  landuse_track: { "fill-color": "#F0DDA0" },
-  landuse_cemetery: { "fill-color": "hsl(90,35%,80%)" },
+  landuse_pitch: { "fill-color": "#CDE3B0" },
+  landuse_track: { "fill-color": "#EAD9AE" },
+  landuse_cemetery: { "fill-color": "hsl(90,25%,82%)" },
   landuse_hospital: { "fill-color": "#FBD7E0" },
-  landuse_school: { "fill-color": "#FDEFAE" },
-  landcover_sand: { "fill-color": "#F6E3B0" },
+  landuse_school: { "fill-color": "#FBEEC0" },
+  // Praia em tom natural de areia (pedido explícito: "praias em tons naturais de areia").
+  landcover_sand: { "fill-color": "#F3E1C3" },
 
+  // Mar azul-turquesa (pedido explícito), mais claro perto da costa e mais profundo no mar aberto.
   water: {
-    "fill-color": ["interpolate", ["linear"], ["zoom"], 10, "#4FB8D8", 16, "#2E9FC9"],
+    "fill-color": ["interpolate", ["linear"], ["zoom"], 10, "#5BD1D9", 16, "#2CC7D4"],
   },
 
+  // Construções em bege e tons pastéis, sombra suave (pedido explícito) — antes era um
+  // pêssego/terracota mais saturado ("Moraí Toy").
   building: {
-    "fill-color": "#F6C49A",
+    "fill-color": "#E9DEC4",
     "fill-outline-color": [
       "interpolate",
       ["linear"],
       ["zoom"],
       13,
-      "hsla(20,55%,55%,0.4)",
+      "hsla(35,25%,55%,0.35)",
       14,
-      "hsl(20,55%,50%)",
+      "hsl(35,25%,48%)",
     ],
   },
-  // Pequena variação de tom pela altura do prédio (render_height) — dá uma sensação de
-  // "maquete"/diorama em vez de blocos idênticos, igual às casinhas do The Sims.
+  // Prédios 3D (fill-extrusion com render_height/render_min_height reais do OpenMapTiles,
+  // não inventados) na mesma paleta bege/pastel, com leve variação por altura pra dar volume
+  // e sombra suave sem virar "maquete de jogo" como antes.
   "building-3d": {
     "fill-extrusion-color": [
       "interpolate",
       ["linear"],
       ["get", "render_height"],
       0,
-      "#FBDBB4",
+      "#F2E9D6",
       8,
-      "#F6C49A",
+      "#E9DEC4",
       25,
-      "#E09C68",
+      "#CDBB95",
     ],
-    "fill-extrusion-opacity": 0.95,
+    "fill-extrusion-opacity": 0.92,
   },
 
-  road_minor_casing: { "line-color": "#D9C79A" },
-  road_secondary_tertiary_casing: { "line-color": "#E0A868" },
-  road_secondary_tertiary: { "line-color": "#FFE9B8" },
-  road_trunk_primary_casing: { "line-color": "#D98A4A" },
-  road_trunk_primary: { "line-color": "#FFD9A0" },
-  road_motorway_casing: { "line-color": "#C96A2E" },
+  // Ruas claras e de alta legibilidade (pedido explícito) — tons neutros/creme em vez do
+  // laranja/creme saturado anterior; a hierarquia viária continua clara pela espessura e
+  // pela leve diferença de tom, não por saturação.
+  road_minor_casing: { "line-color": "#DCD2B8" },
+  road_secondary_tertiary_casing: { "line-color": "#E3CFA0" },
+  road_secondary_tertiary: { "line-color": "#FBF4E3" },
+  road_trunk_primary_casing: { "line-color": "#D9B87E" },
+  road_trunk_primary: { "line-color": "#FDF8EC" },
+  road_motorway_casing: { "line-color": "#C98F52" },
   road_motorway: {
-    "line-color": ["interpolate", ["linear"], ["zoom"], 5, "hsl(16,85%,55%)", 6, "#FF9B4A"],
+    "line-color": ["interpolate", ["linear"], ["zoom"], 5, "hsl(30,70%,62%)", 6, "#F2B467"],
   },
-  road_path_pedestrian: { "line-color": "#E7D2A0" },
+  road_path_pedestrian: { "line-color": "#E8DCC0" },
 
-  boundary_2: { "line-color": "hsl(130,20%,45%)" },
-  boundary_3: { "line-color": "hsl(130,15%,65%)" },
+  boundary_2: { "line-color": "hsl(130,16%,50%)" },
+  boundary_3: { "line-color": "hsl(130,12%,68%)" },
 
-  label_city: { "text-color": "#2E4A2A", "text-halo-color": "#FFFBEF" },
-  label_city_capital: { "text-color": "#2E4A2A", "text-halo-color": "#FFFBEF" },
-  label_town: { "text-color": "#2E4A2A", "text-halo-color": "#FFFBEF" },
-  label_village: { "text-color": "#2E4A2A", "text-halo-color": "#FFFBEF" },
-  label_other: { "text-color": "#2E4A2A", "text-halo-color": "#FFFBEF" },
-  poi_r20: { "text-color": "#4A3728", "text-halo-color": "#FFFBEF" },
-  poi_r7: { "text-color": "#4A3728", "text-halo-color": "#FFFBEF" },
-  poi_r1: { "text-color": "#4A3728", "text-halo-color": "#FFFBEF" },
+  label_city: { "text-color": "#2E4A2A", "text-halo-color": "#FFFBF2" },
+  label_city_capital: { "text-color": "#2E4A2A", "text-halo-color": "#FFFBF2" },
+  label_town: { "text-color": "#2E4A2A", "text-halo-color": "#FFFBF2" },
+  label_village: { "text-color": "#2E4A2A", "text-halo-color": "#FFFBF2" },
+  label_other: { "text-color": "#2E4A2A", "text-halo-color": "#FFFBF2" },
+  poi_r20: { "text-color": "#4A3728", "text-halo-color": "#FFFBF2" },
+  poi_r7: { "text-color": "#4A3728", "text-halo-color": "#FFFBF2" },
+  poi_r1: { "text-color": "#4A3728", "text-halo-color": "#FFFBF2" },
 };
 
-function buildToyStyle(base: unknown): StyleSpecification {
+function buildMoraiClassicStyle(base: unknown): StyleSpecification {
   const style = JSON.parse(JSON.stringify(base)) as StyleSpecification;
   for (const layer of style.layers) {
-    const overrides = TOY_PAINT_OVERRIDES[layer.id];
+    const overrides = MORAI_CLASSIC_PAINT_OVERRIDES[layer.id];
     if (!overrides) continue;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (layer as any).paint = { ...(layer as any).paint, ...overrides };
   }
-  // Luz quente e um pouco mais intensa que o padrão do MapLibre — acentua o sombreado das
-  // faces dos prédios extrudados (building-3d), reforçando a leitura de "maquete" quando o
-  // mapa está inclinado (ver BROWSE_PITCH em MapView.tsx).
+  // Luz suave e neutra (menos quente/intensa que a versão "Moraí Toy") — sombra sutil nos
+  // prédios extrudados sem reforçar a leitura de "maquete de jogo".
   style.light = {
     anchor: "viewport",
-    color: "hsl(38, 85%, 92%)",
-    intensity: 0.6,
+    color: "hsl(40, 60%, 96%)",
+    intensity: 0.45,
     position: [1.2, 200, 42],
   };
   return style;
 }
 
 /**
- * Estilo de ruas "Moraí Toy": tiles vetoriais gratuitos da OpenFreeMap (sem API key),
- * reestilizados com a paleta acima para dar a cara de jogo de simulação pedida pelo
- * produto (Waze no comportamento, SimCity/The Sims na aparência).
+ * Estilo de ruas "Moraí Classic": tiles vetoriais gratuitos da OpenFreeMap (sem API key),
+ * reestilizados com a paleta acima para dar a identidade visual própria do Moraí — GPS
+ * sofisticado e legível, com mar turquesa e areia natural, em vez da aparência padrão
+ * cinza de mapa.
  */
-export const STREETS_STYLE: StyleSpecification = buildToyStyle(libertyBase);
+export const STREETS_STYLE: StyleSpecification = buildMoraiClassicStyle(libertyBase);
 
 /**
  * Estilo satélite: imagens Esri World Imagery (endpoint público gratuito, sem API key,

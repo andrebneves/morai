@@ -76,23 +76,31 @@ O tema (claro/escuro) é resolvido via `:root[data-theme="dark"|"light"]` e
 - **Todo imóvel demonstrativo é claramente rotulado** — badge "Demonstrativo" nos cards e no detalhe;
   imóveis cadastrados por usuários reais (quando Supabase está configurado) **não** recebem esse rótulo.
 
-## Estilo visual do mapa — "Moraí Toy"
+## Estilo visual do mapa — "Moraí Classic"
 
-O app funciona como um GPS de navegação (tipo Waze), mas a aparência do mapa é propositalmente
-estilizada, com cara de jogo de simulação (SimCity/The Sims), em vez do visual fotorrealista padrão
-de mapas como Google Maps.
+O app funciona como um GPS de navegação (tipo Waze), com uma aparência cartográfica proprietária —
+mar turquesa, praia em tom natural de areia, ruas claras e legíveis, construções em bege/pastel com
+sombra suave — em vez do visual fotorrealista padrão de mapas como Google Maps. Substituiu a paleta
+anterior ("Moraí Toy", mais saturada/estilo jogo de simulação SimCity/The Sims) por pedido explícito
+do briefing "Moraí Maps — motor cartográfico com identidade visual própria" (2026-11-27).
 
 - Base: tiles vetoriais gratuitos da OpenFreeMap (esquema OpenMapTiles, estilo "liberty"), sem API key.
 - `src/components/map/libertyBase.json` é um snapshot desse estilo base; `src/components/map/mapStyles.ts`
-  aplica um patch de cores (`TOY_PAINT_OVERRIDES`) por cima dele — só sobrescreve propriedades de cor
-  (`fill-color`, `line-color`, `text-color` etc.), mantendo geometria/zoom/espessuras originais.
-- Paleta: chão verde-claro tipo gramado (`#DCEFC9`), água azul-turquesa vivo (`#6FC7E8`), prédios em tom
-  pêssego/terracota (`#F3B88A`), vias em tons quentes (creme/laranja) em vez do cinza realista, parques e
-  áreas verdes em tons de verde mais saturados. Hillshade fotográfico (`natural_earth`) desligado para
-  manter o visual "chapado" de jogo.
+  aplica um patch de cores (`MORAI_CLASSIC_PAINT_OVERRIDES`) por cima dele — só sobrescreve propriedades
+  de cor (`fill-color`, `line-color`, `text-color` etc.), mantendo geometria/zoom/espessuras originais.
+- Paleta: chão em bege claro (`#F3EDDD`), mar azul-turquesa (`#2CC7D4`–`#5BD1D9` por zoom), praia em
+  areia natural (`#F3E1C3`), prédios (2D e 3D via `fill-extrusion`) em bege/pastel (`#E9DEC4`), vias em
+  tons claros/creme (`#FBF4E3`/`#FDF8EC`) em vez do laranja saturado anterior, parques/vegetação em
+  verde mais suave (menos saturado que a versão "Toy"). Prédios 3D usam `render_height`/
+  `render_min_height` reais do OpenMapTiles (nunca alturas inventadas). Hillshade fotográfico
+  (`natural_earth`) desligado para manter a leitura "ilustrada", não fotorrealista.
+- **Ainda não implementado** (fase seguinte do briefing "Moraí Maps", aguardando mais imagens de
+  referência do usuário): biblioteca de ícones/sprites próprios (vegetação ilustrada com volume,
+  casas/prédios por tipo, pontos de interesse como farmácia/escola/igreja) — hoje o mapa ainda usa o
+  sprite padrão hospedado pela OpenFreeMap, sem nenhum ícone customizado do Moraí.
 - Para atualizar a base (ex.: nova versão do estilo "liberty" da OpenFreeMap), rebaixar
   `https://tiles.openfreemap.org/styles/liberty` sobre `libertyBase.json` e conferir se os ids de layer
-  usados em `TOY_PAINT_OVERRIDES` ainda existem.
+  usados em `MORAI_CLASSIC_PAINT_OVERRIDES` ainda existem.
 - O estilo satélite (`SATELLITE_STYLE`, imagens Esri) não foi alterado — é uma camada alternativa, não o
   modo padrão.
 
