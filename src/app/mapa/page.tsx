@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { Locate, Layers, Navigation, Loader2, X, CheckCircle2, CornerUpRight, CornerUpLeft, ArrowUp } from "lucide-react";
 import { MapView, type MapViewHandle } from "@/components/map/MapView";
@@ -122,49 +123,74 @@ export default function MapaPage() {
         <div className="pointer-events-auto">
           <PurposeToggle value={filters.finalidade} onChange={(v) => setFilters({ finalidade: v })} />
         </div>
-        {passeio.permission === "denied" && (
-          <div className="pointer-events-auto rounded-xl bg-danger/90 px-4 py-2.5 text-xs font-medium text-off-white shadow-[var(--shadow-float)]">
-            Localização não autorizada — ative o acesso à localização do Safari para o GPS do Moraí funcionar.
-          </div>
-        )}
-        {passeio.destino && (() => {
-          const IconeManobra = passeio.passoAtual ? iconeManobra(passeio.passoAtual.tipo, passeio.passoAtual.modificador) : null;
-          return (
-            <div className="pointer-events-auto relative z-30 flex items-center gap-2.5 rounded-xl bg-dark-green py-2.5 pl-3.5 pr-14 text-off-white shadow-[var(--shadow-float)]">
-              {passeio.chegouDestino ? (
-                <CheckCircle2 className="h-5 w-5 shrink-0 text-lime" />
-              ) : IconeManobra ? (
-                <IconeManobra className="h-5 w-5 shrink-0 text-lime" />
-              ) : (
-                <Navigation
-                  className="h-5 w-5 shrink-0 text-lime transition-transform"
-                  style={rumoRelativo !== null ? { transform: `rotate(${rumoRelativo}deg)` } : undefined}
-                />
-              )}
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-xs font-bold">
-                  {passeio.chegouDestino
-                    ? "Você chegou perto do imóvel"
-                    : (passeio.passoAtual?.instrucao ?? passeio.destino.titulo)}
-                </p>
-                <p className="truncate text-[11px] text-off-white/65">
-                  {passeio.chegouDestino
-                    ? passeio.destino.titulo
-                    : passeio.passoAtual && passeio.distanciaProximoPasso !== null
-                      ? `${formatDistance(passeio.distanciaProximoPasso)} · ${passeio.destino.titulo}`
-                      : passeio.rotaCarregando
-                        ? "Calculando rota pelas ruas…"
-                        : passeio.distanciaDestino !== null
-                          ? `${formatDistance(passeio.distanciaDestino)} · siga a seta`
-                          : passeio.destino.titulo}
-                </p>
-              </div>
-              <button onClick={() => passeio.setDestino(null)} aria-label="Cancelar destino" className="shrink-0 p-1">
-                <X className="h-4 w-4 text-off-white/60" />
-              </button>
-            </div>
-          );
-        })()}
+        <AnimatePresence>
+          {passeio.permission === "denied" && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -8 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -8 }}
+              transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
+              className="pointer-events-auto rounded-xl bg-danger/90 px-4 py-2.5 text-xs font-medium text-off-white shadow-[var(--shadow-float)]"
+            >
+              Localização não autorizada — ative o acesso à localização do Safari para o GPS do Moraí funcionar.
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {passeio.destino && (() => {
+            const IconeManobra = passeio.passoAtual ? iconeManobra(passeio.passoAtual.tipo, passeio.passoAtual.modificador) : null;
+            const linhaTitulo = passeio.chegouDestino
+              ? "Você chegou perto do imóvel"
+              : (passeio.passoAtual?.instrucao ?? passeio.destino.titulo);
+            const linhaSub = passeio.chegouDestino
+              ? passeio.destino.titulo
+              : passeio.passoAtual && passeio.distanciaProximoPasso !== null
+                ? `${formatDistance(passeio.distanciaProximoPasso)} · ${passeio.destino.titulo}`
+                : passeio.rotaCarregando
+                  ? "Calculando rota pelas ruas…"
+                  : passeio.distanciaDestino !== null
+                    ? `${formatDistance(passeio.distanciaDestino)} · siga a seta`
+                    : passeio.destino.titulo;
+            return (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: -8 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: -8 }}
+                transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
+                className="pointer-events-auto relative z-30 flex items-center gap-2.5 rounded-xl bg-dark-green py-2.5 pl-3.5 pr-14 text-off-white shadow-[var(--shadow-float)]"
+              >
+                {passeio.chegouDestino ? (
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-lime" />
+                ) : IconeManobra ? (
+                  <IconeManobra className="h-5 w-5 shrink-0 text-lime" />
+                ) : (
+                  <Navigation
+                    className="h-5 w-5 shrink-0 text-lime transition-transform"
+                    style={rumoRelativo !== null ? { transform: `rotate(${rumoRelativo}deg)` } : undefined}
+                  />
+                )}
+                <div className="min-w-0 flex-1">
+                  <AnimatePresence mode="wait">
+                    <motion.p
+                      key={linhaTitulo}
+                      initial={{ opacity: 0, y: 4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -4 }}
+                      transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+                      className="truncate text-xs font-bold"
+                    >
+                      {linhaTitulo}
+                    </motion.p>
+                  </AnimatePresence>
+                  <p className="truncate text-[11px] text-off-white/65">{linhaSub}</p>
+                </div>
+                <button onClick={() => passeio.setDestino(null)} aria-label="Cancelar destino" className="shrink-0 p-1 transition-transform active:scale-90">
+                  <X className="h-4 w-4 text-off-white/60" />
+                </button>
+              </motion.div>
+            );
+          })()}
+        </AnimatePresence>
       </div>
 
       {/* Right controls */}
@@ -174,15 +200,22 @@ export default function MapaPage() {
       </div>
 
       {/* Recentralizar (modo GPS pausado por arraste manual) */}
-      {followPaused && (
-        <button
-          onClick={() => mapRef.current?.resumeFollow()}
-          className="absolute bottom-[calc(132px+env(safe-area-inset-bottom))] left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full bg-emerald px-4 py-2.5 text-sm font-bold text-dark-green shadow-[var(--shadow-float)] active:scale-95 transition-transform"
-        >
-          <Locate className="h-4 w-4" />
-          Recentralizar
-        </button>
-      )}
+      <AnimatePresence>
+        {followPaused && (
+          <motion.button
+            onClick={() => mapRef.current?.resumeFollow()}
+            initial={{ opacity: 0, scale: 0.9, y: 8 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 8 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
+            className="absolute bottom-[calc(132px+env(safe-area-inset-bottom))] left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full bg-emerald px-4 py-2.5 text-sm font-bold text-dark-green shadow-[var(--shadow-float)]"
+          >
+            <Locate className="h-4 w-4" />
+            Recentralizar
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* Status de descoberta por perto (sempre ativo — abre os ajustes de raio/som/deslocamento) */}
       <button
