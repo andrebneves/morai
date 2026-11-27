@@ -263,8 +263,14 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
           const clusterId = props.cluster_id;
           const count = props.point_count;
           el.innerHTML = "";
+          // "maplibregl-marker" tem que continuar na lista de classes — é ela que traz
+          // `position:absolute;top:0;left:0` do CSS da própria lib. Sem isso o elemento vira
+          // position:static e o `transform: translate(...)` que o MapLibre aplica no elemento
+          // passa a valer a partir da posição dele no fluxo normal do documento (que muda toda
+          // vez que um marcador é criado/removido/reordenado), em vez do canto do mapa — é
+          // exatamente o bug do pin "pulando de canto" ao dar zoom.
           el.className =
-            "flex items-center justify-center rounded-full bg-deep-green text-off-white font-bold shadow-[var(--shadow-float)] border-2 border-emerald cursor-pointer select-none";
+            "maplibregl-marker flex items-center justify-center rounded-full bg-deep-green text-off-white font-bold shadow-[var(--shadow-float)] border-2 border-emerald cursor-pointer select-none";
           const size = count < 10 ? 40 : count < 30 ? 48 : 56;
           el.style.width = `${size}px`;
           el.style.height = `${size}px`;
@@ -290,7 +296,9 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
           // sem isso, se o MapLibre não tiver aplicado seu posicionamento absoluto ainda no
           // momento do innerHTML, o pin vira uma barra esticada na largura inteira do mapa
           // (bug visto num iPhone real: etiqueta de preço virou uma faixa cobrindo a tela toda).
-          el.className = "inline-block cursor-pointer select-none";
+          // "maplibregl-marker" tem que continuar na lista de classes (ver comentário igual
+          // acima, no bloco de cluster) — sem ela o pin "pula de canto" ao dar zoom.
+          el.className = "maplibregl-marker inline-block cursor-pointer select-none";
           el.innerHTML = showPriceLabel
             ? `
             <div style="display:inline-block;transform:${selected ? "scale(1.1)" : "scale(1)"};transition:transform .15s ease;animation:morai-pin-pop .35s cubic-bezier(.34,1.56,.64,1);">
@@ -382,7 +390,9 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
 
     if (!userMarkerRef.current) {
       const el = document.createElement("div");
-      el.className = "relative flex items-center justify-center";
+      // "maplibregl-marker" precisa continuar na lista de classes, senão o posicionamento
+      // quebra ao dar zoom (ver comentário detalhado no loop de marcadores de imóvel acima).
+      el.className = "maplibregl-marker relative flex items-center justify-center";
       userMarkerRef.current = new Marker({ element: el, anchor: "center" })
         .setLngLat([userPosition.lng, userPosition.lat])
         .addTo(map);
