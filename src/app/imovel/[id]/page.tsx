@@ -13,12 +13,11 @@ import {
   Ruler,
   Info,
   Clock,
+  Navigation,
 } from "lucide-react";
 import { Gallery } from "@/components/property/Gallery";
 import { NearbyPOISection } from "@/components/property/NearbyPOISection";
 import { CalculatorsSection } from "@/components/property/CalculatorsSection";
-import { RouteButtons } from "@/components/property/RouteButtons";
-import { BottomSheet } from "@/components/ui/BottomSheet";
 import { getAllProperties } from "@/lib/data/properties";
 import { formatBRL, formatCompactPrice, formatArea, formatDate, labelTipo } from "@/lib/format";
 import { calcularRadar, RADAR_LABELS, RADAR_AVISO, isOportunidade } from "@/lib/radar";
@@ -42,7 +41,6 @@ export default function ImovelDetalhePage({ params }: { params: Promise<{ id: st
   const router = useRouter();
 
   const [all, setAll] = useState<Property[] | null>(null);
-  const [routeOpen, setRouteOpen] = useState(false);
 
   const isFavorite = useAppStore((s) => s.isFavorite(id));
   const toggleFavorite = useAppStore((s) => s.toggleFavorite);
@@ -232,11 +230,6 @@ export default function ImovelDetalhePage({ params }: { params: Promise<{ id: st
 
         <CalculatorsSection property={property} />
 
-        <section className="space-y-2">
-          <h2 className="text-base font-bold">Como chegar</h2>
-          <RouteButtons lat={property.lat} lng={property.lng} titulo={property.titulo} />
-        </section>
-
         {property.demo ? (
           <p className="rounded-xl bg-surface-muted p-3 text-xs text-text-muted">
             Este anúncio faz parte da versão beta do Moraí e não possui proprietário ou corretor real —
@@ -266,20 +259,16 @@ export default function ImovelDetalhePage({ params }: { params: Promise<{ id: st
           <Heart className={clsx("h-4 w-4", isFavorite && "fill-danger")} />
           {isFavorite ? "Salvo" : "Salvar"}
         </button>
+        {/* "Ir até lá" ativa o GPS do próprio Moraí direto no mapa — nunca abre Apple Maps,
+            Google Maps ou Waze: o Moraí é a plataforma que leva o usuário até o imóvel. */}
         <button
-          onClick={() => setRouteOpen(true)}
+          onClick={() => router.push(`/mapa?ir=${property.id}`)}
           className="flex flex-1 items-center justify-center gap-2 rounded-full bg-emerald py-3 text-sm font-bold text-dark-green"
         >
-          Como chegar
+          <Navigation className="h-4 w-4" />
+          Ir até lá
         </button>
       </div>
-
-      <BottomSheet open={routeOpen} onClose={() => setRouteOpen(false)} maxHeightVh={45}>
-        <div className="px-5 pb-6 pt-2">
-          <h2 className="mb-3 text-lg font-bold">Como chegar</h2>
-          <RouteButtons lat={property.lat} lng={property.lng} titulo={property.titulo} />
-        </div>
-      </BottomSheet>
     </div>
   );
 }

@@ -107,6 +107,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
   const userMarkerRef = useRef<Marker | null>(null);
   const clusterIndexRef = useRef<Supercluster<PointProps, ClusterProps> | null>(null);
   const [styleLoaded, setStyleLoaded] = useState(false);
+  const hasInitialZoomRef = useRef(false);
   const followingRef = useRef(true);
   const followHeadingRef = useRef(followHeading);
   const onFollowPausedChangeRef = useRef(onFollowPausedChange);
@@ -418,15 +419,22 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
         `;
   }, [userPosition, styleLoaded, followHeading]);
 
-  // câmera "modo GPS": segue a posição e gira pra manter a direção de deslocamento pra cima
+  // câmera "modo GPS": segue a posição e gira pra manter a direção de deslocamento pra cima.
+  // Na primeíssima localização recebida (app recém-aberto), além de centralizar também damos
+  // um zoom de perto — o Moraí deve abrir já "no lugar", como um app de navegação, em vez de
+  // abrir num zoom genérico da cidade e só depois deslizar até o usuário.
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !styleLoaded || !userPosition || !followHeading || !followingRef.current) return;
 
+    const primeiraLocalizacao = !hasInitialZoomRef.current;
+    hasInitialZoomRef.current = true;
+
     map.easeTo({
       center: [userPosition.lng, userPosition.lat],
+      zoom: primeiraLocalizacao ? Math.max(map.getZoom(), 16) : map.getZoom(),
       bearing: userPosition.heading ?? map.getBearing(),
-      duration: 500,
+      duration: primeiraLocalizacao ? 1200 : 500,
       easing: (t) => t,
     });
   }, [userPosition, styleLoaded, followHeading]);

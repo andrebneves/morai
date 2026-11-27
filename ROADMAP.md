@@ -33,7 +33,9 @@
 - Fluxo completo de cadastro de imóvel (`/anunciar`), com upload de fotos via Supabase Storage quando
   configurado, e moderação (`pendente` → `disponivel`) no painel admin
 - Calculadora de custo real de morar e simulador de financiamento (SAC/Price)
-- Navegação externa (Apple Maps / Google Maps / Waze)
+- Navegação própria do Moraí até o imóvel (GPS/rota pelas ruas, voz em pt-BR) — removida a opção de
+  abrir Apple Maps/Google Maps/Waze: o Moraí é a própria plataforma de navegação, não um app
+  imobiliário que delega "como chegar" a terceiros
 - "Moraí Drive" — mockup conceitual de integração CarPlay/Android Auto (claramente identificado como
   não-funcional/conceitual)
 - PWA completo: manifest, service worker (cache network-first + stale-while-revalidate), ícones

@@ -64,6 +64,22 @@ export default function MapaPage() {
     });
   }, []);
 
+  // Vindo do detalhe do imóvel (botão "Ir até lá") via /mapa?ir=<id> — ativa o GPS próprio do
+  // Moraí direto no destino, sem passar por Apple Maps/Google Maps/Waze (pedido explícito: "nós
+  // somos a plataforma que vai fazer ele chegar nesse local"). Só uma vez, pra não reativar o
+  // destino se o usuário cancelar e a URL ainda não tiver sido limpa.
+  const irProcessadoRef = useRef(false);
+  useEffect(() => {
+    if (irProcessadoRef.current || properties.length === 0) return;
+    const id = new URLSearchParams(window.location.search).get("ir");
+    if (!id) return;
+    irProcessadoRef.current = true;
+    const property = properties.find((p) => p.id === id);
+    if (property) passeio.setDestino(property);
+    window.history.replaceState(null, "", "/mapa");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [properties]);
+
   useEffect(() => {
     requestOnce();
     // eslint-disable-next-line react-hooks/exhaustive-deps
