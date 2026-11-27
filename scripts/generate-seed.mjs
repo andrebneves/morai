@@ -25,23 +25,28 @@ const intBetween = (min, max) => Math.floor(between(min, max + 1));
 const chance = (p) => rand() < p;
 
 const BAIRROS = [
-  { nome: "Bairro Novo", lat: -8.0021881, lng: -34.8426716, raioKm: 0.9, count: 15 },
-  { nome: "Casa Caiada", lat: -7.9846571, lng: -34.8383477, raioKm: 0.8, count: 15 },
-  { nome: "Jardim Atlântico", lat: -7.9743534, lng: -34.8426801, raioKm: 0.9, count: 12 },
-  { nome: "Rio Doce", lat: -7.96569, lng: -34.8317257, raioKm: 0.8, count: 10 },
-  { nome: "Carmo", lat: -8.0169124, lng: -34.8490134, raioKm: 0.5, count: 8 },
-  { nome: "Bonsucesso", lat: -8.0102502, lng: -34.8526796, raioKm: 0.5, count: 6 },
-  { nome: "Amparo", lat: -8.0120938, lng: -34.8545333, raioKm: 0.4, count: 5 },
-  { nome: "Varadouro", lat: -8.019138, lng: -34.8541721, raioKm: 0.5, count: 5 },
-  { nome: "Guadalupe", lat: -8.0076592, lng: -34.8555142, raioKm: 0.4, count: 4 },
-  { nome: "Bultrins", lat: -7.9995002, lng: -34.8501475, raioKm: 0.4, count: 4 },
-  { nome: "Fragoso", lat: -7.9837784, lng: -34.8537899, raioKm: 0.7, count: 4 },
-  { nome: "Ouro Preto", lat: -7.9938659, lng: -34.8597123, raioKm: 0.8, count: 3 },
-  { nome: "Jardim Brasil", lat: -8.0050198, lng: -34.8681399, raioKm: 0.7, count: 3 },
-  { nome: "Peixinhos", lat: -8.0137705, lng: -34.87208, raioKm: 0.6, count: 2 },
-  { nome: "Sítio Novo", lat: -8.0266692, lng: -34.8743755, raioKm: 0.4, count: 2 },
-  { nome: "Cidade Tabajara", lat: -7.9770241, lng: -34.8657206, raioKm: 0.5, count: 1 },
-  { nome: "Águas Compridas", lat: -7.9906074, lng: -34.8976237, raioKm: 0.5, count: 1 },
+  { nome: "Bairro Novo", cidade: "Olinda", lat: -8.0021881, lng: -34.8426716, raioKm: 0.9, count: 15 },
+  { nome: "Casa Caiada", cidade: "Olinda", lat: -7.9846571, lng: -34.8383477, raioKm: 0.8, count: 15 },
+  { nome: "Jardim Atlântico", cidade: "Olinda", lat: -7.9743534, lng: -34.8426801, raioKm: 0.9, count: 12 },
+  { nome: "Rio Doce", cidade: "Olinda", lat: -7.96569, lng: -34.8317257, raioKm: 0.8, count: 10 },
+  { nome: "Carmo", cidade: "Olinda", lat: -8.0169124, lng: -34.8490134, raioKm: 0.5, count: 8 },
+  { nome: "Bonsucesso", cidade: "Olinda", lat: -8.0102502, lng: -34.8526796, raioKm: 0.5, count: 6 },
+  { nome: "Amparo", cidade: "Olinda", lat: -8.0120938, lng: -34.8545333, raioKm: 0.4, count: 5 },
+  { nome: "Varadouro", cidade: "Olinda", lat: -8.019138, lng: -34.8541721, raioKm: 0.5, count: 5 },
+  { nome: "Guadalupe", cidade: "Olinda", lat: -8.0076592, lng: -34.8555142, raioKm: 0.4, count: 4 },
+  { nome: "Bultrins", cidade: "Olinda", lat: -7.9995002, lng: -34.8501475, raioKm: 0.4, count: 4 },
+  { nome: "Fragoso", cidade: "Olinda", lat: -7.9837784, lng: -34.8537899, raioKm: 0.7, count: 4 },
+  { nome: "Ouro Preto", cidade: "Olinda", lat: -7.9938659, lng: -34.8597123, raioKm: 0.8, count: 3 },
+  { nome: "Jardim Brasil", cidade: "Olinda", lat: -8.0050198, lng: -34.8681399, raioKm: 0.7, count: 3 },
+  { nome: "Peixinhos", cidade: "Olinda", lat: -8.0137705, lng: -34.87208, raioKm: 0.6, count: 2 },
+  { nome: "Sítio Novo", cidade: "Olinda", lat: -8.0266692, lng: -34.8743755, raioKm: 0.4, count: 2 },
+  { nome: "Cidade Tabajara", cidade: "Olinda", lat: -7.9770241, lng: -34.8657206, raioKm: 0.5, count: 1 },
+  { nome: "Águas Compridas", cidade: "Olinda", lat: -7.9906074, lng: -34.8976237, raioKm: 0.5, count: 1 },
+  // Bairros do Recife adicionados a pedido explícito, pra sócios testarem o Moraí fora de
+  // Olinda também. Coordenadas aproximadas (centro estimado a partir de pontos conhecidos do
+  // bairro via OpenStreetMap/guiamapa — não são um centroide oficial do IBGE).
+  { nome: "Espinheiro", cidade: "Recife", lat: -8.043, lng: -34.8935, raioKm: 0.5, count: 8 },
+  { nome: "Ibura", cidade: "Recife", lat: -8.122, lng: -34.93, raioKm: 1.1, count: 8 },
 ];
 
 const TOTAL = BAIRROS.reduce((s, b) => s + b.count, 0); // 100
@@ -93,7 +98,7 @@ const TITULOS = {
   comercial: ["Sala comercial", "Ponto comercial", "Loja térrea"],
 };
 
-const DESCRICOES_EXTRA = [
+const DESCRICOES_EXTRA_OLINDA = [
   "próximo à orla e a pontos de comércio local.",
   "em rua tranquila e arborizada, perto de escolas.",
   "a poucos minutos do Sítio Histórico de Olinda.",
@@ -101,6 +106,14 @@ const DESCRICOES_EXTRA = [
   "com fácil acesso a transporte público e mercados.",
   "em bairro residencial e familiar.",
   "próximo à praia e a restaurantes locais.",
+];
+
+const DESCRICOES_EXTRA_RECIFE = [
+  "próximo a comércio local e serviços do bairro.",
+  "em rua tranquila e arborizada, perto de escolas.",
+  "em localização privilegiada, perto de praças e comércio.",
+  "com fácil acesso a transporte público e mercados.",
+  "em bairro residencial e familiar.",
 ];
 
 const CARACTERISTICAS_POOL = [
@@ -251,7 +264,7 @@ for (const bairro of BAIRROS) {
     seq++;
 
     const coords = jitterCoord(bairro.lat, bairro.lng, bairro.raioKm);
-    const endereco = `${pick(RUAS)}, ${intBetween(10, 1400)} - ${bairro.nome}, Olinda - PE`;
+    const endereco = `${pick(RUAS)}, ${intBetween(10, 1400)} - ${bairro.nome}, ${bairro.cidade} - PE`;
 
     const semQuartos = tipo === "terreno" || tipo === "comercial";
     const quartos = semQuartos ? 0 : tipo === "kitnet" ? 1 : intBetween(1, 5);
@@ -266,7 +279,8 @@ for (const bairro of BAIRROS) {
     const caracteristicas = gerarCaracteristicas(tipo);
 
     const titulo = `${pick(TITULOS[tipo])} em ${bairro.nome}`;
-    const descricao = `Imóvel demonstrativo do tipo ${tipo.replace("_", " ")} com ${area} m², localizado no bairro ${bairro.nome}, ${pick(DESCRICOES_EXTRA)}`;
+    const descExtraPool = bairro.cidade === "Recife" ? DESCRICOES_EXTRA_RECIFE : DESCRICOES_EXTRA_OLINDA;
+    const descricao = `Imóvel demonstrativo do tipo ${tipo.replace("_", " ")} com ${area} m², localizado no bairro ${bairro.nome}, ${pick(descExtraPool)}`;
 
     const isAluguel = seq % 20 < 9; // ~45% aluguel ao longo da sequência, ajustado abaixo
 
@@ -315,9 +329,10 @@ for (const bairro of BAIRROS) {
   }
 }
 
-// Ajuste final para bater exatamente 55 venda / 45 aluguel conforme especificação
+// Ajuste final pra manter a proporção ~55% venda / 45% aluguel conforme especificação,
+// qualquer que seja o total (cresce quando novos bairros são adicionados)
 const vendaAtual = imoveis.filter((i) => i.finalidade === "venda").length;
-const alvoVenda = 55;
+const alvoVenda = Math.round(TOTAL * 0.55);
 if (vendaAtual !== alvoVenda) {
   const diff = alvoVenda - vendaAtual;
   if (diff > 0) {
