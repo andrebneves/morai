@@ -68,3 +68,9 @@ versão básica funcional, conforme instrução do briefing original:
 - Apps nativos iOS/Android
 - Integração real com CarPlay/Android Auto (hoje é só o mockup conceitual em `/drive`)
 - Modelo de monetização
+- **Moraí Vision**: câmera do celular sobrepondo, em tempo real, os imóveis à venda/aluguel de um
+  edifício apontado (preço médio do m², condomínio, características, oportunidades abaixo da
+  referência). Como PWA gratuita, só é viável numa versão simplificada — câmera + bússola/GPS
+  posicionando rótulos por direção/distância (estilo "Layar"), sem reconhecer visualmente qual
+  prédio é qual. Reconhecimento visual preciso do edifício exigiria app nativo (ARKit/ARCore) e/ou
+  um serviço pago de posicionamento visual (VPS), fora do escopo gratuito desta fase.
