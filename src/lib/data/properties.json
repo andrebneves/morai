@@ -5022,7 +5022,7 @@
     "banheiros": 2,
     "vagas": 1,
     "bairro": "Espinheiro",
-    "endereco": "Rua do Veneza, 1248 - Espinheiro, Recife - PE",
+    "endereco": "Rua Estrela D'Oeste, 1248 - Espinheiro, Recife - PE",
     "lat": -8.039936,
     "lng": -34.894399,
     "fotos": [
@@ -5069,7 +5069,7 @@
     "banheiros": 2,
     "vagas": 0,
     "bairro": "Espinheiro",
-    "endereco": "Rua do Veneza, 496 - Espinheiro, Recife - PE",
+    "endereco": "Rua Estrela D'Oeste, 496 - Espinheiro, Recife - PE",
     "lat": -8.04739,
     "lng": -34.894441,
     "fotos": [
@@ -5123,7 +5123,7 @@
     "banheiros": 2,
     "vagas": 3,
     "bairro": "Espinheiro",
-    "endereco": "Avenida Beira Mar, 830 - Espinheiro, Recife - PE",
+    "endereco": "Rua Canatiba, 830 - Espinheiro, Recife - PE",
     "lat": -8.044805,
     "lng": -34.889624,
     "fotos": [
@@ -5170,7 +5170,7 @@
     "banheiros": 0,
     "vagas": 0,
     "bairro": "Espinheiro",
-    "endereco": "Avenida Beira Mar, 540 - Espinheiro, Recife - PE",
+    "endereco": "Rua Canatiba, 540 - Espinheiro, Recife - PE",
     "lat": -8.045696,
     "lng": -34.890963,
     "fotos": [
@@ -5213,7 +5213,7 @@
     "banheiros": 4,
     "vagas": 0,
     "bairro": "Espinheiro",
-    "endereco": "Alameda das Mangueiras, 1228 - Espinheiro, Recife - PE",
+    "endereco": "Rua Dermeval Lobão, 1228 - Espinheiro, Recife - PE",
     "lat": -8.041321,
     "lng": -34.89061,
     "fotos": [
@@ -5263,7 +5263,7 @@
     "banheiros": 1,
     "vagas": 2,
     "bairro": "Espinheiro",
-    "endereco": "Rua da Matriz, 891 - Espinheiro, Recife - PE",
+    "endereco": "Rua Nova Canaã, 891 - Espinheiro, Recife - PE",
     "lat": -8.044764,
     "lng": -34.891816,
     "fotos": [
@@ -5313,7 +5313,7 @@
     "banheiros": 1,
     "vagas": 1,
     "bairro": "Espinheiro",
-    "endereco": "Rua do Sítio, 542 - Espinheiro, Recife - PE",
+    "endereco": "Rua Perimetral, 542 - Espinheiro, Recife - PE",
     "lat": -8.042286,
     "lng": -34.894287,
     "fotos": [
@@ -5364,7 +5364,7 @@
     "banheiros": 3,
     "vagas": 3,
     "bairro": "Espinheiro",
-    "endereco": "Rua Nova, 209 - Espinheiro, Recife - PE",
+    "endereco": "Rua Rio Moxotó, 209 - Espinheiro, Recife - PE",
     "lat": -8.041131,
     "lng": -34.893034,
     "fotos": [
@@ -5405,8 +5405,8 @@
   {
     "id": "morai-demo-109",
     "demo": true,
-    "titulo": "Casa espaçosa em Ibura",
-    "descricao": "Imóvel demonstrativo do tipo casa com 105 m², localizado no bairro Ibura, próximo a comércio local e serviços do bairro.",
+    "titulo": "Casa espaçosa em Espinheiro",
+    "descricao": "Imóvel demonstrativo do tipo casa com 105 m², localizado no bairro Espinheiro, próximo a comércio local e serviços do bairro.",
     "finalidade": "venda",
     "tipo": "casa",
     "preco": 421000,
@@ -5418,10 +5418,10 @@
     "suites": 2,
     "banheiros": 4,
     "vagas": 0,
-    "bairro": "Ibura",
-    "endereco": "Rua Nova, 1262 - Ibura, Recife - PE",
-    "lat": -8.119247,
-    "lng": -34.926105,
+    "bairro": "Espinheiro",
+    "endereco": "Rua Rio Moxotó, 1262 - Espinheiro, Recife - PE",
+    "lat": -8.041749,
+    "lng": -34.89173,
     "fotos": [
       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=960&h=720&q=80",
       "https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&w=960&h=720&q=80",
@@ -5459,8 +5459,8 @@
   {
     "id": "morai-demo-110",
     "demo": true,
-    "titulo": "Loja térrea em Ibura",
-    "descricao": "Imóvel demonstrativo do tipo comercial com 200 m², localizado no bairro Ibura, em rua tranquila e arborizada, perto de escolas.",
+    "titulo": "Loja térrea em Espinheiro",
+    "descricao": "Imóvel demonstrativo do tipo comercial com 200 m², localizado no bairro Espinheiro, em rua tranquila e arborizada, perto de escolas.",
     "finalidade": "venda",
     "tipo": "comercial",
     "preco": 924000,
@@ -5472,10 +5472,10 @@
     "suites": 0,
     "banheiros": 3,
     "vagas": 3,
-    "bairro": "Ibura",
-    "endereco": "Rua da Praia, 1343 - Ibura, Recife - PE",
-    "lat": -8.120636,
-    "lng": -34.93276,
+    "bairro": "Espinheiro",
+    "endereco": "Rua Visconde de Azuara, 1343 - Espinheiro, Recife - PE",
+    "lat": -8.04238,
+    "lng": -34.894754,
     "fotos": [
       "https://images.unsplash.com/photo-1658843913345-1b92bd88ad6a?auto=format&fit=crop&w=960&h=720&q=80",
       "https://images.unsplash.com/photo-1766321258844-6541b34b2940?auto=format&fit=crop&w=960&h=720&q=80",
@@ -5510,8 +5510,8 @@
   {
     "id": "morai-demo-111",
     "demo": true,
-    "titulo": "Cobertura com terraço gourmet em Ibura",
-    "descricao": "Imóvel demonstrativo do tipo cobertura com 162 m², localizado no bairro Ibura, em bairro residencial e familiar.",
+    "titulo": "Cobertura com terraço gourmet em Espinheiro",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 162 m², localizado no bairro Espinheiro, em bairro residencial e familiar.",
     "finalidade": "venda",
     "tipo": "cobertura",
     "preco": 1371000,
@@ -5523,10 +5523,10 @@
     "suites": 0,
     "banheiros": 2,
     "vagas": 0,
-    "bairro": "Ibura",
-    "endereco": "Avenida Beira Mar, 1240 - Ibura, Recife - PE",
-    "lat": -8.123046,
-    "lng": -34.921011,
+    "bairro": "Espinheiro",
+    "endereco": "Rua Canatiba, 1240 - Espinheiro, Recife - PE",
+    "lat": -8.043475,
+    "lng": -34.889415,
     "fotos": [
       "https://images.unsplash.com/photo-1766321258844-6541b34b2940?auto=format&fit=crop&w=960&h=720&q=80",
       "https://images.unsplash.com/photo-1759352642019-dc5510982676?auto=format&fit=crop&w=960&h=720&q=80",
@@ -5555,8 +5555,8 @@
   {
     "id": "morai-demo-112",
     "demo": true,
-    "titulo": "Cobertura duplex em Ibura",
-    "descricao": "Imóvel demonstrativo do tipo cobertura com 150 m², localizado no bairro Ibura, com fácil acesso a transporte público e mercados.",
+    "titulo": "Cobertura duplex em Espinheiro",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 150 m², localizado no bairro Espinheiro, com fácil acesso a transporte público e mercados.",
     "finalidade": "venda",
     "tipo": "cobertura",
     "preco": 670000,
@@ -5568,10 +5568,10 @@
     "suites": 0,
     "banheiros": 1,
     "vagas": 1,
-    "bairro": "Ibura",
-    "endereco": "Rua do Veneza, 552 - Ibura, Recife - PE",
-    "lat": -8.119467,
-    "lng": -34.934114,
+    "bairro": "Espinheiro",
+    "endereco": "Rua Estrela D'Oeste, 552 - Espinheiro, Recife - PE",
+    "lat": -8.041849,
+    "lng": -34.89537,
     "fotos": [
       "https://images.unsplash.com/photo-1759352642019-dc5510982676?auto=format&fit=crop&w=960&h=720&q=80",
       "https://images.unsplash.com/photo-1718953585022-ca7ce7fcf23b?auto=format&fit=crop&w=960&h=720&q=80",
@@ -5600,8 +5600,8 @@
   {
     "id": "morai-demo-113",
     "demo": true,
-    "titulo": "Casa em condomínio com lazer completo em Ibura",
-    "descricao": "Imóvel demonstrativo do tipo casa condominio com 103 m², localizado no bairro Ibura, com fácil acesso a transporte público e mercados.",
+    "titulo": "Casa em condomínio com lazer completo em Espinheiro",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 103 m², localizado no bairro Espinheiro, com fácil acesso a transporte público e mercados.",
     "finalidade": "venda",
     "tipo": "casa_condominio",
     "preco": 469000,
@@ -5613,10 +5613,10 @@
     "suites": 1,
     "banheiros": 3,
     "vagas": 3,
-    "bairro": "Ibura",
-    "endereco": "Rua Prudente de Moraes, 854 - Ibura, Recife - PE",
-    "lat": -8.118113,
-    "lng": -34.925061,
+    "bairro": "Espinheiro",
+    "endereco": "Rua Lizarda, 854 - Espinheiro, Recife - PE",
+    "lat": -8.041233,
+    "lng": -34.891255,
     "fotos": [
       "https://images.unsplash.com/photo-1777947151071-f985c78f7070?auto=format&fit=crop&w=960&h=720&q=80",
       "https://images.unsplash.com/photo-1641823911769-c55f23c25143?auto=format&fit=crop&w=960&h=720&q=80",
@@ -5646,8 +5646,8 @@
   {
     "id": "morai-demo-114",
     "demo": true,
-    "titulo": "Apartamento com vista em Ibura",
-    "descricao": "Imóvel demonstrativo do tipo apartamento com 61 m², localizado no bairro Ibura, com fácil acesso a transporte público e mercados.",
+    "titulo": "Apartamento com vista em Espinheiro",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 61 m², localizado no bairro Espinheiro, com fácil acesso a transporte público e mercados.",
     "finalidade": "venda",
     "tipo": "apartamento",
     "preco": 342000,
@@ -5659,10 +5659,10 @@
     "suites": 0,
     "banheiros": 5,
     "vagas": 2,
-    "bairro": "Ibura",
-    "endereco": "Rua do Carmo, 794 - Ibura, Recife - PE",
-    "lat": -8.124891,
-    "lng": -34.938851,
+    "bairro": "Espinheiro",
+    "endereco": "Rua Rio Moxotó, 794 - Espinheiro, Recife - PE",
+    "lat": -8.044314,
+    "lng": -34.897522,
     "fotos": [
       "https://images.unsplash.com/photo-1781204516306-18eab1d08e7e?auto=format&fit=crop&w=960&h=720&q=80",
       "https://images.unsplash.com/photo-1766321258844-6541b34b2940?auto=format&fit=crop&w=960&h=720&q=80",
@@ -5691,8 +5691,8 @@
   {
     "id": "morai-demo-115",
     "demo": true,
-    "titulo": "Casa em condomínio fechado em Ibura",
-    "descricao": "Imóvel demonstrativo do tipo casa condominio com 256 m², localizado no bairro Ibura, em rua tranquila e arborizada, perto de escolas.",
+    "titulo": "Casa em condomínio fechado em Espinheiro",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 256 m², localizado no bairro Espinheiro, em rua tranquila e arborizada, perto de escolas.",
     "finalidade": "venda",
     "tipo": "casa_condominio",
     "preco": 937000,
@@ -5704,10 +5704,10 @@
     "suites": 2,
     "banheiros": 4,
     "vagas": 3,
-    "bairro": "Ibura",
-    "endereco": "Rua da Praia, 1388 - Ibura, Recife - PE",
-    "lat": -8.11414,
-    "lng": -34.932146,
+    "bairro": "Espinheiro",
+    "endereco": "Rua Visconde de Azuara, 1388 - Espinheiro, Recife - PE",
+    "lat": -8.039427,
+    "lng": -34.894475,
     "fotos": [
       "https://images.unsplash.com/photo-1757361653037-dbf0d0a820ae?auto=format&fit=crop&w=960&h=720&q=80",
       "https://images.unsplash.com/photo-1616137356540-b13b2a04a507?auto=format&fit=crop&w=960&h=720&q=80",
@@ -5741,8 +5741,8 @@
   {
     "id": "morai-demo-116",
     "demo": true,
-    "titulo": "Sala comercial em Ibura",
-    "descricao": "Imóvel demonstrativo do tipo comercial com 77 m², localizado no bairro Ibura, com fácil acesso a transporte público e mercados.",
+    "titulo": "Sala comercial em Espinheiro",
+    "descricao": "Imóvel demonstrativo do tipo comercial com 77 m², localizado no bairro Espinheiro, com fácil acesso a transporte público e mercados.",
     "finalidade": "venda",
     "tipo": "comercial",
     "preco": 299000,
@@ -5754,10 +5754,10 @@
     "suites": 0,
     "banheiros": 1,
     "vagas": 2,
-    "bairro": "Ibura",
-    "endereco": "Rua do Amparo, 94 - Ibura, Recife - PE",
-    "lat": -8.121784,
-    "lng": -34.924771,
+    "bairro": "Espinheiro",
+    "endereco": "Rua Canatiba, 94 - Espinheiro, Recife - PE",
+    "lat": -8.042902,
+    "lng": -34.891124,
     "fotos": [
       "https://images.unsplash.com/photo-1672697435797-db092ae0fbd9?auto=format&fit=crop&w=960&h=720&q=80",
       "https://images.unsplash.com/photo-1781204516306-18eab1d08e7e?auto=format&fit=crop&w=960&h=720&q=80",
@@ -5781,6 +5781,1205 @@
       {
         "date": "2026-09-13",
         "price": 299000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-117",
+    "demo": true,
+    "titulo": "Terreno de esquina em Espinheiro",
+    "descricao": "Imóvel demonstrativo do tipo terreno com 265 m², localizado no bairro Espinheiro, com fácil acesso a transporte público e mercados.",
+    "finalidade": "venda",
+    "tipo": "terreno",
+    "preco": 442000,
+    "condominio": 0,
+    "iptuMensal": 261,
+    "area": 265,
+    "precoM2": 1667.92,
+    "quartos": 0,
+    "suites": 0,
+    "banheiros": 0,
+    "vagas": 0,
+    "bairro": "Espinheiro",
+    "endereco": "Rua Lizarda, 774 - Espinheiro, Recife - PE",
+    "lat": -8.040791,
+    "lng": -34.891826,
+    "fotos": [
+      "https://images.unsplash.com/photo-1593978223426-590610a97a06?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1706982803887-82f929f5faa3?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-24",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-24",
+        "price": 440368
+      },
+      {
+        "date": "2026-09-17",
+        "price": 442000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-118",
+    "demo": true,
+    "titulo": "Apartamento arejado em Espinheiro",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 113 m², localizado no bairro Espinheiro, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 736000,
+    "condominio": 560,
+    "iptuMensal": 182,
+    "area": 113,
+    "precoM2": 6513.27,
+    "quartos": 3,
+    "suites": 2,
+    "banheiros": 3,
+    "vagas": 2,
+    "bairro": "Espinheiro",
+    "endereco": "Rua Rio Moxotó, 1259 - Espinheiro, Recife - PE",
+    "lat": -8.038882,
+    "lng": -34.895045,
+    "fotos": [
+      "https://images.unsplash.com/photo-1781204516306-18eab1d08e7e?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1766321258844-6541b34b2940?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1759352642019-dc5510982676?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-11",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-11",
+        "price": 771606
+      },
+      {
+        "date": "2026-10-05",
+        "price": 757140
+      },
+      {
+        "date": "2026-11-10",
+        "price": 736000
+      }
+    ],
+    "status": "reservado"
+  },
+  {
+    "id": "morai-demo-119",
+    "demo": true,
+    "titulo": "Apartamento arejado em Espinheiro",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 115 m², localizado no bairro Espinheiro, próximo a comércio local e serviços do bairro.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 3000,
+    "condominio": 550,
+    "iptuMensal": 83,
+    "area": 115,
+    "precoM2": 26.09,
+    "quartos": 4,
+    "suites": 2,
+    "banheiros": 4,
+    "vagas": 2,
+    "bairro": "Espinheiro",
+    "endereco": "Rua Lizarda, 1339 - Espinheiro, Recife - PE",
+    "lat": -8.04135,
+    "lng": -34.895919,
+    "fotos": [
+      "https://images.unsplash.com/photo-1766321258844-6541b34b2940?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1541616138747-f4a42c7f0668?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1781204516306-18eab1d08e7e?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1641823911769-c55f23c25143?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-04",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-04",
+        "price": 2944
+      },
+      {
+        "date": "2026-11-27",
+        "price": 2939
+      },
+      {
+        "date": "2026-11-27",
+        "price": 3000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-120",
+    "demo": true,
+    "titulo": "Casa em condomínio fechado em Espinheiro",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 182 m², localizado no bairro Espinheiro, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "aluguel",
+    "tipo": "casa_condominio",
+    "preco": 5050,
+    "condominio": 410,
+    "iptuMensal": 48,
+    "area": 182,
+    "precoM2": 27.75,
+    "quartos": 4,
+    "suites": 1,
+    "banheiros": 3,
+    "vagas": 2,
+    "bairro": "Espinheiro",
+    "endereco": "Rua Lizarda, 485 - Espinheiro, Recife - PE",
+    "lat": -8.0436,
+    "lng": -34.891236,
+    "fotos": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1616137356540-b13b2a04a507?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1641823911769-c55f23c25143?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1746517757473-7c88850e539b?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": true,
+      "piscina": true,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-11-04",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-04",
+        "price": 5050
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-121",
+    "demo": true,
+    "titulo": "Kitnet mobiliada em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo kitnet com 39 m², localizado no bairro Ibura, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "aluguel",
+    "tipo": "kitnet",
+    "preco": 1300,
+    "condominio": 0,
+    "iptuMensal": 116,
+    "area": 39,
+    "precoM2": 33.33,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 3,
+    "bairro": "Ibura",
+    "endereco": "Rua Dermeval Lobão, 1119 - Ibura, Recife - PE",
+    "lat": -8.121031,
+    "lng": -34.936383,
+    "fotos": [
+      "https://images.unsplash.com/photo-1627799048600-ab328d27f853?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1641823911769-c55f23c25143?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1760894492960-5b0a2da0676d?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1746517757473-7c88850e539b?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-21",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-21",
+        "price": 1300
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-122",
+    "demo": true,
+    "titulo": "Casa de vila em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo casa com 120 m², localizado no bairro Ibura, próximo a comércio local e serviços do bairro.",
+    "finalidade": "aluguel",
+    "tipo": "casa",
+    "preco": 1900,
+    "condominio": 0,
+    "iptuMensal": 293,
+    "area": 120,
+    "precoM2": 15.83,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 2,
+    "bairro": "Ibura",
+    "endereco": "Rua Perimetral, 1226 - Ibura, Recife - PE",
+    "lat": -8.125113,
+    "lng": -34.933612,
+    "fotos": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1616137356540-b13b2a04a507?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1757361653037-dbf0d0a820ae?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-06",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-06",
+        "price": 1913
+      },
+      {
+        "date": "2026-10-03",
+        "price": 1981
+      },
+      {
+        "date": "2026-10-06",
+        "price": 1900
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-123",
+    "demo": true,
+    "titulo": "Cobertura com terraço gourmet em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 202 m², localizado no bairro Ibura, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "aluguel",
+    "tipo": "cobertura",
+    "preco": 7750,
+    "condominio": 390,
+    "iptuMensal": 157,
+    "area": 202,
+    "precoM2": 38.37,
+    "quartos": 2,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 0,
+    "bairro": "Ibura",
+    "endereco": "Rua Silva Jardim, 549 - Ibura, Recife - PE",
+    "lat": -8.127763,
+    "lng": -34.930612,
+    "fotos": [
+      "https://images.unsplash.com/photo-1627799048600-ab328d27f853?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1722339141645-b0a1d4eaad50?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1766321258844-6541b34b2940?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1616137356540-b13b2a04a507?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1541616138747-f4a42c7f0668?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-10-29",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-29",
+        "price": 7782
+      },
+      {
+        "date": "2026-11-13",
+        "price": 8052
+      },
+      {
+        "date": "2026-11-27",
+        "price": 7750
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-124",
+    "demo": true,
+    "titulo": "Apartamento reformado em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 85 m², localizado no bairro Ibura, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 1700,
+    "condominio": 400,
+    "iptuMensal": 253,
+    "area": 85,
+    "precoM2": 20,
+    "quartos": 3,
+    "suites": 2,
+    "banheiros": 3,
+    "vagas": 2,
+    "bairro": "Ibura",
+    "endereco": "Rua Herval D'Oeste, 1312 - Ibura, Recife - PE",
+    "lat": -8.118252,
+    "lng": -34.929956,
+    "fotos": [
+      "https://images.unsplash.com/photo-1760894492960-5b0a2da0676d?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1616137356540-b13b2a04a507?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1648631478953-1334ce24a24c?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1781204516306-18eab1d08e7e?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1627799048600-ab328d27f853?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-17",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-17",
+        "price": 1683
+      },
+      {
+        "date": "2026-10-24",
+        "price": 1726
+      },
+      {
+        "date": "2026-11-04",
+        "price": 1700
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-125",
+    "demo": true,
+    "titulo": "Terreno de esquina em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo terreno com 380 m², localizado no bairro Ibura, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "aluguel",
+    "tipo": "terreno",
+    "preco": 3750,
+    "condominio": 0,
+    "iptuMensal": 448,
+    "area": 380,
+    "precoM2": 9.87,
+    "quartos": 0,
+    "suites": 0,
+    "banheiros": 0,
+    "vagas": 0,
+    "bairro": "Ibura",
+    "endereco": "Rua Lizarda, 493 - Ibura, Recife - PE",
+    "lat": -8.117496,
+    "lng": -34.922487,
+    "fotos": [
+      "https://images.unsplash.com/photo-1593978223426-590610a97a06?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1706982803887-82f929f5faa3?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-09-09",
+    "historicoPrecos": [
+      {
+        "date": "2026-09-09",
+        "price": 3903
+      },
+      {
+        "date": "2026-10-11",
+        "price": 3750
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-126",
+    "demo": true,
+    "titulo": "Apartamento compacto em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 76 m², localizado no bairro Ibura, próximo a comércio local e serviços do bairro.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 1600,
+    "condominio": 620,
+    "iptuMensal": 285,
+    "area": 76,
+    "precoM2": 21.05,
+    "quartos": 3,
+    "suites": 0,
+    "banheiros": 2,
+    "vagas": 1,
+    "bairro": "Ibura",
+    "endereco": "Rua Visconde de Azuara, 1065 - Ibura, Recife - PE",
+    "lat": -8.117391,
+    "lng": -34.929893,
+    "fotos": [
+      "https://images.unsplash.com/photo-1760894492960-5b0a2da0676d?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1541616138747-f4a42c7f0668?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1648631478953-1334ce24a24c?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1746517757473-7c88850e539b?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1759352642019-dc5510982676?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-08-22",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-22",
+        "price": 1600
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-127",
+    "demo": true,
+    "titulo": "Apartamento com vista em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 135 m², localizado no bairro Ibura, com fácil acesso a transporte público e mercados.",
+    "finalidade": "aluguel",
+    "tipo": "apartamento",
+    "preco": 3850,
+    "condominio": 460,
+    "iptuMensal": 120,
+    "area": 135,
+    "precoM2": 28.52,
+    "quartos": 3,
+    "suites": 0,
+    "banheiros": 3,
+    "vagas": 2,
+    "bairro": "Ibura",
+    "endereco": "Rua Dermeval Lobão, 1371 - Ibura, Recife - PE",
+    "lat": -8.125679,
+    "lng": -34.939065,
+    "fotos": [
+      "https://images.unsplash.com/photo-1759352642019-dc5510982676?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1746517757473-7c88850e539b?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-07",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-07",
+        "price": 3852
+      },
+      {
+        "date": "2026-09-05",
+        "price": 3951
+      },
+      {
+        "date": "2026-10-18",
+        "price": 3850
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-128",
+    "demo": true,
+    "titulo": "Kitnet mobiliada em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo kitnet com 29 m², localizado no bairro Ibura, próximo a comércio local e serviços do bairro.",
+    "finalidade": "venda",
+    "tipo": "kitnet",
+    "preco": 205000,
+    "condominio": 0,
+    "iptuMensal": 148,
+    "area": 29,
+    "precoM2": 7068.97,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 2,
+    "bairro": "Ibura",
+    "endereco": "Rua Perimetral, 707 - Ibura, Recife - PE",
+    "lat": -8.130206,
+    "lng": -34.934095,
+    "fotos": [
+      "https://images.unsplash.com/photo-1759352642019-dc5510982676?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1760894492960-5b0a2da0676d?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1541616138747-f4a42c7f0668?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": true,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-08-02",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-02",
+        "price": 221758
+      },
+      {
+        "date": "2026-09-05",
+        "price": 211562
+      },
+      {
+        "date": "2026-09-21",
+        "price": 205000
+      }
+    ],
+    "status": "reservado"
+  },
+  {
+    "id": "morai-demo-129",
+    "demo": true,
+    "titulo": "Cobertura duplex em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo cobertura com 233 m², localizado no bairro Ibura, com fácil acesso a transporte público e mercados.",
+    "finalidade": "venda",
+    "tipo": "cobertura",
+    "preco": 1187000,
+    "condominio": 390,
+    "iptuMensal": 242,
+    "area": 233,
+    "precoM2": 5094.42,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 1,
+    "bairro": "Ibura",
+    "endereco": "Rua Estrela D'Oeste, 721 - Ibura, Recife - PE",
+    "lat": -8.131291,
+    "lng": -34.927667,
+    "fotos": [
+      "https://images.unsplash.com/photo-1627799048600-ab328d27f853?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1759352642019-dc5510982676?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1718953585022-ca7ce7fcf23b?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1616137356540-b13b2a04a507?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": true,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-11-05",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-05",
+        "price": 1169021
+      },
+      {
+        "date": "2026-11-27",
+        "price": 1187000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-130",
+    "demo": true,
+    "titulo": "Apartamento arejado em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 92 m², localizado no bairro Ibura, com fácil acesso a transporte público e mercados.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 586000,
+    "condominio": 280,
+    "iptuMensal": 76,
+    "area": 92,
+    "precoM2": 6369.57,
+    "quartos": 2,
+    "suites": 0,
+    "banheiros": 2,
+    "vagas": 2,
+    "bairro": "Ibura",
+    "endereco": "Rua Herval D'Oeste, 426 - Ibura, Recife - PE",
+    "lat": -8.114726,
+    "lng": -34.932296,
+    "fotos": [
+      "https://images.unsplash.com/photo-1627799048600-ab328d27f853?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1759352642019-dc5510982676?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1760894492960-5b0a2da0676d?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-11-01",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-01",
+        "price": 586000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-131",
+    "demo": true,
+    "titulo": "Apartamento arejado em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 121 m², localizado no bairro Ibura, com fácil acesso a transporte público e mercados.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 707000,
+    "condominio": 700,
+    "iptuMensal": 161,
+    "area": 121,
+    "precoM2": 5842.98,
+    "quartos": 3,
+    "suites": 2,
+    "banheiros": 3,
+    "vagas": 0,
+    "bairro": "Ibura",
+    "endereco": "Rua Silva Jardim, 246 - Ibura, Recife - PE",
+    "lat": -8.126518,
+    "lng": -34.938774,
+    "fotos": [
+      "https://images.unsplash.com/photo-1781204516306-18eab1d08e7e?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1627799048600-ab328d27f853?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1759352642019-dc5510982676?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1613849925594-415a32298f54?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1766321258844-6541b34b2940?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1648631478953-1334ce24a24c?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": true,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-10-16",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-16",
+        "price": 661499
+      },
+      {
+        "date": "2026-11-05",
+        "price": 680428
+      },
+      {
+        "date": "2026-11-19",
+        "price": 707000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-132",
+    "demo": true,
+    "titulo": "Casa em condomínio fechado em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo casa condominio com 205 m², localizado no bairro Ibura, próximo a comércio local e serviços do bairro.",
+    "finalidade": "venda",
+    "tipo": "casa_condominio",
+    "preco": 1241000,
+    "condominio": 500,
+    "iptuMensal": 313,
+    "area": 205,
+    "precoM2": 6053.66,
+    "quartos": 5,
+    "suites": 2,
+    "banheiros": 5,
+    "vagas": 0,
+    "bairro": "Ibura",
+    "endereco": "Rua Estrela D'Oeste, 396 - Ibura, Recife - PE",
+    "lat": -8.115967,
+    "lng": -34.931364,
+    "fotos": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1757361653037-dbf0d0a820ae?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1641823911769-c55f23c25143?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1613849925594-415a32298f54?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1528908929486-dfaa209c6986?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1648631478953-1334ce24a24c?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": true,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-28",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-28",
+        "price": 1296533
+      },
+      {
+        "date": "2026-10-05",
+        "price": 1241000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-133",
+    "demo": true,
+    "titulo": "Apartamento com vista em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 99 m², localizado no bairro Ibura, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 383000,
+    "condominio": 540,
+    "iptuMensal": 275,
+    "area": 99,
+    "precoM2": 3868.69,
+    "quartos": 4,
+    "suites": 0,
+    "banheiros": 4,
+    "vagas": 2,
+    "bairro": "Ibura",
+    "endereco": "Rua Dom Miguel de Lima Valverde, 476 - Ibura, Recife - PE",
+    "lat": -8.118964,
+    "lng": -34.927876,
+    "fotos": [
+      "https://images.unsplash.com/photo-1781204516306-18eab1d08e7e?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1648631478953-1334ce24a24c?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1613849925594-415a32298f54?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1759352642019-dc5510982676?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1541616138747-f4a42c7f0668?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-02",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-02",
+        "price": 383000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-134",
+    "demo": true,
+    "titulo": "Apartamento reformado em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 96 m², localizado no bairro Ibura, com fácil acesso a transporte público e mercados.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 310000,
+    "condominio": 610,
+    "iptuMensal": 263,
+    "area": 96,
+    "precoM2": 3229.17,
+    "quartos": 3,
+    "suites": 1,
+    "banheiros": 2,
+    "vagas": 3,
+    "bairro": "Ibura",
+    "endereco": "Rua Lizarda, 746 - Ibura, Recife - PE",
+    "lat": -8.116542,
+    "lng": -34.929799,
+    "fotos": [
+      "https://images.unsplash.com/photo-1766321258844-6541b34b2940?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1760894492960-5b0a2da0676d?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1746517757473-7c88850e539b?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-25",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-25",
+        "price": 310000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-135",
+    "demo": true,
+    "titulo": "Apartamento compacto em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 60 m², localizado no bairro Ibura, em bairro residencial e familiar.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 249000,
+    "condominio": 660,
+    "iptuMensal": 256,
+    "area": 60,
+    "precoM2": 4150,
+    "quartos": 4,
+    "suites": 0,
+    "banheiros": 4,
+    "vagas": 3,
+    "bairro": "Ibura",
+    "endereco": "Rua Visconde de Azuara, 63 - Ibura, Recife - PE",
+    "lat": -8.127028,
+    "lng": -34.937919,
+    "fotos": [
+      "https://images.unsplash.com/photo-1766321258844-6541b34b2940?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1641823911769-c55f23c25143?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-30",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-30",
+        "price": 239615
+      },
+      {
+        "date": "2026-09-21",
+        "price": 249000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-136",
+    "demo": true,
+    "titulo": "Studio compacto em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo kitnet com 38 m², localizado no bairro Ibura, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "venda",
+    "tipo": "kitnet",
+    "preco": 227000,
+    "condominio": 0,
+    "iptuMensal": 125,
+    "area": 38,
+    "precoM2": 5973.68,
+    "quartos": 1,
+    "suites": 0,
+    "banheiros": 1,
+    "vagas": 1,
+    "bairro": "Ibura",
+    "endereco": "Rua Visconde de Azuara, 1160 - Ibura, Recife - PE",
+    "lat": -8.12809,
+    "lng": -34.930066,
+    "fotos": [
+      "https://images.unsplash.com/photo-1760894492960-5b0a2da0676d?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1648631478953-1334ce24a24c?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1746517757473-7c88850e539b?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-11-22",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-22",
+        "price": 227000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-137",
+    "demo": true,
+    "titulo": "Apartamento reformado em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 83 m², localizado no bairro Ibura, em localização privilegiada, perto de praças e comércio.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 306000,
+    "condominio": 600,
+    "iptuMensal": 248,
+    "area": 83,
+    "precoM2": 3686.75,
+    "quartos": 5,
+    "suites": 1,
+    "banheiros": 5,
+    "vagas": 1,
+    "bairro": "Ibura",
+    "endereco": "Rua Estrela D'Oeste, 376 - Ibura, Recife - PE",
+    "lat": -8.114521,
+    "lng": -34.924268,
+    "fotos": [
+      "https://images.unsplash.com/photo-1627799048600-ab328d27f853?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1528908929486-dfaa209c6986?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1746517757473-7c88850e539b?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1760894492960-5b0a2da0676d?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1613849925594-415a32298f54?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": false,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-11-08",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-08",
+        "price": 312587
+      },
+      {
+        "date": "2026-11-27",
+        "price": 302113
+      },
+      {
+        "date": "2026-11-27",
+        "price": 306000
+      }
+    ],
+    "status": "reservado"
+  },
+  {
+    "id": "morai-demo-138",
+    "demo": true,
+    "titulo": "Apartamento com vista em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo apartamento com 81 m², localizado no bairro Ibura, em rua tranquila e arborizada, perto de escolas.",
+    "finalidade": "venda",
+    "tipo": "apartamento",
+    "preco": 455000,
+    "condominio": 310,
+    "iptuMensal": 150,
+    "area": 81,
+    "precoM2": 5617.28,
+    "quartos": 3,
+    "suites": 0,
+    "banheiros": 2,
+    "vagas": 2,
+    "bairro": "Ibura",
+    "endereco": "Rua Nova Canaã, 308 - Ibura, Recife - PE",
+    "lat": -8.124684,
+    "lng": -34.933589,
+    "fotos": [
+      "https://images.unsplash.com/photo-1759352642019-dc5510982676?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1760894492960-5b0a2da0676d?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1641823911769-c55f23c25143?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1766321258844-6541b34b2940?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": true,
+      "quintal": false,
+      "elevador": true,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-10-02",
+    "historicoPrecos": [
+      {
+        "date": "2026-10-02",
+        "price": 471525
+      },
+      {
+        "date": "2026-10-23",
+        "price": 455000
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-139",
+    "demo": true,
+    "titulo": "Casa espaçosa em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo casa com 152 m², localizado no bairro Ibura, com fácil acesso a transporte público e mercados.",
+    "finalidade": "aluguel",
+    "tipo": "casa",
+    "preco": 3900,
+    "condominio": 0,
+    "iptuMensal": 162,
+    "area": 152,
+    "precoM2": 25.66,
+    "quartos": 5,
+    "suites": 2,
+    "banheiros": 4,
+    "vagas": 2,
+    "bairro": "Ibura",
+    "endereco": "Rua Dermeval Lobão, 1380 - Ibura, Recife - PE",
+    "lat": -8.13066,
+    "lng": -34.933088,
+    "fotos": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1746517757473-7c88850e539b?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": true,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": false,
+      "mobiliado": false
+    },
+    "dataPublicacao": "2026-08-26",
+    "historicoPrecos": [
+      {
+        "date": "2026-08-26",
+        "price": 4070
+      },
+      {
+        "date": "2026-09-16",
+        "price": 3900
+      }
+    ],
+    "status": "disponivel"
+  },
+  {
+    "id": "morai-demo-140",
+    "demo": true,
+    "titulo": "Casa aconchegante em Ibura",
+    "descricao": "Imóvel demonstrativo do tipo casa com 219 m², localizado no bairro Ibura, em bairro residencial e familiar.",
+    "finalidade": "aluguel",
+    "tipo": "casa",
+    "preco": 4550,
+    "condominio": 0,
+    "iptuMensal": 85,
+    "area": 219,
+    "precoM2": 20.78,
+    "quartos": 5,
+    "suites": 0,
+    "banheiros": 4,
+    "vagas": 0,
+    "bairro": "Ibura",
+    "endereco": "Rua Perimetral, 162 - Ibura, Recife - PE",
+    "lat": -8.121829,
+    "lng": -34.936558,
+    "fotos": [
+      "https://images.unsplash.com/photo-1777947151071-f985c78f7070?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1528908929486-dfaa209c6986?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1757361653037-dbf0d0a820ae?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=960&h=720&q=80",
+      "https://images.unsplash.com/photo-1648631478953-1334ce24a24c?auto=format&fit=crop&w=960&h=720&q=80"
+    ],
+    "caracteristicas": {
+      "aceitaAnimais": false,
+      "condominioFechado": false,
+      "piscina": false,
+      "varanda": false,
+      "quintal": true,
+      "elevador": false,
+      "acessibilidade": true,
+      "mobiliado": true
+    },
+    "dataPublicacao": "2026-11-20",
+    "historicoPrecos": [
+      {
+        "date": "2026-11-20",
+        "price": 4558
+      },
+      {
+        "date": "2026-11-27",
+        "price": 4550
       }
     ],
     "status": "disponivel"

@@ -45,8 +45,8 @@ const BAIRROS = [
   // Bairros do Recife adicionados a pedido explícito, pra sócios testarem o Moraí fora de
   // Olinda também. Coordenadas aproximadas (centro estimado a partir de pontos conhecidos do
   // bairro via OpenStreetMap/guiamapa — não são um centroide oficial do IBGE).
-  { nome: "Espinheiro", cidade: "Recife", lat: -8.043, lng: -34.8935, raioKm: 0.5, count: 8 },
-  { nome: "Ibura", cidade: "Recife", lat: -8.122, lng: -34.93, raioKm: 1.1, count: 8 },
+  { nome: "Espinheiro", cidade: "Recife", lat: -8.043, lng: -34.8935, raioKm: 0.5, count: 20 },
+  { nome: "Ibura", cidade: "Recife", lat: -8.122, lng: -34.93, raioKm: 1.1, count: 20 },
 ];
 
 const TOTAL = BAIRROS.reduce((s, b) => s + b.count, 0); // 100
@@ -86,6 +86,15 @@ const RUAS = [
   "Rua Nova", "Rua do Carmo", "Travessa da Paz", "Rua dos Coqueiros", "Rua do Sítio",
   "Rua Direita", "Rua do Bonsucesso", "Rua da Matriz", "Alameda das Mangueiras",
   "Rua do Farol", "Rua do Veneza", "Rua do Varadouro", "Rua Prudente de Moraes",
+];
+
+// Nomes de ruas reais de Espinheiro e Ibura (Recife), só pra dar realismo ao endereço
+// fictício do imóvel demonstrativo — nenhum desses imóveis corresponde a um anúncio real de
+// alguém, é só o nome da rua (informação geográfica pública) + numeração sorteada.
+const RUAS_RECIFE = [
+  "Rua Dom Miguel de Lima Valverde", "Rua Visconde de Azuara", "Rua Canatiba",
+  "Rua Rio Moxotó", "Rua Herval D'Oeste", "Rua Perimetral", "Rua Silva Jardim",
+  "Rua Nova Canaã", "Rua Dermeval Lobão", "Rua Estrela D'Oeste", "Rua Lizarda",
 ];
 
 const TITULOS = {
@@ -264,7 +273,8 @@ for (const bairro of BAIRROS) {
     seq++;
 
     const coords = jitterCoord(bairro.lat, bairro.lng, bairro.raioKm);
-    const endereco = `${pick(RUAS)}, ${intBetween(10, 1400)} - ${bairro.nome}, ${bairro.cidade} - PE`;
+    const ruasPool = bairro.cidade === "Recife" ? RUAS_RECIFE : RUAS;
+    const endereco = `${pick(ruasPool)}, ${intBetween(10, 1400)} - ${bairro.nome}, ${bairro.cidade} - PE`;
 
     const semQuartos = tipo === "terreno" || tipo === "comercial";
     const quartos = semQuartos ? 0 : tipo === "kitnet" ? 1 : intBetween(1, 5);

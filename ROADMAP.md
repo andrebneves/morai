@@ -7,10 +7,11 @@
 - Mapa interativo em tela cheia (MapLibre GL JS): localização do usuário, zoom/rotação, recentralizar,
   camadas rua/satélite, busca de endereço/bairro
 - Clustering de marcadores com Supercluster
-- 116 imóveis demonstrativos: 100 distribuídos pelos 17 bairros de Olinda (contagem exata definida
-  no briefing do produto) + 16 em Espinheiro e Ibura (Recife), adicionados a pedido pra sócios
-  testarem o Moraí fora de Olinda também — coordenadas reais de cada bairro, seed reproduzível
-  (`npm run seed:generate`)
+- 140 imóveis demonstrativos: 100 distribuídos pelos 17 bairros de Olinda (contagem exata definida
+  no briefing do produto) + 40 em Espinheiro e Ibura (Recife), adicionados a pedido pra sócios
+  testarem o Moraí fora de Olinda também — coordenadas reais de cada bairro, nomes de rua reais
+  desses bairros (endereço fictício, não corresponde a nenhum anúncio real de alguém), seed
+  reproduzível (`npm run seed:generate`)
 - Toggle Comprar / Alugar / Anunciar
 - Página de detalhe do imóvel: galeria, especificações, descrição, histórico de preços, calculadoras,
   POIs próximos, rotas externas
