@@ -38,10 +38,11 @@
   imobiliário que delega "como chegar" a terceiros
 - Zoom automático na localização do usuário já na abertura do mapa (antes só centralizava mantendo o
   zoom genérico da cidade)
-- **Redesign "app de navegação imobiliário" (Prioridade 1 do briefing de direção de arte)**:
-  tipografia Plus Jakarta Sans, botão primário verde-escuro com borda esmeralda, cabeçalho
-  `MoraiHeader` (painel sólido com curva orgânica) no mapa — ver seção dedicada em
-  [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)
+- **Redesign "app de navegação imobiliário" (Prioridades 1 e 2 do briefing de direção de arte)**:
+  tipografia Plus Jakarta Sans, cabeçalho `MoraiHeader` (painel sólido com curva orgânica),
+  3 níveis de botão (principal lima, secundário verde-escuro, terciário contorno), chips de
+  filtro rápido funcionais, marcador selecionado em lima, botão de filtros virou flutuante —
+  ver seção dedicada em [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)
 - "Moraí Drive" — mockup conceitual de integração CarPlay/Android Auto (claramente identificado como
   não-funcional/conceitual)
 - PWA completo: manifest, service worker (cache network-first + stale-while-revalidate), ícones
@@ -129,11 +130,12 @@ níveis de prioridade definida pelo próprio briefing (ver seção "Direção de
 navegação inferior) foi implementada nesta rodada. Registrado aqui o que falta, exatamente nos
 termos do briefing, pra priorização item a item nas próximas rodadas:
 
-- **Prioridade 2**: estilo cartográfico "Moraí Claro" dedicado (hoje o mapa usa o estilo "Moraí Toy"
-  já existente, não o especificado no briefing), marcadores de preço e localização do usuário
-  redesenhados, botões flutuantes redesenhados, **chips de filtro rápido** (fileira de filtros
-  ativos com botão de remover, abaixo da busca — hoje só existe o contador no ícone de filtros) e
-  redesenho do cartão inferior do imóvel
+- **Prioridade 2 (parcial — feito: marcador selecionado em lima, botões flutuantes reorganizados
+  com filtros entre eles, chips de filtro rápido funcionais)**: falta o estilo cartográfico
+  "Moraí Claro" dedicado (hoje o mapa usa o estilo "Moraí Toy" já existente, não o especificado no
+  briefing — essa é a maior pendência da Prioridade 2, o próprio briefing pede atenção especial a
+  ela) e o redesenho do cartão inferior do imóvel (hoje ainda no visual anterior ao briefing,
+  exceto o botão "Dirigir até lá" já corrigido pra verde-escuro)
 - **Prioridade 3**: configuração do Modo Passeio, alertas de proximidade e filtros avançados — telas
   já funcionais, ainda no visual anterior ao briefing
 - **Prioridade 4**: detalhes do imóvel, favoritos, comparação e calculadora de custo real de morar —

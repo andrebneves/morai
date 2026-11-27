@@ -36,10 +36,16 @@ O tema (claro/escuro) é resolvido via `:root[data-theme="dark"|"light"]` e
 
 ## Componentes base (`src/components/ui`, `src/components/layout`)
 
-- **Button** — variantes de tamanho (`sm`/`md`/`lg`), `fullWidth`, estados de loading/disabled.
-  Variante `primary`: verde-escuro sólido (`bg-dark-green`) com texto `off-white` e uma borda
-  esmeralda sutil (`border-emerald/35`) — a borda é essencial no tema escuro, onde `--surface` já é
-  um verde próximo do `dark-green` e o botão ficaria quase invisível sem ela.
+- **Button** — variantes de tamanho (`sm`/`md`/`lg`), `fullWidth`, estados de loading/disabled. Os
+  3 níveis de botão do briefing de direção de arte:
+  - `primary` (**botão principal**): fundo lima, texto verde-escuro — CTA central de cada tela
+    ("Aplicar filtros", "Publicar imóvel", "Ver resultados").
+  - `dark` (**botão secundário**): verde-escuro sólido com texto claro e borda esmeralda sutil — a
+    borda é essencial no tema escuro, onde `--surface` já é um verde próximo do `dark-green` e o
+    botão ficaria quase invisível sem ela — ações contextuais de navegação ("Ir até lá", "Ver
+    detalhes").
+  - `outline` (**botão terciário**): fundo claro, contorno e texto verde-escuro — ações de apoio
+    ("Salvar", "Comparar").
 - **Chip** — pílula selecionável usada em filtros, prioridades do Bairro Ideal, tipo de toggle.
 - **BottomSheet** — folha inferior com arraste para fechar (Framer Motion `drag`), respeita
   `safe-area-inset-bottom`, usada para preview de imóvel, filtros, Modo Passeio, feedback, instalação.
@@ -47,6 +53,9 @@ O tema (claro/escuro) é resolvido via `:root[data-theme="dark"|"light"]` e
   curva orgânica decorativa (dois gradientes radiais em esmeralda, cortados pelo `overflow-hidden`
   do painel) atrás da logo; usado no topo do mapa. Recebe conteúdo da tela (busca, chips) como
   `children`, renderizado dentro do painel.
+- **QuickFilterChips** (`src/components/map/QuickFilterChips.tsx`) — fileira de cápsulas lima com
+  os filtros ativos (ícone + texto + X), derivada do estado de filtros por
+  `src/lib/quickFilterChips.ts`. Cada cápsula remove só o próprio critério.
 
 ## Princípios de layout
 
@@ -109,13 +118,15 @@ componente de botão primário e a introdução de um cabeçalho sólido com ide
 
 O próprio briefing definiu 5 níveis de prioridade pro redesign, pra não tentar tudo de uma vez:
 
-1. **Design system, identidade visual, tipografia, botões, cabeçalho, navegação inferior** — feito
-   nesta rodada: tipografia (Plus Jakarta Sans), botão primário (verde-escuro + borda esmeralda) e
-   `MoraiHeader` (painel sólido com curva orgânica) no mapa. Navegação inferior já batia com a
-   referência (selo lima na aba ativa) e não precisou de mudança.
+1. **Design system, identidade visual, tipografia, botões, cabeçalho, navegação inferior** — feito:
+   tipografia (Plus Jakarta Sans), os 3 níveis de botão (principal lima, secundário verde-escuro,
+   terciário contorno) e `MoraiHeader` (painel sólido com curva orgânica) no mapa. Navegação
+   inferior já batia com a referência (selo lima na aba ativa) e não precisou de mudança.
 2. Estilo cartográfico "Moraí Claro", marcadores de preço, localização do usuário, botões
-   flutuantes, **filtros rápidos** (chips de filtro ativo acima do mapa, visto nas referências — hoje
-   só existe o contador no botão de filtros) e cartão inferior do imóvel — **ainda não feito**.
+   flutuantes, filtros rápidos e cartão inferior do imóvel — **parcial**: marcador selecionado em
+   lima, botões flutuantes reorganizados (filtros virou flutuante, saiu da busca) e chips de filtro
+   rápido funcionais já feitos; falta o estilo cartográfico "Moraí Claro" (a maior pendência — o
+   briefing pede atenção especial a essa seção) e o redesenho do cartão inferior do imóvel.
 3. Configuração do Modo Passeio, alertas de proximidade, filtros avançados — **ainda não feito**.
 4. Detalhes dos imóveis, favoritos, comparação, custo real de morar — **ainda não feito**.
 5. POIs ilustrados, mapa 3D, tema noturno, microinterações avançadas — **ainda não feito**.
