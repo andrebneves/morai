@@ -88,6 +88,12 @@ public/                     # Ícones, splash screens, service worker (sw.js), w
   nunca assume que o cliente existe. Isso é o que permite o app funcionar 100% sem backend.
 - **RLS (Row Level Security)** ativado em todas as tabelas Supabase desde o primeiro schema — nunca
   houve uma versão sem RLS.
+- **Descoberta geolocalizada é incondicional, não uma feature com botão de ligar**: `useModoPasseio`
+  (`src/lib/hooks/useModoPasseio.ts`) roda alerta de imóveis próximos, cálculo de compatibilidade e
+  guia até o destino sempre que há posição + lista de imóveis — não existe nenhuma flag de "ativar" o
+  modo passeio. A pasta/hook internos mantiveram o nome "passeio" (decisão interna, não visível ao
+  usuário), mas a UI chama essa configuração de **Minha Busca**, não "Modo Passeio" — ver
+  [CLAUDE.md](CLAUDE.md).
 
 ## Fluxo de dados de um imóvel
 

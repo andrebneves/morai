@@ -43,6 +43,10 @@
   3 níveis de botão (principal lima, secundário verde-escuro, terciário contorno), chips de
   filtro rápido funcionais, marcador selecionado em lima, botão de filtros virou flutuante —
   ver seção dedicada em [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)
+- **"O Moraí É o modo passeio"**: confirmado que a descoberta geolocalizada já é incondicional (sem
+  botão de iniciar), "Modo Passeio" renomeado para **Minha Busca** no texto visível ao usuário, e
+  selo de status do mapa revisado pra sempre mostrar texto real do estado atual — ver seção dedicada
+  em [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)
 - "Moraí Drive" — mockup conceitual de integração CarPlay/Android Auto (claramente identificado como
   não-funcional/conceitual)
 - PWA completo: manifest, service worker (cache network-first + stale-while-revalidate), ícones

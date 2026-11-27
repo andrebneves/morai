@@ -6,6 +6,13 @@ Moraí é um PWA (Progressive Web App) de descoberta imobiliária por geolocaliz
 testes em **Olinda, Pernambuco**. Esta é a versão **Beta 1.0**: um app mapa-cêntrico, instalável no
 iPhone/Android sem precisar de App Store, Mac ou conta de desenvolvedor Apple.
 
+**Princípio fundamental do produto**: o Moraí não é um app imobiliário que tem um mapa — é um GPS que
+é especializado em imóveis. Por isso a descoberta geolocalizada (acompanhar a posição do usuário,
+avisar de imóveis compatíveis por perto, guiar até o imóvel escolhido pelas ruas) é o comportamento
+padrão do app desde que o mapa abre, sem nenhum botão de "iniciar". A configuração disso (raio, modo de
+deslocamento, perfis de busca salvos) chama-se **Minha Busca** — não é uma funcionalidade separada que
+precisa ser ativada, só os ajustes de como a busca sempre ativa funciona.
+
 Esta versão roda em **modo demonstrativo** por padrão (100 imóveis fictícios gerados com seed
 reproduzível) e funciona inteiramente sem backend. Ao configurar um projeto Supabase (opcional), o app
 passa a usar banco de dados compartilhado real, autenticação e upload de fotos — ver [DATABASE.md](DATABASE.md).

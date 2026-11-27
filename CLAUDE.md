@@ -58,6 +58,11 @@ estrito e o build falha em qualquer erro de tipo.
   Waze/Google Maps especializado do que de um portal imobiliário com mapa anexado). Redesign sendo
   aplicado em fases por prioridade do próprio briefing — ver seção "Direção de arte" em
   [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) e o backlog em [ROADMAP.md](ROADMAP.md).
+- **"O Moraí É o modo passeio" (princípio permanente)**: a descoberta geolocalizada (acompanhar
+  posição, avisar de imóveis próximos, guiar até o destino) é o comportamento padrão do app desde que
+  o mapa abre — nunca crie um botão/flag de "iniciar" ou "ativar" essa descoberta. O que hoje chama-se
+  "Modo Passeio" internamente no código é **Minha Busca** pro usuário (configuração de raio/perfis/
+  alertas da busca sempre ativa, não uma funcionalidade separada) — ver [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Testando mudanças de UI
 

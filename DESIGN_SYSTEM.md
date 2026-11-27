@@ -62,7 +62,8 @@ O tema (claro/escuro) é resolvido via `:root[data-theme="dark"|"light"]` e
 - **Mapa-cêntrico**: o mapa ocupa a tela inteira; controles (busca, filtros, toggle comprar/alugar,
   camadas, locate-me) flutuam por cima em cards com `shadow-[var(--shadow-float)]`.
 - **Navegação de uma mão**: ações principais e a barra inferior (`BottomNav`, 5 abas) ficam na metade
-  inferior da tela; o Modo Passeio tem um botão de acesso direto flutuante no mapa.
+  inferior da tela; a configuração de Minha Busca (raio, perfis, alertas — chamada de "Modo Passeio"
+  só internamente no código) tem um botão de acesso direto flutuante no mapa.
 - **Toque confortável**: alvos de toque mínimos de 32–44px (botões circulares de ação, itens de lista).
 - **Safe area do iPhone**: classes utilitárias `pt-safe`/`pb-safe` (usando `env(safe-area-inset-*)`)
   aplicadas em todas as telas com conteúdo fixo no topo/rodapé, para respeitar o notch/Dynamic Island e
@@ -133,6 +134,36 @@ O próprio briefing definiu 5 níveis de prioridade pro redesign, pra não tenta
 
 Itens 2–5 ficam registrados como próxima fase no [ROADMAP.md](ROADMAP.md), um de cada vez, em vez de
 uma reforma visual completa de uma vez só (risco de regressão alto sem revisar tela por tela).
+
+## "O Moraí É o modo passeio" — alteração fundamental de conceito (briefing 2026-11-27)
+
+Um segundo briefing, explicitamente dito como substituto de qualquer instrução anterior que tratasse
+"Modo Passeio" como uma funcionalidade separada e opcional, pediu que a descoberta geolocalizada seja
+o comportamento padrão do app, sem botão de "iniciar". Ao investigar, a maior parte disso já estava
+implementada numa etapa anterior desta mesma sessão:
+
+- `useModoPasseio` já roda descoberta/alerta/câmera-seguindo incondicionalmente (sem flag de
+  ativação) desde que há posição do usuário + imóveis carregados — ver nota em
+  [ARCHITECTURE.md](ARCHITECTURE.md).
+- Não existe nenhum botão "iniciar passeio" em nenhuma tela.
+- O selo de status flutuante no mapa foi revisado pra mostrar sempre texto real do estado atual
+  ("Localizando você…", "Localização indisponível", "N imóvel(is) por perto"), nunca uma legenda
+  fictícia de "modo ativado".
+- Os dois modos de câmera (seguir automaticamente vs. explorar livremente arrastando o mapa) já
+  existem via `followPaused`/`resumeFollow` em `MapView.tsx`.
+- "Modo Passeio" foi renomeado para **Minha Busca** no texto visível ao usuário (Perfil, Privacidade,
+  Termos) — o nome interno do hook/pasta (`passeio`) ficou como está, por ser detalhe de
+  implementação, não UI.
+
+Duas perguntas do briefing foram levadas ao usuário e respondidas (confirmando o estado atual, sem
+necessidade de mudança de código):
+
+- **Aba "Explorar" na navegação inferior**: mantida como está. Não é redundante com o mapa — é uma
+  visão em lista por bairro, com carrossel de oportunidades do Moraí Radar e atalho pro Bairro Ideal,
+  nada disso coberto pela descoberta automática do mapa.
+- **Navegação externa (Apple/Google Maps/Waze)**: confirmado que continua desativada — o Moraí
+  permanece como a única plataforma de navegação do app, decisão já tomada e publicada antes neste
+  mesmo briefing de redesign.
 
 ## Acessibilidade e contraste
 
