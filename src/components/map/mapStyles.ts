@@ -112,14 +112,71 @@ const MORAI_CLASSIC_PAINT_OVERRIDES: Record<string, Record<string, unknown>> = {
   poi_r1: { "text-color": "#4A3728", "text-halo-color": "#FFFBF2" },
 };
 
+// Classes de POI com ilustração isométrica própria (biblioteca "Moraí Maps" —
+// design/map-assets/, gerada em public/map-assets/sprites/morai-poi por
+// scripts/generate-poi-sprite.mjs). Essas ilustrações são "de pé" na coordenada (perspectiva de
+// prédio, não um pino centralizado), então os layers de POI precisam de `icon-anchor: "bottom"`
+// só para essas classes — o restante (ícone padrão da OpenFreeMap) continua ancorado ao centro.
+const MORAI_ILLUSTRATED_POI_CLASSES = [
+  "pharmacy",
+  "hospital",
+  "doctors",
+  "school",
+  "college",
+  "bakery",
+  "restaurant",
+  "cafe",
+  "fast_food",
+  "fuel",
+  "bank",
+  "post",
+  "museum",
+  "attraction",
+  "place_of_worship",
+  "park",
+  "shop",
+  "supermarket",
+  "police",
+  "fire_station",
+];
+
+const POI_ICON_ANCHOR_LAYOUT = {
+  "icon-anchor": [
+    "match",
+    ["get", "class"],
+    MORAI_ILLUSTRATED_POI_CLASSES,
+    "bottom",
+    "center",
+  ],
+};
+
+const MORAI_CLASSIC_LAYOUT_OVERRIDES: Record<string, Record<string, unknown>> = {
+  poi_r20: POI_ICON_ANCHOR_LAYOUT,
+  poi_r7: POI_ICON_ANCHOR_LAYOUT,
+  poi_r1: POI_ICON_ANCHOR_LAYOUT,
+};
+
 function buildMoraiClassicStyle(base: unknown): StyleSpecification {
   const style = JSON.parse(JSON.stringify(base)) as StyleSpecification;
   for (const layer of style.layers) {
-    const overrides = MORAI_CLASSIC_PAINT_OVERRIDES[layer.id];
-    if (!overrides) continue;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (layer as any).paint = { ...(layer as any).paint, ...overrides };
+    const paintOverrides = MORAI_CLASSIC_PAINT_OVERRIDES[layer.id];
+    if (paintOverrides) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (layer as any).paint = { ...(layer as any).paint, ...paintOverrides };
+    }
+    const layoutOverrides = MORAI_CLASSIC_LAYOUT_OVERRIDES[layer.id];
+    if (layoutOverrides) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (layer as any).layout = { ...(layer as any).layout, ...layoutOverrides };
+    }
   }
+  // Sprite própria "Moraí Maps": mesmo conjunto de ícones padrão da OpenFreeMap (nenhuma classe
+  // não-customizada muda) + ilustrações isométricas próprias nas classes acima — ver
+  // scripts/generate-poi-sprite.mjs e design/map-assets/. MapLibre exige URL absoluta pro
+  // `sprite`; como este módulo pode ser avaliado durante SSR (sem `window`), resolve o origin em
+  // runtime no cliente e cai num caminho relativo inofensivo no servidor (nunca usado lá).
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
+  style.sprite = `${origin}/map-assets/sprites/morai-poi`;
   // Luz suave e neutra (menos quente/intensa que a versão "Moraí Toy") — sombra sutil nos
   // prédios extrudados sem reforçar a leitura de "maquete de jogo".
   style.light = {

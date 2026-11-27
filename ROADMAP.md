@@ -47,6 +47,12 @@
   botão de iniciar), "Modo Passeio" renomeado para **Minha Busca** no texto visível ao usuário, e
   selo de status do mapa revisado pra sempre mostrar texto real do estado atual — ver seção dedicada
   em [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)
+- **"Moraí Maps" — paleta própria e ícones de POI ilustrados**: paleta "Moraí Classic" (mar turquesa,
+  areia natural, construções bege/pastel) e 20 classes de POI (farmácia, hospital, escola, igreja,
+  parque etc.) renderizando com ilustração isométrica própria em vez do ícone genérico padrão — ver
+  seção dedicada em [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md). Biblioteca completa (231 ilustrações) em
+  `design/map-assets/`; categorias que não são POI genérico (marcadores, marcos, tipos de imóvel,
+  vegetação) ficam no backlog da mesma seção.
 - "Moraí Drive" — mockup conceitual de integração CarPlay/Android Auto (claramente identificado como
   não-funcional/conceitual)
 - PWA completo: manifest, service worker (cache network-first + stale-while-revalidate), ícones

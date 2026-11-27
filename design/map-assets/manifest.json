@@ -1,0 +1,2081 @@
+[
+  {
+    "id": "01_servicos/igreja",
+    "path": "01_servicos/igreja.png",
+    "width": 167,
+    "height": 132,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "01_servicos/igreja_historica",
+    "path": "01_servicos/igreja_historica.png",
+    "width": 151,
+    "height": 124,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "01_servicos/escola",
+    "path": "01_servicos/escola.png",
+    "width": 171,
+    "height": 114,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "01_servicos/universidade",
+    "path": "01_servicos/universidade.png",
+    "width": 174,
+    "height": 112,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "01_servicos/hospital",
+    "path": "01_servicos/hospital.png",
+    "width": 152,
+    "height": 117,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "01_servicos/upa",
+    "path": "01_servicos/upa.png",
+    "width": 154,
+    "height": 121,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "01_servicos/farmacia",
+    "path": "01_servicos/farmacia.png",
+    "width": 164,
+    "height": 114,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "01_servicos/delegacia",
+    "path": "01_servicos/delegacia.png",
+    "width": 147,
+    "height": 114,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "01_servicos/bombeiros",
+    "path": "01_servicos/bombeiros.png",
+    "width": 156,
+    "height": 127,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "02_comercio/supermercado",
+    "path": "02_comercio/supermercado.png",
+    "width": 179,
+    "height": 86,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "02_comercio/mercado",
+    "path": "02_comercio/mercado.png",
+    "width": 139,
+    "height": 90,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "02_comercio/padaria",
+    "path": "02_comercio/padaria.png",
+    "width": 169,
+    "height": 99,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "02_comercio/restaurante",
+    "path": "02_comercio/restaurante.png",
+    "width": 153,
+    "height": 96,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "02_comercio/cafeteria",
+    "path": "02_comercio/cafeteria.png",
+    "width": 151,
+    "height": 94,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "02_comercio/lanchonete",
+    "path": "02_comercio/lanchonete.png",
+    "width": 147,
+    "height": 93,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "02_comercio/shopping",
+    "path": "02_comercio/shopping.png",
+    "width": 172,
+    "height": 104,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "02_comercio/academia",
+    "path": "02_comercio/academia.png",
+    "width": 170,
+    "height": 90,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "02_comercio/banco",
+    "path": "02_comercio/banco.png",
+    "width": 147,
+    "height": 95,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "03_lazer/praca",
+    "path": "03_lazer/praca.png",
+    "width": 166,
+    "height": 89,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "03_lazer/parque",
+    "path": "03_lazer/parque.png",
+    "width": 154,
+    "height": 89,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "03_lazer/praia",
+    "path": "03_lazer/praia.png",
+    "width": 146,
+    "height": 89,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "03_lazer/quiosque_praia",
+    "path": "03_lazer/quiosque_praia.png",
+    "width": 136,
+    "height": 86,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "03_lazer/quadra_esportiva",
+    "path": "03_lazer/quadra_esportiva.png",
+    "width": 190,
+    "height": 79,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "03_lazer/ciclovia",
+    "path": "03_lazer/ciclovia.png",
+    "width": 111,
+    "height": 83,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "03_lazer/ponto_onibus",
+    "path": "03_lazer/ponto_onibus.png",
+    "width": 155,
+    "height": 79,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "03_lazer/metro_vlt",
+    "path": "03_lazer/metro_vlt.png",
+    "width": 160,
+    "height": 77,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "03_lazer/terminal",
+    "path": "03_lazer/terminal.png",
+    "width": 150,
+    "height": 75,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "04_imoveis/casa_terrea",
+    "path": "04_imoveis/casa_terrea.png",
+    "width": 154,
+    "height": 76,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "04_imoveis/sobrado",
+    "path": "04_imoveis/sobrado.png",
+    "width": 133,
+    "height": 84,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "04_imoveis/casa_condominial",
+    "path": "04_imoveis/casa_condominial.png",
+    "width": 150,
+    "height": 80,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "04_imoveis/vila",
+    "path": "04_imoveis/vila.png",
+    "width": 128,
+    "height": 69,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "04_imoveis/edificio_residencial",
+    "path": "04_imoveis/edificio_residencial.png",
+    "width": 172,
+    "height": 83,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "04_imoveis/edificio_comercial",
+    "path": "04_imoveis/edificio_comercial.png",
+    "width": 145,
+    "height": 85,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "04_imoveis/condominio_casas",
+    "path": "04_imoveis/condominio_casas.png",
+    "width": 173,
+    "height": 65,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "04_imoveis/condominio_clube",
+    "path": "04_imoveis/condominio_clube.png",
+    "width": 170,
+    "height": 85,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "04_imoveis/obra",
+    "path": "04_imoveis/obra.png",
+    "width": 165,
+    "height": 88,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "05_vegetacao/arvore_urbana",
+    "path": "05_vegetacao/arvore_urbana.png",
+    "width": 84,
+    "height": 60,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "05_vegetacao/ipe_amarelo",
+    "path": "05_vegetacao/ipe_amarelo.png",
+    "width": 76,
+    "height": 62,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "05_vegetacao/ipe_roxo",
+    "path": "05_vegetacao/ipe_roxo.png",
+    "width": 93,
+    "height": 59,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "05_vegetacao/coqueiro",
+    "path": "05_vegetacao/coqueiro.png",
+    "width": 70,
+    "height": 58,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "05_vegetacao/palmeira_imperial",
+    "path": "05_vegetacao/palmeira_imperial.png",
+    "width": 85,
+    "height": 62,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "05_vegetacao/arbusto",
+    "path": "05_vegetacao/arbusto.png",
+    "width": 106,
+    "height": 61,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "05_vegetacao/jardim",
+    "path": "05_vegetacao/jardim.png",
+    "width": 107,
+    "height": 61,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "05_vegetacao/area_verde",
+    "path": "05_vegetacao/area_verde.png",
+    "width": 107,
+    "height": 61,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "06_agua/mar",
+    "path": "06_agua/mar.png",
+    "width": 119,
+    "height": 58,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "06_agua/rio",
+    "path": "06_agua/rio.png",
+    "width": 119,
+    "height": 61,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "06_agua/lagoa",
+    "path": "06_agua/lagoa.png",
+    "width": 119,
+    "height": 63,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "06_agua/lago",
+    "path": "06_agua/lago.png",
+    "width": 111,
+    "height": 57,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "07_vias/rua_local",
+    "path": "07_vias/rua_local.png",
+    "width": 100,
+    "height": 58,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "07_vias/rua_principal",
+    "path": "07_vias/rua_principal.png",
+    "width": 101,
+    "height": 63,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "07_vias/avenida",
+    "path": "07_vias/avenida.png",
+    "width": 122,
+    "height": 71,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "07_vias/cruzamento",
+    "path": "07_vias/cruzamento.png",
+    "width": 116,
+    "height": 69,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "07_vias/rotatoria",
+    "path": "07_vias/rotatoria.png",
+    "width": 120,
+    "height": 64,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "07_vias/ciclovia",
+    "path": "07_vias/ciclovia.png",
+    "width": 114,
+    "height": 69,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "07_vias/calcada",
+    "path": "07_vias/calcada.png",
+    "width": 120,
+    "height": 69,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "07_vias/orla",
+    "path": "07_vias/orla.png",
+    "width": 121,
+    "height": 71,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "08_marcos/alto_da_se",
+    "path": "08_marcos/alto_da_se.png",
+    "width": 84,
+    "height": 63,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "08_marcos/forte_casa_caiada",
+    "path": "08_marcos/forte_casa_caiada.png",
+    "width": 83,
+    "height": 49,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "08_marcos/marco_zero",
+    "path": "08_marcos/marco_zero.png",
+    "width": 87,
+    "height": 60,
+    "anchor": "bottom",
+    "source": "isometrica",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "09_mobilidade/ponto_onibus",
+    "path": "09_mobilidade/ponto_onibus.png",
+    "width": 89,
+    "height": 61,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "09_mobilidade/terminal_integracao",
+    "path": "09_mobilidade/terminal_integracao.png",
+    "width": 98,
+    "height": 57,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "09_mobilidade/metro_vlt",
+    "path": "09_mobilidade/metro_vlt.png",
+    "width": 104,
+    "height": 55,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "09_mobilidade/brt",
+    "path": "09_mobilidade/brt.png",
+    "width": 98,
+    "height": 61,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "09_mobilidade/trem",
+    "path": "09_mobilidade/trem.png",
+    "width": 113,
+    "height": 57,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "09_mobilidade/aeroporto",
+    "path": "09_mobilidade/aeroporto.png",
+    "width": 117,
+    "height": 69,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "09_mobilidade/porto",
+    "path": "09_mobilidade/porto.png",
+    "width": 101,
+    "height": 64,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "09_mobilidade/taxi",
+    "path": "09_mobilidade/taxi.png",
+    "width": 99,
+    "height": 54,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "09_mobilidade/transporte_app",
+    "path": "09_mobilidade/transporte_app.png",
+    "width": 47,
+    "height": 63,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "09_mobilidade/estacionamento",
+    "path": "09_mobilidade/estacionamento.png",
+    "width": 94,
+    "height": 61,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "09_mobilidade/estacionamento_coberto",
+    "path": "09_mobilidade/estacionamento_coberto.png",
+    "width": 91,
+    "height": 56,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "09_mobilidade/posto_combustivel",
+    "path": "09_mobilidade/posto_combustivel.png",
+    "width": 88,
+    "height": 65,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "09_mobilidade/eletroposto",
+    "path": "09_mobilidade/eletroposto.png",
+    "width": 107,
+    "height": 73,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "10_educacao_cultura/creche",
+    "path": "10_educacao_cultura/creche.png",
+    "width": 102,
+    "height": 52,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "10_educacao_cultura/escola_infantil",
+    "path": "10_educacao_cultura/escola_infantil.png",
+    "width": 96,
+    "height": 57,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "10_educacao_cultura/escola_fundamental",
+    "path": "10_educacao_cultura/escola_fundamental.png",
+    "width": 107,
+    "height": 58,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "10_educacao_cultura/colegio",
+    "path": "10_educacao_cultura/colegio.png",
+    "width": 105,
+    "height": 58,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "10_educacao_cultura/universidade",
+    "path": "10_educacao_cultura/universidade.png",
+    "width": 102,
+    "height": 56,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "10_educacao_cultura/curso_tecnico",
+    "path": "10_educacao_cultura/curso_tecnico.png",
+    "width": 111,
+    "height": 56,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "10_educacao_cultura/biblioteca",
+    "path": "10_educacao_cultura/biblioteca.png",
+    "width": 112,
+    "height": 50,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "10_educacao_cultura/teatro",
+    "path": "10_educacao_cultura/teatro.png",
+    "width": 108,
+    "height": 55,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "10_educacao_cultura/museu",
+    "path": "10_educacao_cultura/museu.png",
+    "width": 93,
+    "height": 52,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "10_educacao_cultura/centro_cultural",
+    "path": "10_educacao_cultura/centro_cultural.png",
+    "width": 104,
+    "height": 48,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "10_educacao_cultura/espaco_eventos",
+    "path": "10_educacao_cultura/espaco_eventos.png",
+    "width": 95,
+    "height": 60,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "10_educacao_cultura/sesc_senac",
+    "path": "10_educacao_cultura/sesc_senac.png",
+    "width": 98,
+    "height": 49,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "10_educacao_cultura/cinema",
+    "path": "10_educacao_cultura/cinema.png",
+    "width": 100,
+    "height": 52,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "11_saude/hospital",
+    "path": "11_saude/hospital.png",
+    "width": 100,
+    "height": 54,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "11_saude/upa",
+    "path": "11_saude/upa.png",
+    "width": 99,
+    "height": 49,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "11_saude/posto_saude",
+    "path": "11_saude/posto_saude.png",
+    "width": 95,
+    "height": 51,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "11_saude/clinica_medica",
+    "path": "11_saude/clinica_medica.png",
+    "width": 98,
+    "height": 49,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "11_saude/clinica_odontologica",
+    "path": "11_saude/clinica_odontologica.png",
+    "width": 93,
+    "height": 50,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "11_saude/clinica_veterinaria",
+    "path": "11_saude/clinica_veterinaria.png",
+    "width": 100,
+    "height": 55,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "11_saude/laboratorio",
+    "path": "11_saude/laboratorio.png",
+    "width": 97,
+    "height": 49,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "11_saude/academia",
+    "path": "11_saude/academia.png",
+    "width": 102,
+    "height": 53,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "11_saude/pilates",
+    "path": "11_saude/pilates.png",
+    "width": 92,
+    "height": 52,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "11_saude/fisioterapia",
+    "path": "11_saude/fisioterapia.png",
+    "width": 101,
+    "height": 49,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "11_saude/spa",
+    "path": "11_saude/spa.png",
+    "width": 96,
+    "height": 54,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "11_saude/centro_esportivo",
+    "path": "11_saude/centro_esportivo.png",
+    "width": 92,
+    "height": 51,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "11_saude/clube",
+    "path": "11_saude/clube.png",
+    "width": 91,
+    "height": 58,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "12_servicos_essenciais/banco",
+    "path": "12_servicos_essenciais/banco.png",
+    "width": 98,
+    "height": 50,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "12_servicos_essenciais/caixa_eletronico",
+    "path": "12_servicos_essenciais/caixa_eletronico.png",
+    "width": 96,
+    "height": 56,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "12_servicos_essenciais/correios",
+    "path": "12_servicos_essenciais/correios.png",
+    "width": 101,
+    "height": 55,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "12_servicos_essenciais/loterica",
+    "path": "12_servicos_essenciais/loterica.png",
+    "width": 91,
+    "height": 53,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "12_servicos_essenciais/cartorio",
+    "path": "12_servicos_essenciais/cartorio.png",
+    "width": 94,
+    "height": 51,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "12_servicos_essenciais/prefeitura",
+    "path": "12_servicos_essenciais/prefeitura.png",
+    "width": 97,
+    "height": 52,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "12_servicos_essenciais/delegacia",
+    "path": "12_servicos_essenciais/delegacia.png",
+    "width": 98,
+    "height": 46,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "12_servicos_essenciais/receita_federal",
+    "path": "12_servicos_essenciais/receita_federal.png",
+    "width": 100,
+    "height": 57,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "12_servicos_essenciais/inss",
+    "path": "12_servicos_essenciais/inss.png",
+    "width": 90,
+    "height": 53,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "12_servicos_essenciais/detran",
+    "path": "12_servicos_essenciais/detran.png",
+    "width": 92,
+    "height": 51,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "12_servicos_essenciais/defensoria_publica",
+    "path": "12_servicos_essenciais/defensoria_publica.png",
+    "width": 96,
+    "height": 54,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "12_servicos_essenciais/forum",
+    "path": "12_servicos_essenciais/forum.png",
+    "width": 88,
+    "height": 54,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "12_servicos_essenciais/centro_atendimento",
+    "path": "12_servicos_essenciais/centro_atendimento.png",
+    "width": 89,
+    "height": 54,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "13_esporte_turismo/parque",
+    "path": "13_esporte_turismo/parque.png",
+    "width": 104,
+    "height": 54,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "13_esporte_turismo/praca",
+    "path": "13_esporte_turismo/praca.png",
+    "width": 95,
+    "height": 47,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "13_esporte_turismo/quadra_esportiva",
+    "path": "13_esporte_turismo/quadra_esportiva.png",
+    "width": 99,
+    "height": 46,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "13_esporte_turismo/campo_futebol",
+    "path": "13_esporte_turismo/campo_futebol.png",
+    "width": 106,
+    "height": 51,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "13_esporte_turismo/quadra_tenis",
+    "path": "13_esporte_turismo/quadra_tenis.png",
+    "width": 104,
+    "height": 46,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "13_esporte_turismo/piscina_publica",
+    "path": "13_esporte_turismo/piscina_publica.png",
+    "width": 103,
+    "height": 48,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "13_esporte_turismo/academia_ar_livre",
+    "path": "13_esporte_turismo/academia_ar_livre.png",
+    "width": 110,
+    "height": 51,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "13_esporte_turismo/ciclovia",
+    "path": "13_esporte_turismo/ciclovia.png",
+    "width": 106,
+    "height": 46,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "13_esporte_turismo/pista_cooper",
+    "path": "13_esporte_turismo/pista_cooper.png",
+    "width": 92,
+    "height": 50,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "13_esporte_turismo/mirante",
+    "path": "13_esporte_turismo/mirante.png",
+    "width": 95,
+    "height": 43,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "13_esporte_turismo/ponto_turistico",
+    "path": "13_esporte_turismo/ponto_turistico.png",
+    "width": 86,
+    "height": 45,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "13_esporte_turismo/centro_historico",
+    "path": "13_esporte_turismo/centro_historico.png",
+    "width": 102,
+    "height": 43,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "13_esporte_turismo/rota_turistica",
+    "path": "13_esporte_turismo/rota_turistica.png",
+    "width": 93,
+    "height": 51,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "14_natureza/praia",
+    "path": "14_natureza/praia.png",
+    "width": 107,
+    "height": 46,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "14_natureza/orla",
+    "path": "14_natureza/orla.png",
+    "width": 91,
+    "height": 40,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "14_natureza/rio",
+    "path": "14_natureza/rio.png",
+    "width": 96,
+    "height": 45,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "14_natureza/lagoa",
+    "path": "14_natureza/lagoa.png",
+    "width": 98,
+    "height": 40,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "14_natureza/lago",
+    "path": "14_natureza/lago.png",
+    "width": 99,
+    "height": 46,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "14_natureza/manguezal",
+    "path": "14_natureza/manguezal.png",
+    "width": 97,
+    "height": 45,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "14_natureza/reserva_ambiental",
+    "path": "14_natureza/reserva_ambiental.png",
+    "width": 106,
+    "height": 46,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "14_natureza/area_protecao",
+    "path": "14_natureza/area_protecao.png",
+    "width": 112,
+    "height": 44,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "14_natureza/trilha",
+    "path": "14_natureza/trilha.png",
+    "width": 93,
+    "height": 46,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "14_natureza/morro",
+    "path": "14_natureza/morro.png",
+    "width": 97,
+    "height": 46,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "14_natureza/restinga",
+    "path": "14_natureza/restinga.png",
+    "width": 102,
+    "height": 45,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "14_natureza/duna",
+    "path": "14_natureza/duna.png",
+    "width": 110,
+    "height": 43,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "14_natureza/cachoeira",
+    "path": "14_natureza/cachoeira.png",
+    "width": 96,
+    "height": 45,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "15_servicos_urbanos/shopping",
+    "path": "15_servicos_urbanos/shopping.png",
+    "width": 94,
+    "height": 44,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "15_servicos_urbanos/galeria_comercial",
+    "path": "15_servicos_urbanos/galeria_comercial.png",
+    "width": 94,
+    "height": 41,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "15_servicos_urbanos/centro_comercial",
+    "path": "15_servicos_urbanos/centro_comercial.png",
+    "width": 96,
+    "height": 44,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "15_servicos_urbanos/feira_livre",
+    "path": "15_servicos_urbanos/feira_livre.png",
+    "width": 97,
+    "height": 50,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "15_servicos_urbanos/mercado_publico",
+    "path": "15_servicos_urbanos/mercado_publico.png",
+    "width": 104,
+    "height": 50,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "15_servicos_urbanos/hortifruti",
+    "path": "15_servicos_urbanos/hortifruti.png",
+    "width": 108,
+    "height": 50,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "15_servicos_urbanos/acougue",
+    "path": "15_servicos_urbanos/acougue.png",
+    "width": 98,
+    "height": 39,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "15_servicos_urbanos/peixaria",
+    "path": "15_servicos_urbanos/peixaria.png",
+    "width": 89,
+    "height": 38,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "15_servicos_urbanos/conveniencia",
+    "path": "15_servicos_urbanos/conveniencia.png",
+    "width": 84,
+    "height": 40,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "15_servicos_urbanos/loja_construcao",
+    "path": "15_servicos_urbanos/loja_construcao.png",
+    "width": 94,
+    "height": 41,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "15_servicos_urbanos/materiais_eletricos",
+    "path": "15_servicos_urbanos/materiais_eletricos.png",
+    "width": 99,
+    "height": 50,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "15_servicos_urbanos/deposito_bebidas",
+    "path": "15_servicos_urbanos/deposito_bebidas.png",
+    "width": 106,
+    "height": 50,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "15_servicos_urbanos/pet_shop",
+    "path": "15_servicos_urbanos/pet_shop.png",
+    "width": 84,
+    "height": 47,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "16_urbanismo/casa_terrea",
+    "path": "16_urbanismo/casa_terrea.png",
+    "width": 98,
+    "height": 44,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "16_urbanismo/sobrado",
+    "path": "16_urbanismo/sobrado.png",
+    "width": 98,
+    "height": 50,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "16_urbanismo/apartamento",
+    "path": "16_urbanismo/apartamento.png",
+    "width": 98,
+    "height": 51,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "16_urbanismo/cobertura",
+    "path": "16_urbanismo/cobertura.png",
+    "width": 100,
+    "height": 49,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "16_urbanismo/flat",
+    "path": "16_urbanismo/flat.png",
+    "width": 107,
+    "height": 47,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "16_urbanismo/condominio_residencial",
+    "path": "16_urbanismo/condominio_residencial.png",
+    "width": 84,
+    "height": 55,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "16_urbanismo/condominio_casas",
+    "path": "16_urbanismo/condominio_casas.png",
+    "width": 106,
+    "height": 53,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "16_urbanismo/condominio_clube",
+    "path": "16_urbanismo/condominio_clube.png",
+    "width": 106,
+    "height": 55,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "16_urbanismo/terreno",
+    "path": "16_urbanismo/terreno.png",
+    "width": 105,
+    "height": 36,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "16_urbanismo/galpao",
+    "path": "16_urbanismo/galpao.png",
+    "width": 88,
+    "height": 47,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "16_urbanismo/sala_comercial",
+    "path": "16_urbanismo/sala_comercial.png",
+    "width": 95,
+    "height": 51,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "16_urbanismo/predio_comercial",
+    "path": "16_urbanismo/predio_comercial.png",
+    "width": 87,
+    "height": 52,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "16_urbanismo/obra",
+    "path": "16_urbanismo/obra.png",
+    "width": 81,
+    "height": 62,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/rua",
+    "path": "17_infraestrutura/rua.png",
+    "width": 48,
+    "height": 37,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/avenida",
+    "path": "17_infraestrutura/avenida.png",
+    "width": 49,
+    "height": 34,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/via_expressa",
+    "path": "17_infraestrutura/via_expressa.png",
+    "width": 48,
+    "height": 35,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/viaduto",
+    "path": "17_infraestrutura/viaduto.png",
+    "width": 48,
+    "height": 32,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/ponte",
+    "path": "17_infraestrutura/ponte.png",
+    "width": 46,
+    "height": 29,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/tunel",
+    "path": "17_infraestrutura/tunel.png",
+    "width": 40,
+    "height": 27,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/rotatoria",
+    "path": "17_infraestrutura/rotatoria.png",
+    "width": 43,
+    "height": 38,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/faixa_pedestre",
+    "path": "17_infraestrutura/faixa_pedestre.png",
+    "width": 51,
+    "height": 26,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/semaforo",
+    "path": "17_infraestrutura/semaforo.png",
+    "width": 19,
+    "height": 39,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/ciclovia",
+    "path": "17_infraestrutura/ciclovia.png",
+    "width": 40,
+    "height": 36,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/faixa_onibus",
+    "path": "17_infraestrutura/faixa_onibus.png",
+    "width": 40,
+    "height": 38,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/linha_transporte",
+    "path": "17_infraestrutura/linha_transporte.png",
+    "width": 51,
+    "height": 15,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/limite_bairro",
+    "path": "17_infraestrutura/limite_bairro.png",
+    "width": 43,
+    "height": 28,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/area_verde",
+    "path": "17_infraestrutura/area_verde.png",
+    "width": 43,
+    "height": 28,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "17_infraestrutura/massa_agua",
+    "path": "17_infraestrutura/massa_agua.png",
+    "width": 43,
+    "height": 28,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "18_marcadores/imovel",
+    "path": "18_marcadores/imovel.png",
+    "width": 36,
+    "height": 44,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "18_marcadores/selecionado",
+    "path": "18_marcadores/selecionado.png",
+    "width": 37,
+    "height": 45,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "18_marcadores/localizacao",
+    "path": "18_marcadores/localizacao.png",
+    "width": 39,
+    "height": 44,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "18_marcadores/rota",
+    "path": "18_marcadores/rota.png",
+    "width": 48,
+    "height": 26,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "18_marcadores/raio_busca",
+    "path": "18_marcadores/raio_busca.png",
+    "width": 45,
+    "height": 43,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "18_marcadores/destaque",
+    "path": "18_marcadores/destaque.png",
+    "width": 36,
+    "height": 44,
+    "anchor": "bottom",
+    "source": "completa",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "19_vegetacao_guia/arvore_pequena",
+    "path": "19_vegetacao_guia/arvore_pequena.png",
+    "width": 68,
+    "height": 79,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "19_vegetacao_guia/arvore_frondosa",
+    "path": "19_vegetacao_guia/arvore_frondosa.png",
+    "width": 118,
+    "height": 100,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "19_vegetacao_guia/arvore_praca",
+    "path": "19_vegetacao_guia/arvore_praca.png",
+    "width": 124,
+    "height": 103,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "19_vegetacao_guia/coqueiro",
+    "path": "19_vegetacao_guia/coqueiro.png",
+    "width": 88,
+    "height": 102,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "19_vegetacao_guia/arbusto",
+    "path": "19_vegetacao_guia/arbusto.png",
+    "width": 150,
+    "height": 67,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "19_vegetacao_guia/canteiro",
+    "path": "19_vegetacao_guia/canteiro.png",
+    "width": 142,
+    "height": 70,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "20_edificacoes_guia/casa_terrea",
+    "path": "20_edificacoes_guia/casa_terrea.png",
+    "width": 109,
+    "height": 52,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "20_edificacoes_guia/sobrado",
+    "path": "20_edificacoes_guia/sobrado.png",
+    "width": 105,
+    "height": 79,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "20_edificacoes_guia/predio_baixo",
+    "path": "20_edificacoes_guia/predio_baixo.png",
+    "width": 91,
+    "height": 78,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "20_edificacoes_guia/predio_medio",
+    "path": "20_edificacoes_guia/predio_medio.png",
+    "width": 88,
+    "height": 90,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "20_edificacoes_guia/predio_alto",
+    "path": "20_edificacoes_guia/predio_alto.png",
+    "width": 104,
+    "height": 117,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "20_edificacoes_guia/predio_beira_mar",
+    "path": "20_edificacoes_guia/predio_beira_mar.png",
+    "width": 103,
+    "height": 115,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "20_edificacoes_guia/predio_comercial",
+    "path": "20_edificacoes_guia/predio_comercial.png",
+    "width": 102,
+    "height": 61,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "20_edificacoes_guia/igreja_historica",
+    "path": "20_edificacoes_guia/igreja_historica.png",
+    "width": 105,
+    "height": 106,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "21_superficies_guia/rua_local",
+    "path": "21_superficies_guia/rua_local.png",
+    "width": 111,
+    "height": 91,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "21_superficies_guia/avenida_principal",
+    "path": "21_superficies_guia/avenida_principal.png",
+    "width": 119,
+    "height": 91,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "21_superficies_guia/avenida_beira_mar",
+    "path": "21_superficies_guia/avenida_beira_mar.png",
+    "width": 129,
+    "height": 91,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "21_superficies_guia/calcada",
+    "path": "21_superficies_guia/calcada.png",
+    "width": 107,
+    "height": 91,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "21_superficies_guia/praca",
+    "path": "21_superficies_guia/praca.png",
+    "width": 117,
+    "height": 91,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "21_superficies_guia/parque",
+    "path": "21_superficies_guia/parque.png",
+    "width": 114,
+    "height": 91,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "21_superficies_guia/estacionamento",
+    "path": "21_superficies_guia/estacionamento.png",
+    "width": 119,
+    "height": 91,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "21_superficies_guia/ciclovia",
+    "path": "21_superficies_guia/ciclovia.png",
+    "width": 107,
+    "height": 91,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "22_paisagem_guia/praia",
+    "path": "22_paisagem_guia/praia.png",
+    "width": 146,
+    "height": 83,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "22_paisagem_guia/faixa_areia",
+    "path": "22_paisagem_guia/faixa_areia.png",
+    "width": 123,
+    "height": 83,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "22_paisagem_guia/oceano",
+    "path": "22_paisagem_guia/oceano.png",
+    "width": 128,
+    "height": 83,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "22_paisagem_guia/lago",
+    "path": "22_paisagem_guia/lago.png",
+    "width": 128,
+    "height": 83,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "22_paisagem_guia/lagoa",
+    "path": "22_paisagem_guia/lagoa.png",
+    "width": 127,
+    "height": 83,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "22_paisagem_guia/rio",
+    "path": "22_paisagem_guia/rio.png",
+    "width": 129,
+    "height": 83,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "22_paisagem_guia/orla",
+    "path": "22_paisagem_guia/orla.png",
+    "width": 138,
+    "height": 83,
+    "anchor": "center",
+    "source": "guia",
+    "background_removed_approximately": false
+  },
+  {
+    "id": "23_pois_guia/farmacia",
+    "path": "23_pois_guia/farmacia.png",
+    "width": 81,
+    "height": 55,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "23_pois_guia/escola",
+    "path": "23_pois_guia/escola.png",
+    "width": 83,
+    "height": 65,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "23_pois_guia/supermercado",
+    "path": "23_pois_guia/supermercado.png",
+    "width": 81,
+    "height": 60,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "23_pois_guia/padaria",
+    "path": "23_pois_guia/padaria.png",
+    "width": 72,
+    "height": 59,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "23_pois_guia/hospital",
+    "path": "23_pois_guia/hospital.png",
+    "width": 81,
+    "height": 64,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "23_pois_guia/shopping",
+    "path": "23_pois_guia/shopping.png",
+    "width": 89,
+    "height": 62,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "23_pois_guia/ponto_onibus",
+    "path": "23_pois_guia/ponto_onibus.png",
+    "width": 70,
+    "height": 63,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "23_pois_guia/posto_combustivel",
+    "path": "23_pois_guia/posto_combustivel.png",
+    "width": 78,
+    "height": 55,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "23_pois_guia/restaurante",
+    "path": "23_pois_guia/restaurante.png",
+    "width": 80,
+    "height": 62,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "23_pois_guia/ponto_turistico",
+    "path": "23_pois_guia/ponto_turistico.png",
+    "width": 75,
+    "height": 68,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "24_ui_guia/imovel_disponivel",
+    "path": "24_ui_guia/imovel_disponivel.png",
+    "width": 103,
+    "height": 64,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "24_ui_guia/imovel_selecionado",
+    "path": "24_ui_guia/imovel_selecionado.png",
+    "width": 99,
+    "height": 61,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "24_ui_guia/agrupamento",
+    "path": "24_ui_guia/agrupamento.png",
+    "width": 89,
+    "height": 77,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "24_ui_guia/localizacao",
+    "path": "24_ui_guia/localizacao.png",
+    "width": 70,
+    "height": 70,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "24_ui_guia/rota",
+    "path": "24_ui_guia/rota.png",
+    "width": 94,
+    "height": 67,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "24_ui_guia/alerta_oportunidade",
+    "path": "24_ui_guia/alerta_oportunidade.png",
+    "width": 63,
+    "height": 66,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "24_ui_guia/etiqueta_preco",
+    "path": "24_ui_guia/etiqueta_preco.png",
+    "width": 98,
+    "height": 38,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  },
+  {
+    "id": "24_ui_guia/camadas",
+    "path": "24_ui_guia/camadas.png",
+    "width": 69,
+    "height": 57,
+    "anchor": "bottom",
+    "source": "guia",
+    "background_removed_approximately": true
+  }
+]

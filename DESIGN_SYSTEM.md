@@ -94,13 +94,46 @@ do briefing "Moraí Maps — motor cartográfico com identidade visual própria"
   verde mais suave (menos saturado que a versão "Toy"). Prédios 3D usam `render_height`/
   `render_min_height` reais do OpenMapTiles (nunca alturas inventadas). Hillshade fotográfico
   (`natural_earth`) desligado para manter a leitura "ilustrada", não fotorrealista.
-- **Ainda não implementado** (fase seguinte do briefing "Moraí Maps", aguardando mais imagens de
-  referência do usuário): biblioteca de ícones/sprites próprios (vegetação ilustrada com volume,
-  casas/prédios por tipo, pontos de interesse como farmácia/escola/igreja) — hoje o mapa ainda usa o
-  sprite padrão hospedado pela OpenFreeMap, sem nenhum ícone customizado do Moraí.
 - Para atualizar a base (ex.: nova versão do estilo "liberty" da OpenFreeMap), rebaixar
   `https://tiles.openfreemap.org/styles/liberty` sobre `libertyBase.json` e conferir se os ids de layer
   usados em `MORAI_CLASSIC_PAINT_OVERRIDES` ainda existem.
+
+### Ícones de POI próprios (biblioteca "Moraí Maps", 2026-11-27)
+
+O usuário forneceu uma biblioteca de 231 ilustrações isométricas prontas (PNG, fundo transparente,
+recortadas de 3 pranchas originais) — importada para `design/map-assets/` (manifest.json documenta
+`id`, dimensões, âncora sugerida e origem de cada arquivo; `LEIA-ME.txt` avisa que a remoção de fundo
+é aproximada e pode ter artefatos em alguns itens).
+
+- **Implementado**: 20 classes de POI do OpenMapTiles (farmácia, hospital, posto de saúde, escola,
+  universidade, padaria, restaurante, cafeteria, lanchonete, posto de combustível, banco, correios,
+  museu, ponto turístico, igreja, parque, mercado/loja, supermercado, delegacia, bombeiros) agora
+  renderizam com a ilustração isométrica própria em vez do ícone genérico da OpenFreeMap.
+  - `scripts/generate-poi-sprite.mjs` gera `public/map-assets/sprites/morai-poi{.png,.json,@2x.png,@2x.json}`:
+    parte da sprite padrão vendorizada (`scripts/vendor/ofm-sprite/`, mantém todo ícone não-customizado
+    idêntico) e adiciona, numa faixa extra do atlas, as 20 ilustrações redimensionadas (mantendo
+    proporção, sem upscale) para ~34px de altura em 1x. `CLASS_TO_ASSET` no topo do script é o
+    mapeamento classe OSM → arquivo; rodar `node scripts/generate-poi-sprite.mjs` depois de qualquer
+    mudança nesse mapeamento ou nos PNGs de origem.
+  - `mapStyles.ts` aponta `style.sprite` para essa sprite própria (URL absoluta resolvida em runtime
+    via `window.location.origin` — MapLibre exige URL absoluta) e adiciona `icon-anchor: "bottom"`
+    via expressão `match` nas 3 layers de POI (`poi_r20`/`poi_r7`/`poi_r1`) só para essas 20 classes —
+    o resto continua ancorado ao centro, igual ao padrão.
+- **Backlog, não implementado** (mesma biblioteca, categorias que não são POIs genéricos do OSM e
+  precisam de uma abordagem diferente — ver `design/map-assets/manifest.json` para a lista completa):
+  - `18_marcadores/` (imóvel, selecionado, localização, rota, raio de busca, destaque): substituiria os
+    marcadores HTML/CSS atuais do `MapView.tsx`, não os ícones de POI — exige mexer na criação dos
+    `Marker` do MapLibre, não no estilo.
+  - `08_marcos` (Alto da Sé, Forte de Casa Caiada, Marco Zero): não são uma classe genérica do OSM;
+    precisam de uma camada própria com coordenadas reais verificadas (não inventar coordenadas).
+  - `04_imoveis`/`16_urbanismo` (ícones por tipo de imóvel): mais prováveis de servir o card de imóvel
+    ou o seletor de tipo em `/anunciar` do que o mapa em si.
+  - `05_vegetacao`/`14_natureza`/`17_infraestrutura`: o `LEIA-ME.txt` da própria biblioteca avisa que
+    ruas, água e terrenos reais devem continuar vindo da geometria do mapa — essas imagens são
+    referência ilustrativa, não dado geográfico; precisam de uma decisão de design antes de qualquer
+    implementação (não renderizar como se fosse geometria real).
+  - `19_vegetacao_guia` a `24_ui_guia` (47 itens): pela nomenclatura, parecem referência/legenda, não
+    elementos para renderizar no mapa ao vivo — não auditado a fundo ainda.
 - O estilo satélite (`SATELLITE_STYLE`, imagens Esri) não foi alterado — é uma camada alternativa, não o
   modo padrão.
 

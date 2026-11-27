@@ -1,0 +1,5 @@
+MORAÍ MAPS — Biblioteca de assets extraídos das três pranchas originais.
+
+231 PNGs, incluindo variantes. Os recortes são feitos das pranchas raster, não de modelos 3D. O fundo claro foi removido de forma aproximada na maioria dos elementos; as superfícies mantêm o fundo. Pode haver bordas, sombras, restos de divisórias ou recortes parciais: revisar antes de usar em produção. Resolução nativa preservada, sem upscale artificial.
+
+manifest.json: IDs, caminhos relativos, dimensões, sugestão de âncora e origem. Para MapLibre/Mapbox, registrar os PNGs selecionados como imagens do mapa (addImage) e renderizar com symbol layers por categoria/zoom. Ruas, água e terrenos reais devem continuar vindo da geometria do mapa, não desses PNGs. As imagens de superfícies são referências/tiles ilustrativos, não dados geográficos.
