@@ -36,6 +36,12 @@
 - Navegação própria do Moraí até o imóvel (GPS/rota pelas ruas, voz em pt-BR) — removida a opção de
   abrir Apple Maps/Google Maps/Waze: o Moraí é a própria plataforma de navegação, não um app
   imobiliário que delega "como chegar" a terceiros
+- Zoom automático na localização do usuário já na abertura do mapa (antes só centralizava mantendo o
+  zoom genérico da cidade)
+- **Redesign "app de navegação imobiliário" (Prioridade 1 do briefing de direção de arte)**:
+  tipografia Plus Jakarta Sans, botão primário verde-escuro com borda esmeralda, cabeçalho
+  `MoraiHeader` (painel sólido com curva orgânica) no mapa — ver seção dedicada em
+  [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)
 - "Moraí Drive" — mockup conceitual de integração CarPlay/Android Auto (claramente identificado como
   não-funcional/conceitual)
 - PWA completo: manifest, service worker (cache network-first + stale-while-revalidate), ícones
@@ -114,3 +120,27 @@ backlog de visão, pra priorização futura item a item:
   `PRODUCT_STRATEGY.md`, `BUSINESS_MODEL.md`, `COMPETITIVE_ANALYSIS.md`, `FEATURE_MATRIX.md`,
   `TEST_PLAN.md`) — ainda não criados; fazem sentido conforme cada frente acima for priorizada,
   não todos de uma vez
+
+### Do briefing de direção de arte, design system e redesign da interface
+
+Briefing recebido em 2026-11-27 com 7 imagens de referência e uma ordem de implementação em 5
+níveis de prioridade definida pelo próprio briefing (ver seção "Direção de arte" em
+[DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)). Prioridade 1 (design system, tipografia, botões, cabeçalho,
+navegação inferior) foi implementada nesta rodada. Registrado aqui o que falta, exatamente nos
+termos do briefing, pra priorização item a item nas próximas rodadas:
+
+- **Prioridade 2**: estilo cartográfico "Moraí Claro" dedicado (hoje o mapa usa o estilo "Moraí Toy"
+  já existente, não o especificado no briefing), marcadores de preço e localização do usuário
+  redesenhados, botões flutuantes redesenhados, **chips de filtro rápido** (fileira de filtros
+  ativos com botão de remover, abaixo da busca — hoje só existe o contador no ícone de filtros) e
+  redesenho do cartão inferior do imóvel
+- **Prioridade 3**: configuração do Modo Passeio, alertas de proximidade e filtros avançados — telas
+  já funcionais, ainda no visual anterior ao briefing
+- **Prioridade 4**: detalhes do imóvel, favoritos, comparação e calculadora de custo real de morar —
+  idem
+- **Prioridade 5**: pontos de interesse ilustrados no mapa, mapas tridimensionais, tema noturno
+  dedicado e microinterações avançadas
+- Biblioteca de ícones de POI customizados (só paisagens reais de Olinda, nunca inventadas)
+- Validação visual formal: pasta de screenshots comparando cada tela redesenhada às 7 referências,
+  em viewport iPhone 13 (pedido explícito do briefing) — feito informalmente nesta rodada (sem pasta
+  dedicada ainda)

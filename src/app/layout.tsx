@@ -1,10 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ServiceWorkerRegister } from "@/components/pwa/ServiceWorkerRegister";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+// Troca de Manrope pra Plus Jakarta Sans — tipografia preferida pelo briefing de direção de
+// arte (condicionada à legibilidade: Plus Jakarta Sans é uma fonte geométrica bem estabelecida,
+// sem perda de legibilidade em relação à Manrope).
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
@@ -54,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${manrope.variable} antialiased`}>
+      <body className={`${plusJakartaSans.variable} antialiased`}>
         {children}
         <ServiceWorkerRegister />
       </body>

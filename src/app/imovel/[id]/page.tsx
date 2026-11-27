@@ -263,7 +263,7 @@ export default function ImovelDetalhePage({ params }: { params: Promise<{ id: st
             Google Maps ou Waze: o Moraí é a plataforma que leva o usuário até o imóvel. */}
         <button
           onClick={() => router.push(`/mapa?ir=${property.id}`)}
-          className="flex flex-1 items-center justify-center gap-2 rounded-full bg-emerald py-3 text-sm font-bold text-dark-green"
+          className="flex flex-1 items-center justify-center gap-2 rounded-full border border-emerald/35 bg-dark-green py-3 text-sm font-bold text-off-white"
         >
           <Navigation className="h-4 w-4" />
           Ir até lá

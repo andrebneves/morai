@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { Locate, Layers, Navigation, Loader2, X, CheckCircle2, CornerUpRight, CornerUpLeft, ArrowUp, Eye } from "lucide-react";
+import { Locate, Layers, Navigation, X, CheckCircle2, CornerUpRight, CornerUpLeft, ArrowUp, Eye } from "lucide-react";
 import { MapView, type MapViewHandle } from "@/components/map/MapView";
+import { MoraiHeader } from "@/components/layout/MoraiHeader";
 import { PurposeToggle } from "@/components/map/PurposeToggle";
 import { SearchBar } from "@/components/map/SearchBar";
 import { FiltersSheet } from "@/components/filters/FiltersSheet";
@@ -13,7 +14,6 @@ import { ModoPasseioSheet } from "@/components/passeio/ModoPasseioSheet";
 import { BottomSheet } from "@/components/ui/BottomSheet";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { SplashScreen, useSplashGate } from "@/components/splash/SplashScreen";
-import { Logo } from "@/components/icons/Logo";
 import { useAppStore } from "@/lib/store/useAppStore";
 import { useGeolocation } from "@/lib/hooks/useGeolocation";
 import { useRadarMap } from "@/lib/hooks/useRadarMap";
@@ -123,19 +123,16 @@ export default function MapaPage() {
       />
 
       {/* Top overlay */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex flex-col gap-3 px-4 pt-safe">
-        <div className="pointer-events-auto flex items-center justify-between">
-          <Logo size={26} wordmarkClassName="text-lg drop-shadow-sm" />
-          {loading && <Loader2 className="h-4 w-4 animate-spin text-emerald" />}
-        </div>
-        <div className="pointer-events-auto">
+      <div className="absolute inset-x-0 top-0 z-20">
+        <MoraiHeader loading={loading}>
           <SearchBar
             onSelectResult={(r) => mapRef.current?.flyTo(r.lat, r.lng, r.zoom)}
             onOpenFilters={() => setFiltersOpen(true)}
             activeFilterCount={countActiveFilters(filters)}
             purpose={filters.finalidade}
           />
-        </div>
+        </MoraiHeader>
+        <div className="pointer-events-none mt-3 flex flex-col gap-3 px-4">
         <div className="pointer-events-auto">
           <PurposeToggle value={filters.finalidade} onChange={(v) => setFilters({ finalidade: v })} />
         </div>
@@ -207,6 +204,7 @@ export default function MapaPage() {
             );
           })()}
         </AnimatePresence>
+        </div>
       </div>
 
       {/* Right controls */}

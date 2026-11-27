@@ -75,8 +75,8 @@
   --color-lime: var(--color-lime);
   --color-off-white: var(--color-off-white);
   --color-graphite: var(--color-graphite);
-  --font-sans: var(--font-manrope), system-ui, -apple-system, sans-serif;
-  --font-display: var(--font-manrope), system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-jakarta), system-ui, sans-serif;
 }
 
 * {

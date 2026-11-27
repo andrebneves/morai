@@ -52,6 +52,12 @@ estrito e o build falha em qualquer erro de tipo.
   ("Moraí Drive") como exemplo do padrão esperado.
 - **Nunca afirmar que algo foi testado em um iPhone físico** se o teste foi feito apenas em navegador
   com emulação de viewport — seja sempre explícito sobre o que foi/não foi verificado fisicamente.
+- **Direção de arte oficial (2026-11-27)**: "Não quero que o Moraí pareça um aplicativo imobiliário
+  que possui um mapa. Quero que pareça um aplicativo de navegação inteligente especializado no
+  mercado imobiliário" — toda decisão visual nova deve ser julgada por essa lente (mais perto de um
+  Waze/Google Maps especializado do que de um portal imobiliário com mapa anexado). Redesign sendo
+  aplicado em fases por prioridade do próprio briefing — ver seção "Direção de arte" em
+  [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) e o backlog em [ROADMAP.md](ROADMAP.md).
 
 ## Testando mudanças de UI
 
