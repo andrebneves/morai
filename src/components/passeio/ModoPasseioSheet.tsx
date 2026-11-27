@@ -1,10 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { BottomSheet } from "@/components/ui/BottomSheet";
 import { Chip } from "@/components/ui/Chip";
+import { PerfilEditor } from "@/components/passeio/PerfilEditor";
 import { formatDistance } from "@/lib/geo";
 import { formatCompactPrice } from "@/lib/format";
-import { Footprints, Car, Volume2, VolumeX, Radar } from "lucide-react";
+import { Footprints, Car, Volume2, VolumeX, Radar, Plus, Pencil, Pause, Play, Copy, Trash2 } from "lucide-react";
 import type { useModoPasseio, RaioPasseio } from "@/lib/hooks/useModoPasseio";
 
 const RAIOS: { value: RaioPasseio; label: string }[] = [
@@ -32,7 +34,23 @@ export function ModoPasseioSheet({ open, onClose, passeio }: ModoPasseioSheetPro
     nearby,
     permission,
     testarAlerta,
+    perfis,
+    perfilAtivo,
+    criarPerfil,
+    atualizarPerfil,
+    duplicarPerfil,
+    removerPerfil,
+    pausarPerfil,
+    definirPerfilAtivo,
   } = passeio;
+  const [editandoId, setEditandoId] = useState<string | null>(null);
+
+  const handleCriarPerfil = () => {
+    const nome = window.prompt("Nome do novo perfil (ex: Casa pra comprar na zona sul)");
+    if (!nome || !nome.trim()) return;
+    const id = criarPerfil(nome.trim());
+    setEditandoId(id);
+  };
 
   return (
     <BottomSheet open={open} onClose={onClose} maxHeightVh={80}>
@@ -45,6 +63,78 @@ export function ModoPasseioSheet({ open, onClose, passeio }: ModoPasseioSheetPro
           O Moraí acompanha sua localização o tempo todo enquanto o mapa está aberto e avisa
           quando houver imóveis próximos — ajuste aqui como isso funciona.
         </p>
+
+        <section className="space-y-2.5">
+          <div className="flex items-center justify-between">
+            <h3 className="text-sm font-semibold text-text-muted">Perfis de busca salvos</h3>
+            <button onClick={handleCriarPerfil} className="flex items-center gap-1 text-xs font-bold text-emerald">
+              <Plus className="h-3.5 w-3.5" />
+              Novo perfil
+            </button>
+          </div>
+
+          {perfis.length === 0 ? (
+            <p className="text-xs text-text-muted">
+              Crie um perfil pra separar o que é obrigatório do que é só desejável nos seus
+              alertas — e salvar vários perfis pra alternar sem perder a configuração.
+            </p>
+          ) : (
+            <div className="space-y-2">
+              {perfis.map((perfil) => {
+                const ativo = perfilAtivo?.id === perfil.id;
+                return (
+                  <div
+                    key={perfil.id}
+                    className={`rounded-xl border px-3 py-2.5 ${
+                      ativo ? "border-emerald bg-emerald/10" : "border-border-subtle"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <button
+                        onClick={() => definirPerfilAtivo(ativo ? null : perfil.id)}
+                        className="min-w-0 flex-1 text-left"
+                      >
+                        <span className="truncate text-sm font-semibold">{perfil.nome}</span>
+                        {ativo && <span className="ml-2 text-[11px] font-bold text-emerald">Em uso</span>}
+                        {perfil.pausado && !ativo && (
+                          <span className="ml-2 text-[11px] text-text-muted">Pausado</span>
+                        )}
+                      </button>
+                      <div className="flex shrink-0 items-center gap-1">
+                        <IconButton
+                          label="Editar critérios do perfil"
+                          onClick={() => setEditandoId(editandoId === perfil.id ? null : perfil.id)}
+                        >
+                          <Pencil className="h-4 w-4" />
+                        </IconButton>
+                        <IconButton
+                          label={perfil.pausado ? "Reativar perfil" : "Pausar perfil"}
+                          onClick={() => pausarPerfil(perfil.id, !perfil.pausado)}
+                        >
+                          {perfil.pausado ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
+                        </IconButton>
+                        <IconButton label="Duplicar perfil" onClick={() => duplicarPerfil(perfil.id)}>
+                          <Copy className="h-4 w-4" />
+                        </IconButton>
+                        <IconButton
+                          label="Excluir perfil"
+                          onClick={() => {
+                            if (window.confirm(`Excluir o perfil "${perfil.nome}"?`)) removerPerfil(perfil.id);
+                          }}
+                        >
+                          <Trash2 className="h-4 w-4 text-danger" />
+                        </IconButton>
+                      </div>
+                    </div>
+                    {editandoId === perfil.id && (
+                      <PerfilEditor perfil={perfil} onChange={(patch) => atualizarPerfil(perfil.id, patch)} />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </section>
 
         <section className="space-y-2">
           <h3 className="text-sm font-semibold text-text-muted">Como você está se deslocando?</h3>
@@ -84,6 +174,7 @@ export function ModoPasseioSheet({ open, onClose, passeio }: ModoPasseioSheetPro
         <section className="space-y-2">
           <h3 className="text-sm font-semibold text-text-muted">
             {nearby.length} imóvel(is) dentro do raio
+            {perfilAtivo && <span className="font-normal"> · perfil &ldquo;{perfilAtivo.nome}&rdquo;</span>}
           </h3>
           <div className="max-h-40 space-y-2 overflow-y-auto no-scrollbar">
             {nearby.slice(0, 6).map((n) => (
@@ -94,6 +185,7 @@ export function ModoPasseioSheet({ open, onClose, passeio }: ModoPasseioSheetPro
                 <span className="truncate pr-2">{n.property.titulo}</span>
                 <span className="shrink-0 text-xs font-semibold text-emerald">
                   {formatDistance(n.distanciaMetros)} · {formatCompactPrice(n.property.preco)}
+                  {n.compatibilidade !== null && ` · ${n.compatibilidade}%`}
                 </span>
               </div>
             ))}
@@ -116,5 +208,25 @@ export function ModoPasseioSheet({ open, onClose, passeio }: ModoPasseioSheetPro
         </button>
       </div>
     </BottomSheet>
+  );
+}
+
+function IconButton({
+  children,
+  onClick,
+  label,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+  label: string;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label={label}
+      className="flex h-7 w-7 items-center justify-center rounded-full text-text-muted transition-transform active:scale-90"
+    >
+      {children}
+    </button>
   );
 }

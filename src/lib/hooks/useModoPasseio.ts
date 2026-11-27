@@ -1,11 +1,15 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { Property } from "@/lib/types";
+import type { ModoDeslocamento, Property, RadarResult, RaioPasseio } from "@/lib/types";
 import { useGeolocation } from "@/lib/hooks/useGeolocation";
+import { useAppStore } from "@/lib/store/useAppStore";
+import { atendeObrigatorios, calcularCompatibilidade } from "@/lib/perfil";
 import { haversineMeters, bearingDegrees, formatDistanceFalada } from "@/lib/geo";
 import { formatPrecoFalado } from "@/lib/format";
 import { buscarRota, type ResultadoRota } from "@/lib/routing";
+
+export type { RaioPasseio, ModoDeslocamento };
 
 /** Abaixo desta distância consideramos que o usuário chegou ao destino escolhido. */
 const RAIO_CHEGADA_METROS = 30;
@@ -14,12 +18,12 @@ const RAIO_PRE_AVISO_METROS = 150;
 /** Considera a manobra "feita" e passa pra próxima quando chegar perto assim dela. */
 const RAIO_PASSO_CONCLUIDO_METROS = 20;
 
-export type RaioPasseio = 100 | 250 | 500 | 1000 | 2000;
-export type ModoDeslocamento = "pe" | "carro";
-
 export interface ImovelProximo {
   property: Property;
   distanciaMetros: number;
+  /** % de compatibilidade com as preferências desejáveis do perfil ativo — `null` sem perfil
+   * ativo ou sem nenhuma preferência desejável marcada. */
+  compatibilidade: number | null;
 }
 
 const ALERTA_COOLDOWN_MS = 1000 * 60 * 10; // não repete o mesmo imóvel por 10 min
@@ -27,15 +31,48 @@ const ALERTA_COOLDOWN_MS = 1000 * 60 * 10; // não repete o mesmo imóvel por 10
 // O Moraí não tem um "Modo Passeio" opcional — o app É esse modo: a localização fica sempre
 // acompanhando e os imóveis próximos aparecem em tempo real desde que a página do mapa abre
 // (pedido explícito: "não existe um modo passeio, o próprio Moraí é somente um modo passeio").
-export function useModoPasseio(properties: Property[]) {
-  const [raioMetros, setRaioMetros] = useState<RaioPasseio>(250);
-  const [modo, setModo] = useState<ModoDeslocamento>("pe");
-  const [somAtivo, setSomAtivo] = useState(true);
+export function useModoPasseio(properties: Property[], radarById?: Record<string, RadarResult>) {
+  // Estado local usado só quando nenhum perfil de busca está ativo — mantém o comportamento
+  // original (raio simples, sem obrigatório/desejável) pra quem nunca criou um perfil.
+  const [raioLocal, setRaioLocal] = useState<RaioPasseio>(250);
+  const [modoLocal, setModoLocal] = useState<ModoDeslocamento>("pe");
+  const [somLocal, setSomLocal] = useState(true);
   const [ultimoAlerta, setUltimoAlerta] = useState<ImovelProximo | null>(null);
   const [destino, setDestinoState] = useState<Property | null>(null);
   const [rota, setRota] = useState<ResultadoRota | null>(null);
   const [rotaCarregando, setRotaCarregando] = useState(false);
   const [passoIndex, setPassoIndex] = useState(0);
+
+  const perfis = useAppStore((s) => s.perfis);
+  const perfilAtivoId = useAppStore((s) => s.perfilAtivoId);
+  const criarPerfil = useAppStore((s) => s.criarPerfil);
+  const atualizarPerfil = useAppStore((s) => s.atualizarPerfil);
+  const duplicarPerfil = useAppStore((s) => s.duplicarPerfil);
+  const removerPerfil = useAppStore((s) => s.removerPerfil);
+  const pausarPerfil = useAppStore((s) => s.pausarPerfil);
+  const definirPerfilAtivo = useAppStore((s) => s.definirPerfilAtivo);
+
+  const perfilAtivo = useMemo(
+    () => perfis.find((p) => p.id === perfilAtivoId && !p.pausado) ?? null,
+    [perfis, perfilAtivoId],
+  );
+
+  const raioMetros = perfilAtivo?.raioMetros ?? raioLocal;
+  const modo = perfilAtivo?.modo ?? modoLocal;
+  const somAtivo = perfilAtivo?.somAtivo ?? somLocal;
+
+  const setRaioMetros = useCallback(
+    (v: RaioPasseio) => (perfilAtivo ? atualizarPerfil(perfilAtivo.id, { raioMetros: v }) : setRaioLocal(v)),
+    [perfilAtivo, atualizarPerfil],
+  );
+  const setModo = useCallback(
+    (v: ModoDeslocamento) => (perfilAtivo ? atualizarPerfil(perfilAtivo.id, { modo: v }) : setModoLocal(v)),
+    [perfilAtivo, atualizarPerfil],
+  );
+  const setSomAtivo = useCallback(
+    (v: boolean) => (perfilAtivo ? atualizarPerfil(perfilAtivo.id, { somAtivo: v }) : setSomLocal(v)),
+    [perfilAtivo, atualizarPerfil],
+  );
 
   const { position, permission } = useGeolocation({ watch: true });
   const announced = useRef<Map<string, number>>(new Map());
@@ -91,14 +128,22 @@ export function useModoPasseio(properties: Property[]) {
 
   const nearby: ImovelProximo[] = useMemo(() => {
     if (!position) return [];
-    return properties
+    // Obrigatório exclui por completo; desejável só pontua — é a distinção pedida entre
+    // "filtros obrigatórios" e "preferências desejáveis" do Modo Passeio Inteligente.
+    const candidatos = perfilAtivo
+      ? properties.filter((p) => atendeObrigatorios(p, perfilAtivo.obrigatorios))
+      : properties;
+    return candidatos
       .map((property) => ({
         property,
         distanciaMetros: haversineMeters(position, { lat: property.lat, lng: property.lng }),
+        compatibilidade: perfilAtivo
+          ? calcularCompatibilidade(property, perfilAtivo.desejaveis, radarById?.[property.id])
+          : null,
       }))
       .filter((p) => p.distanciaMetros <= raioMetros)
       .sort((a, b) => a.distanciaMetros - b.distanciaMetros);
-  }, [position, properties, raioMetros]);
+  }, [position, properties, raioMetros, perfilAtivo, radarById]);
 
   useEffect(() => {
     if (nearby.length === 0) return;
@@ -112,8 +157,12 @@ export function useModoPasseio(properties: Property[]) {
       setUltimoAlerta(novo);
       const finalidade = novo.property.finalidade === "venda" ? "à venda" : "para alugar";
       const porMes = novo.property.finalidade === "aluguel" ? " por mês" : "";
+      // Alerta personalizado: quando há um perfil ativo com preferências desejáveis marcadas,
+      // avisa também o % de compatibilidade (pedido explícito: "alertas personalizados").
+      const compat =
+        novo.compatibilidade !== null ? `, ${novo.compatibilidade} por cento compatível com seu perfil` : "";
       falar(
-        `Imóvel ${finalidade} a ${formatDistanceFalada(novo.distanciaMetros)} de você, por ${formatPrecoFalado(novo.property.preco)}${porMes}.`,
+        `Imóvel ${finalidade} a ${formatDistanceFalada(novo.distanciaMetros)} de você, por ${formatPrecoFalado(novo.property.preco)}${porMes}${compat}.`,
       );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -214,5 +263,14 @@ export function useModoPasseio(properties: Property[]) {
     rotaCarregando,
     passoAtual,
     distanciaProximoPasso,
+    // Perfis de busca salvos do Modo Passeio Inteligente
+    perfis,
+    perfilAtivo,
+    criarPerfil,
+    atualizarPerfil,
+    duplicarPerfil,
+    removerPerfil,
+    pausarPerfil,
+    definirPerfilAtivo,
   };
 }

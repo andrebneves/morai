@@ -7,16 +7,21 @@
 - Mapa interativo em tela cheia (MapLibre GL JS): localização do usuário, zoom/rotação, recentralizar,
   camadas rua/satélite, busca de endereço/bairro
 - Clustering de marcadores com Supercluster
-- 100 imóveis demonstrativos distribuídos pelos 17 bairros de Olinda (contagem exata definida no
-  briefing do produto), com coordenadas reais de cada bairro, seed reproduzível
+- 116 imóveis demonstrativos: 100 distribuídos pelos 17 bairros de Olinda (contagem exata definida
+  no briefing do produto) + 16 em Espinheiro e Ibura (Recife), adicionados a pedido pra sócios
+  testarem o Moraí fora de Olinda também — coordenadas reais de cada bairro, seed reproduzível
   (`npm run seed:generate`)
 - Toggle Comprar / Alugar / Anunciar
 - Página de detalhe do imóvel: galeria, especificações, descrição, histórico de preços, calculadoras,
   POIs próximos, rotas externas
 - Filtros avançados (tipo, preço, área, quartos, banheiros, vagas, pet-friendly, condomínio fechado,
   piscina, varanda, quintal, elevador, acessibilidade, mobiliado, apenas oportunidades)
-- **Modo Passeio**: rastreamento de localização em tempo real, alerta de imóveis próximos por raio
-  configurável (100 m–2 km), modo a pé/carro, voz em pt-BR, botão de teste de alerta
+- **Modo Passeio Inteligente**: rastreamento de localização em tempo real, alerta de imóveis
+  próximos por raio configurável (100 m–2 km), modo a pé/carro, voz em pt-BR, botão de teste de
+  alerta; **perfis de busca salvos** (criar/usar/pausar/duplicar/excluir) com **filtros
+  obrigatórios** (excluem o imóvel do alerta se não baterem: finalidade, tipo, preço máximo, área
+  mínima, características) separados de **preferências desejáveis** (só pontuam um % de
+  compatibilidade mostrado no alerta, não excluem nada)
 - **Moraí Radar**: classificação de preço (muito abaixo / abaixo / dentro / acima / muito acima da
   mediana comparável), com gating por amostra mínima e aviso de dado demonstrativo
 - 22 categorias de pontos de interesse via Overpass API, seção "O que tem por perto" no detalhe do
@@ -74,3 +79,35 @@ versão básica funcional, conforme instrução do briefing original:
   posicionando rótulos por direção/distância (estilo "Layar"), sem reconhecer visualmente qual
   prédio é qual. Reconhecimento visual preciso do edifício exigiria app nativo (ARKit/ARCore) e/ou
   um serviço pago de posicionamento visual (VPS), fora do escopo gratuito desta fase.
+
+### Do briefing estratégico "Dores, desejos e novas funcionalidades"
+
+O briefing de produto recebido em 2026-11-27 (ver [MARKET_RESEARCH.md](MARKET_RESEARCH.md) pras
+referências de mercado e dores/desejos mapeados) propõe uma visão bem mais ampla do Moraí, cobrindo
+posicionamento, monetização, métricas e dezenas de funcionalidades novas. Por instrução explícita do
+próprio briefing ("não tente implementar tudo simultaneamente") e da fase atual do projeto (Beta
+1.0 — ver `CLAUDE.md`), isso **não foi implementado de uma vez**; só o item priorizado
+explicitamente (Modo Passeio Inteligente, acima) entrou nesta rodada. Fica registrado aqui como
+backlog de visão, pra priorização futura item a item:
+
+- Moraí Match (recomendação "match" entre perfil de busca e imóveis — o embrião disso já existe no
+  % de compatibilidade dos perfis do Modo Passeio Inteligente)
+- Radar de Demanda / mapa de calor de interesse por região
+- Moraí Bairro, Moraí Meu Lugar, Moraí Valor, Moraí Avalia (ferramentas de inteligência de bairro e
+  precificação pro comprador/proprietário)
+- Calculadora de Imóvel Parado (tempo/custo de vacância pro proprietário)
+- Melhorias em Anunciar: indicadores de performance do anúncio, orientação de melhoria
+- Moraí Confiança (verificação de corretores/anúncios — relacionado ao item "selo verificado" já
+  listado acima)
+- Moraí Pro (CRM de corretor) e Moraí Business (painel pra imobiliárias) — já havia "Moraí Pro / CRM"
+  listado acima; o briefing detalha separadamente o lado "imobiliária"
+- Busca por IA em linguagem natural e Busca em Família (já listados acima)
+- Diário de Visitas (já listado acima)
+- Modelo de monetização (o briefing é explícito: **sem cobrança nesta primeira versão**)
+- Onboarding personalizado por perfil de uso
+- Métricas de sucesso do produto — com a ressalva explícita do briefing de **não usar tracking
+  invasivo nem guardar rotas precisas sem consentimento específico**
+- Documentos de produto adicionais sugeridos pelo briefing (`CUSTOMER_DISCOVERY.md`,
+  `PRODUCT_STRATEGY.md`, `BUSINESS_MODEL.md`, `COMPETITIVE_ANALYSIS.md`, `FEATURE_MATRIX.md`,
+  `TEST_PLAN.md`) — ainda não criados; fazem sentido conforme cada frente acima for priorizada,
+  não todos de uma vez

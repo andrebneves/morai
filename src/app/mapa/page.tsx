@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { Locate, Layers, Navigation, Loader2, X, CheckCircle2, CornerUpRight, CornerUpLeft, ArrowUp } from "lucide-react";
+import { Locate, Layers, Navigation, Loader2, X, CheckCircle2, CornerUpRight, CornerUpLeft, ArrowUp, Eye } from "lucide-react";
 import { MapView, type MapViewHandle } from "@/components/map/MapView";
 import { PurposeToggle } from "@/components/map/PurposeToggle";
 import { SearchBar } from "@/components/map/SearchBar";
@@ -48,7 +48,7 @@ export default function MapaPage() {
   const mapRef = useRef<MapViewHandle>(null);
   const { position, requestOnce } = useGeolocation();
   const radarById = useRadarMap(properties);
-  const passeio = useModoPasseio(properties);
+  const passeio = useModoPasseio(properties, radarById);
   const { show: showSplash, fading: splashFading } = useSplashGate(!loading);
 
   useEffect(() => {
@@ -197,6 +197,7 @@ export default function MapaPage() {
       <div className="absolute right-4 top-[calc(var(--safe-top)+168px)] z-20 flex flex-col gap-2.5">
         <ControlButton icon={<Layers className="h-5 w-5" />} onClick={() => setSatellite((s) => !s)} active={satellite} />
         <ControlButton icon={<Locate className="h-5 w-5" />} onClick={handleLocate} />
+        <ControlButton icon={<Eye className="h-5 w-5" />} onClick={() => router.push("/vision")} />
       </div>
 
       {/* Recentralizar (modo GPS pausado por arraste manual) */}

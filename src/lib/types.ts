@@ -121,3 +121,53 @@ export interface FeedbackEntry {
   nota?: number;
   mensagem: string;
 }
+
+export type RaioPasseio = 100 | 250 | 500 | 1000 | 2000;
+export type ModoDeslocamento = "pe" | "carro";
+
+/** Critérios obrigatórios de um perfil de busca do Modo Passeio — um imóvel que não atenda a
+ * algum deles nunca aparece na lista de proximidade nem gera alerta, mesmo dentro do raio. */
+export interface PerfilObrigatorios {
+  finalidade: ListingPurpose;
+  tipos: PropertyType[];
+  precoMax: number | null;
+  areaMin: number | null;
+  quartosMin: number | null;
+  vagasMin: number | null;
+  aceitaAnimais: boolean;
+  condominioFechado: boolean;
+  piscina: boolean;
+  varanda: boolean;
+  quintal: boolean;
+  elevador: boolean;
+  acessibilidade: boolean;
+  mobiliado: boolean;
+}
+
+/** Preferências desejáveis — não excluem o imóvel, só compõem um % de compatibilidade usado
+ * para destacar e priorizar os alertas do Modo Passeio. */
+export interface PerfilDesejaveis {
+  apenasOportunidades: boolean;
+  aceitaAnimais: boolean;
+  condominioFechado: boolean;
+  piscina: boolean;
+  varanda: boolean;
+  quintal: boolean;
+  elevador: boolean;
+  acessibilidade: boolean;
+  mobiliado: boolean;
+}
+
+/** Um perfil de busca salvo do Modo Passeio Inteligente — nomeado, pausável e substituível por
+ * outro perfil sem perder a configuração (pedido explícito: "perfis de busca salvos"). */
+export interface PerfilBusca {
+  id: string;
+  nome: string;
+  criadoEm: string;
+  pausado: boolean;
+  raioMetros: RaioPasseio;
+  modo: ModoDeslocamento;
+  somAtivo: boolean;
+  obrigatorios: PerfilObrigatorios;
+  desejaveis: PerfilDesejaveis;
+}
