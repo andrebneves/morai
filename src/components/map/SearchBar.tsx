@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Search, SlidersHorizontal, X } from "lucide-react";
+import { Search, X } from "lucide-react";
 import clsx from "clsx";
 import { OLINDA_BAIRROS } from "@/lib/data/olinda-bairros";
 import type { ListingPurpose } from "@/lib/types";
@@ -15,8 +15,6 @@ interface SearchResult {
 
 interface SearchBarProps {
   onSelectResult: (result: SearchResult) => void;
-  onOpenFilters: () => void;
-  activeFilterCount: number;
   /** Tinge o ícone de busca e o contorno com a mesma cor do modo ativo (Comprar/Alugar),
    * pra dar pra saber de relance em qual modo você está. */
   purpose: ListingPurpose;
@@ -24,7 +22,10 @@ interface SearchBarProps {
 
 const OLINDA_VIEWBOX = "-34.92,-8.04,-34.80,-7.95"; // lonMin,latMin,lonMax,latMax aprox.
 
-export function SearchBar({ onSelectResult, onOpenFilters, activeFilterCount, purpose }: SearchBarProps) {
+// O botão de filtros saiu da barra de busca e virou um botão circular flutuante na lateral
+// direita do mapa, junto com camadas/centralizar — organização pedida no briefing de direção
+// de arte ("organize os botões preferencialmente na lateral direita").
+export function SearchBar({ onSelectResult, purpose }: SearchBarProps) {
   const isAluguel = purpose === "aluguel";
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
@@ -107,18 +108,6 @@ export function SearchBar({ onSelectResult, onOpenFilters, activeFilterCount, pu
             <X className="h-4 w-4 text-text-muted" />
           </button>
         )}
-        <button
-          onClick={onOpenFilters}
-          className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-dark-green text-off-white"
-          aria-label="Filtros"
-        >
-          <SlidersHorizontal className="h-4 w-4" />
-          {activeFilterCount > 0 && (
-            <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-lime text-[9px] font-bold text-dark-green ring-2 ring-surface">
-              {activeFilterCount}
-            </span>
-          )}
-        </button>
       </div>
 
       {open && query.length > 0 && (

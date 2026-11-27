@@ -3,11 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { Locate, Layers, Navigation, X, CheckCircle2, CornerUpRight, CornerUpLeft, ArrowUp, Eye } from "lucide-react";
+import { Locate, Layers, Navigation, X, CheckCircle2, CornerUpRight, CornerUpLeft, ArrowUp, Eye, SlidersHorizontal } from "lucide-react";
 import { MapView, type MapViewHandle } from "@/components/map/MapView";
 import { MoraiHeader } from "@/components/layout/MoraiHeader";
 import { PurposeToggle } from "@/components/map/PurposeToggle";
 import { SearchBar } from "@/components/map/SearchBar";
+import { QuickFilterChips } from "@/components/map/QuickFilterChips";
 import { FiltersSheet } from "@/components/filters/FiltersSheet";
 import { PropertyPreviewSheet } from "@/components/property/PropertyPreviewSheet";
 import { ModoPasseioSheet } from "@/components/passeio/ModoPasseioSheet";
@@ -127,10 +128,9 @@ export default function MapaPage() {
         <MoraiHeader loading={loading}>
           <SearchBar
             onSelectResult={(r) => mapRef.current?.flyTo(r.lat, r.lng, r.zoom)}
-            onOpenFilters={() => setFiltersOpen(true)}
-            activeFilterCount={countActiveFilters(filters)}
             purpose={filters.finalidade}
           />
+          <QuickFilterChips filters={filters} onChange={setFilters} />
         </MoraiHeader>
         <div className="pointer-events-none mt-3 flex flex-col gap-3 px-4">
         <div className="pointer-events-auto">
@@ -207,11 +207,23 @@ export default function MapaPage() {
         </div>
       </div>
 
-      {/* Right controls */}
+      {/* Right controls — ordem e visual pedidos no briefing: botões circulares flutuantes,
+          fundo claro, ícone verde-escuro, na lateral direita (camadas, centralizar, filtros). */}
       <div className="absolute right-4 top-[calc(var(--safe-top)+168px)] z-20 flex flex-col gap-2.5">
-        <ControlButton icon={<Layers className="h-5 w-5" />} onClick={() => setSatellite((s) => !s)} active={satellite} />
-        <ControlButton icon={<Locate className="h-5 w-5" />} onClick={handleLocate} />
-        <ControlButton icon={<Eye className="h-5 w-5" />} onClick={() => router.push("/vision")} />
+        <ControlButton
+          icon={<Layers className="h-5 w-5" />}
+          onClick={() => setSatellite((s) => !s)}
+          active={satellite}
+          label="Camadas do mapa"
+        />
+        <ControlButton icon={<Locate className="h-5 w-5" />} onClick={handleLocate} label="Centralizar localização" />
+        <ControlButton
+          icon={<SlidersHorizontal className="h-5 w-5" />}
+          onClick={() => setFiltersOpen(true)}
+          badge={countActiveFilters(filters) || undefined}
+          label="Filtros"
+        />
+        <ControlButton icon={<Eye className="h-5 w-5" />} onClick={() => router.push("/vision")} label="Moraí Vision" />
       </div>
 
       {/* Recentralizar (modo GPS pausado por arraste manual) */}
@@ -260,19 +272,30 @@ function ControlButton({
   icon,
   onClick,
   active,
+  badge,
+  label,
 }: {
   icon: React.ReactNode;
   onClick: () => void;
   active?: boolean;
+  /** Contador exibido num selo lima no canto, ex. número de filtros ativos. */
+  badge?: number;
+  label: string;
 }) {
   return (
     <button
       onClick={onClick}
-      className={`flex h-11 w-11 items-center justify-center rounded-full shadow-[var(--shadow-float)] active:scale-95 transition-transform ${
+      aria-label={label}
+      className={`relative flex h-11 w-11 items-center justify-center rounded-full shadow-[var(--shadow-float)] active:scale-95 transition-transform ${
         active ? "bg-emerald text-dark-green" : "bg-surface text-foreground"
       }`}
     >
       {icon}
+      {!!badge && (
+        <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-lime text-[9px] font-bold text-dark-green ring-2 ring-surface">
+          {badge}
+        </span>
+      )}
     </button>
   );
 }

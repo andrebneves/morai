@@ -97,7 +97,7 @@ export function PropertyPreviewSheet({ property, radar, onDirigir }: PropertyPre
 
       <button
         onClick={() => onDirigir(property)}
-        className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-emerald py-2.5 text-sm font-bold text-dark-green"
+        className="mt-2 flex w-full items-center justify-center gap-2 rounded-full border border-emerald/35 bg-dark-green py-2.5 text-sm font-bold text-off-white"
       >
         <Navigation className="h-4 w-4" />
         Dirigir até lá

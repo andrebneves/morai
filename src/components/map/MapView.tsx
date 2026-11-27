@@ -305,7 +305,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
             <div style="display:inline-block;transform:${selected ? "scale(1.1)" : "scale(1)"};transition:transform .15s ease;animation:morai-pin-pop .35s cubic-bezier(.34,1.56,.64,1);">
               <div style="
                 display:inline-flex;align-items:center;gap:3px;
-                background:${selected ? "#00E58A" : "#003D32"};
+                background:${selected ? "#C5FF35" : "#003D32"};
                 color:${selected ? "#003D32" : "#F5F7F2"};
                 padding:3px 8px 3px 4px;border-radius:999px;
                 font-weight:700;font-size:11px;white-space:nowrap;
@@ -326,7 +326,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
                 ${opportunity ? '<span style="width:5px;height:5px;border-radius:999px;background:#C5FF35;display:inline-block;"></span>' : ""}
                 <span>${formatCompactPrice(property.preco)}${property.finalidade === "aluguel" ? "/mês" : ""}</span>
               </div>
-              <div style="width:0;height:0;margin:0 auto;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid ${selected ? "#00E58A" : "#003D32"};"></div>
+              <div style="width:0;height:0;margin:0 auto;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid ${selected ? "#C5FF35" : "#003D32"};"></div>
             </div>
           `
             : `
@@ -334,7 +334,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
               <div style="
                 display:flex;align-items:center;justify-content:center;
                 width:22px;height:22px;border-radius:999px;
-                background:${selected ? "#00E58A" : "#003D32"};
+                background:${selected ? "#C5FF35" : "#003D32"};
                 border:2px solid ${opportunity ? "#C5FF35" : "rgba(245,247,242,0.75)"};
                 box-shadow:0 4px 10px rgba(6,42,36,0.3);
               ">
@@ -343,7 +343,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
                   <path d="M5.5 10v8.5a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V10" stroke="${selected ? "#003D32" : "#F5F7F2"}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <div style="width:0;height:0;margin-top:-1px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid ${selected ? "#00E58A" : "#003D32"};"></div>
+              <div style="width:0;height:0;margin-top:-1px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid ${selected ? "#C5FF35" : "#003D32"};"></div>
             </div>
           `;
           el.onclick = (e) => {
