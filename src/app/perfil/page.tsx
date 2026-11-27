@@ -99,7 +99,7 @@ export default function PerfilPage() {
           <p className="text-xs leading-relaxed text-text-muted">
             O Moraí usa sua localização apenas no seu dispositivo, para centralizar o mapa e calcular
             distâncias. Não compartilhamos sua localização com terceiros nem armazenamos seu trajeto sem
-            consentimento específico (Modo Passeio). Dados de favoritos e preferências ficam salvos
+            consentimento específico (Minha Busca). Dados de favoritos e preferências ficam salvos
             localmente neste dispositivo até que você crie uma conta. Em conformidade com a LGPD, você
             pode apagar todos os dados locais a qualquer momento.
           </p>

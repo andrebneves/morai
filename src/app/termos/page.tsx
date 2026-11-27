@@ -36,7 +36,8 @@ export default function TermosPage() {
         <h2 className="font-semibold text-foreground">Limitação de responsabilidade</h2>
         <p>
           O Moraí é fornecido &quot;como está&quot;, sem garantias de disponibilidade contínua. Durante o
-          Modo Passeio, nunca utilize o celular enquanto dirige — use apenas os alertas sonoros.
+          uso do Moraí (Minha Busca), nunca utilize o celular enquanto dirige — use apenas os alertas
+          sonoros.
         </p>
       </div>
     </div>

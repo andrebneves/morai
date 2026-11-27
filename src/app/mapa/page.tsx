@@ -107,6 +107,15 @@ export default function MapaPage() {
   const rumoRelativo =
     passeio.rumoDestino !== null ? (passeio.rumoDestino - (activeUserPosition?.heading ?? 0) + 360) % 360 : null;
 
+  // Texto real do status (nunca uma legenda fictícia de "modo ativado") — reflete o estado de
+  // verdade da localização/descoberta nesse instante.
+  const statusLabel =
+    passeio.permission === "denied"
+      ? "Localização indisponível"
+      : !activeUserPosition
+        ? "Localizando você…"
+        : `${passeio.nearby.length} imóvel(is) por perto`;
+
   return (
     <div className="relative h-screen w-full overflow-hidden bg-background">
       {showSplash && <SplashScreen fadingOut={splashFading} />}
@@ -250,7 +259,7 @@ export default function MapaPage() {
         className="absolute bottom-[calc(76px+env(safe-area-inset-bottom))] left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full bg-dark-green px-5 py-3 text-sm font-bold text-off-white shadow-[var(--shadow-float)] active:scale-95 transition-transform"
       >
         <Navigation className="h-4 w-4 text-lime animate-pulse" />
-        {passeio.nearby.length} imóvel(is) por perto
+        {statusLabel}
       </button>
 
       <BottomSheet open={Boolean(selected)} onClose={() => setSelectedId(null)} maxHeightVh={55}>

@@ -17,10 +17,11 @@ export default function PrivacidadePage() {
         </p>
         <h2 className="font-semibold text-foreground">Localização</h2>
         <p>
-          Sua localização é usada apenas no seu dispositivo, para centralizar o mapa e calcular distâncias
-          até imóveis e pontos de interesse. Não enviamos sua localização para nossos servidores, exceto
-          quando você ativa o Modo Passeio, cujos dados de deslocamento não são armazenados sem seu
-          consentimento explícito e não são compartilhados com terceiros.
+          Sua localização é usada apenas no seu dispositivo, para centralizar o mapa, descobrir imóveis
+          por perto e calcular distâncias até imóveis e pontos de interesse — o Moraí acompanha sua
+          localização sempre que o mapa está aberto, sem precisar ativar nada separado. Não enviamos sua
+          localização para nossos servidores, e os dados de deslocamento da busca (Minha Busca) não são
+          armazenados sem seu consentimento explícito nem compartilhados com terceiros.
         </p>
         <h2 className="font-semibold text-foreground">Dados salvos localmente</h2>
         <p>
