@@ -1,11 +1,10 @@
 "use client";
 
 import { BottomSheet } from "@/components/ui/BottomSheet";
-import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
 import { formatDistance } from "@/lib/geo";
 import { formatCompactPrice } from "@/lib/format";
-import { Footprints, Car, Volume2, VolumeX, Navigation } from "lucide-react";
+import { Footprints, Car, Volume2, VolumeX, Radar } from "lucide-react";
 import type { useModoPasseio, RaioPasseio } from "@/lib/hooks/useModoPasseio";
 
 const RAIOS: { value: RaioPasseio; label: string }[] = [
@@ -24,9 +23,6 @@ interface ModoPasseioSheetProps {
 
 export function ModoPasseioSheet({ open, onClose, passeio }: ModoPasseioSheetProps) {
   const {
-    active,
-    start,
-    stop,
     raioMetros,
     setRaioMetros,
     modo,
@@ -42,12 +38,12 @@ export function ModoPasseioSheet({ open, onClose, passeio }: ModoPasseioSheetPro
     <BottomSheet open={open} onClose={onClose} maxHeightVh={80}>
       <div className="space-y-5 px-5 pb-6 pt-2">
         <div className="flex items-center gap-2">
-          <Navigation className="h-5 w-5 text-emerald" />
-          <h2 className="text-lg font-bold">Modo Passeio</h2>
+          <Radar className="h-5 w-5 text-emerald" />
+          <h2 className="text-lg font-bold">Descoberta por perto</h2>
         </div>
         <p className="text-sm text-text-muted">
-          Acompanhe sua localização enquanto explora Olinda e receba avisos quando houver
-          imóveis demonstrativos próximos.
+          O Moraí acompanha sua localização o tempo todo enquanto o mapa está aberto e avisa
+          quando houver imóveis próximos — ajuste aqui como isso funciona.
         </p>
 
         <section className="space-y-2">
@@ -85,56 +81,36 @@ export function ModoPasseioSheet({ open, onClose, passeio }: ModoPasseioSheetPro
           </button>
         </section>
 
-        {active && (
-          <section className="space-y-2">
-            <h3 className="text-sm font-semibold text-text-muted">
-              {nearby.length} imóvel(is) dentro do raio
-            </h3>
-            <div className="max-h-40 space-y-2 overflow-y-auto no-scrollbar">
-              {nearby.slice(0, 6).map((n) => (
-                <div
-                  key={n.property.id}
-                  className="flex items-center justify-between rounded-xl border border-border-subtle px-3 py-2 text-sm"
-                >
-                  <span className="truncate pr-2">{n.property.titulo}</span>
-                  <span className="shrink-0 text-xs font-semibold text-emerald">
-                    {formatDistance(n.distanciaMetros)} · {formatCompactPrice(n.property.preco)}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+        <section className="space-y-2">
+          <h3 className="text-sm font-semibold text-text-muted">
+            {nearby.length} imóvel(is) dentro do raio
+          </h3>
+          <div className="max-h-40 space-y-2 overflow-y-auto no-scrollbar">
+            {nearby.slice(0, 6).map((n) => (
+              <div
+                key={n.property.id}
+                className="flex items-center justify-between rounded-xl border border-border-subtle px-3 py-2 text-sm"
+              >
+                <span className="truncate pr-2">{n.property.titulo}</span>
+                <span className="shrink-0 text-xs font-semibold text-emerald">
+                  {formatDistance(n.distanciaMetros)} · {formatCompactPrice(n.property.preco)}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {permission === "denied" && (
           <p className="text-xs text-danger">
-            Localização não autorizada. Habilite o acesso à localização do Safari para usar o Modo Passeio.
+            Localização não autorizada. Habilite o acesso à localização do Safari para o Moraí funcionar.
           </p>
         )}
 
         <p className="text-[11px] text-text-muted">
           O Moraí não funciona em segundo plano nem com a tela bloqueada no iPhone — mantenha o app
-          aberto durante o passeio. Em breve: integração nativa com GPS.
+          aberto enquanto explora. Em breve: integração nativa com GPS.
         </p>
 
-        <div className="flex gap-3">
-          {!active ? (
-            <Button
-              fullWidth
-              size="lg"
-              onClick={() => {
-                start();
-                onClose();
-              }}
-            >
-              Iniciar Modo Passeio
-            </Button>
-          ) : (
-            <Button fullWidth size="lg" variant="danger" onClick={stop}>
-              Encerrar Modo Passeio
-            </Button>
-          )}
-        </div>
         <button onClick={testarAlerta} className="w-full text-center text-sm font-semibold text-emerald">
           Testar alerta sonoro
         </button>

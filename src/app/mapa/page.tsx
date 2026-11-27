@@ -68,19 +68,11 @@ export default function MapaPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // A ideia central do Moraí é o GPS de descoberta (Modo Passeio) — ele liga sozinho ao abrir
-  // o mapa em vez de ficar escondido atrás de um botão, pra ser a experiência padrão.
-  const passeioAutoIniciado = useRef(false);
-  useEffect(() => {
-    if (passeioAutoIniciado.current || loading) return;
-    passeioAutoIniciado.current = true;
-    passeio.start();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loading]);
-
   const filtered = applyFilters(properties, filters, radarById);
   const selected = properties.find((p) => p.id === selectedId) ?? null;
-  const activeUserPosition = passeio.active ? passeio.position : position;
+  // O Moraí não é um app com um "Modo Passeio" opcional — o app É esse modo: a localização
+  // acompanha sempre que o mapa está aberto, sem precisar ligar nada.
+  const activeUserPosition = passeio.position ?? position;
 
   const handleLocate = () => {
     requestOnce();
@@ -90,7 +82,6 @@ export default function MapaPage() {
   // "Dirigir até lá" é o próprio GPS do Moraí guiando por distância/rumo em linha reta — não
   // abre um app de navegação externo (pedido explícito: "a navegação deveria ser dele próprio").
   const handleDirigir = (property: Property) => {
-    if (!passeio.active) passeio.start();
     passeio.setDestino(property);
     setSelectedId(null);
   };
@@ -109,7 +100,7 @@ export default function MapaPage() {
         onSelectProperty={setSelectedId}
         userPosition={activeUserPosition}
         satellite={satellite}
-        followHeading={passeio.active}
+        followHeading={Boolean(activeUserPosition)}
         onFollowPausedChange={setFollowPaused}
         routeCoordinates={passeio.rota?.coordenadas ?? null}
       />
@@ -183,7 +174,7 @@ export default function MapaPage() {
       </div>
 
       {/* Recentralizar (modo GPS pausado por arraste manual) */}
-      {passeio.active && followPaused && (
+      {followPaused && (
         <button
           onClick={() => mapRef.current?.resumeFollow()}
           className="absolute bottom-[calc(132px+env(safe-area-inset-bottom))] left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full bg-emerald px-4 py-2.5 text-sm font-bold text-dark-green shadow-[var(--shadow-float)] active:scale-95 transition-transform"
@@ -193,13 +184,13 @@ export default function MapaPage() {
         </button>
       )}
 
-      {/* Modo Passeio FAB */}
+      {/* Status de descoberta por perto (sempre ativo — abre os ajustes de raio/som/deslocamento) */}
       <button
         onClick={() => setPasseioOpen(true)}
         className="absolute bottom-[calc(76px+env(safe-area-inset-bottom))] left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full bg-dark-green px-5 py-3 text-sm font-bold text-off-white shadow-[var(--shadow-float)] active:scale-95 transition-transform"
       >
-        <Navigation className={`h-4 w-4 ${passeio.active ? "text-lime animate-pulse" : "text-emerald"}`} />
-        {passeio.active ? `Passeio ativo · ${passeio.nearby.length} próx.` : "Modo Passeio"}
+        <Navigation className="h-4 w-4 text-lime animate-pulse" />
+        {passeio.nearby.length} imóvel(is) por perto
       </button>
 
       <BottomSheet open={Boolean(selected)} onClose={() => setSelectedId(null)} maxHeightVh={55}>

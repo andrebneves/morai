@@ -24,8 +24,10 @@ export interface ImovelProximo {
 
 const ALERTA_COOLDOWN_MS = 1000 * 60 * 10; // não repete o mesmo imóvel por 10 min
 
+// O Moraí não tem um "Modo Passeio" opcional — o app É esse modo: a localização fica sempre
+// acompanhando e os imóveis próximos aparecem em tempo real desde que a página do mapa abre
+// (pedido explícito: "não existe um modo passeio, o próprio Moraí é somente um modo passeio").
 export function useModoPasseio(properties: Property[]) {
-  const [active, setActive] = useState(false);
   const [raioMetros, setRaioMetros] = useState<RaioPasseio>(250);
   const [modo, setModo] = useState<ModoDeslocamento>("pe");
   const [somAtivo, setSomAtivo] = useState(true);
@@ -35,7 +37,7 @@ export function useModoPasseio(properties: Property[]) {
   const [rotaCarregando, setRotaCarregando] = useState(false);
   const [passoIndex, setPassoIndex] = useState(0);
 
-  const { position, permission, requestOnce } = useGeolocation({ watch: active });
+  const { position, permission } = useGeolocation({ watch: true });
   const announced = useRef<Map<string, number>>(new Map());
   const chegadaAnunciada = useRef<string | null>(null);
   const rotaChaveRef = useRef<string | null>(null);
@@ -99,7 +101,7 @@ export function useModoPasseio(properties: Property[]) {
   }, [position, properties, raioMetros]);
 
   useEffect(() => {
-    if (!active || nearby.length === 0) return;
+    if (nearby.length === 0) return;
     const now = Date.now();
     const novo = nearby.find((n) => {
       const last = announced.current.get(n.property.id);
@@ -115,16 +117,7 @@ export function useModoPasseio(properties: Property[]) {
       );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [nearby, active]);
-
-  const start = useCallback(() => {
-    requestOnce();
-    setActive(true);
-  }, [requestOnce]);
-
-  const stop = useCallback(() => {
-    setActive(false);
-  }, []);
+  }, [nearby]);
 
   const testarAlerta = useCallback(() => {
     falar("Este é um alerta de teste do modo passeio do Moraí.");
@@ -188,7 +181,7 @@ export function useModoPasseio(properties: Property[]) {
   // Avança de passo em passo conforme o usuário se aproxima de cada manobra, avisando em voz
   // alta com antecedência — igual ao "em 150 metros, vire à direita" de um GPS de verdade.
   useEffect(() => {
-    if (!active || !passoAtual || distanciaProximoPasso === null) return;
+    if (!passoAtual || distanciaProximoPasso === null) return;
 
     if (!passoPreAvisadoRef.current.has(passoIndex) && distanciaProximoPasso <= RAIO_PRE_AVISO_METROS) {
       passoPreAvisadoRef.current.add(passoIndex);
@@ -198,12 +191,9 @@ export function useModoPasseio(properties: Property[]) {
     if (distanciaProximoPasso <= RAIO_PASSO_CONCLUIDO_METROS && rota && passoIndex < rota.passos.length - 1) {
       setPassoIndex((i) => i + 1);
     }
-  }, [active, passoAtual, passoIndex, distanciaProximoPasso, rota, falar]);
+  }, [passoAtual, passoIndex, distanciaProximoPasso, rota, falar]);
 
   return {
-    active,
-    start,
-    stop,
     raioMetros,
     setRaioMetros,
     modo,
