@@ -3,7 +3,15 @@ import { POI_CATEGORIES, findPOICategory } from "@/lib/data/poiCategories";
 import type { POI, POICategory } from "@/lib/types";
 import { haversineMeters } from "@/lib/geo";
 
-const OVERPASS_ENDPOINT = "https://overpass-api.de/api/interpreter";
+// Mais de uma instância pública da Overpass (todas rodam o mesmo banco de dados do
+// OpenStreetMap) — a instância principal (overpass-api.de) cai com alguma frequência por
+// sobrecarga; sem alternativa, a busca de POI inteira ficava fora do ar nesses períodos (visto na
+// prática: "/api/poi" retornando "Overpass indisponível" com a instância principal fora do ar).
+const OVERPASS_ENDPOINTS = [
+  "https://overpass-api.de/api/interpreter",
+  "https://overpass.kumi.systems/api/interpreter",
+  "https://overpass.private.coffee/api/interpreter",
+];
 
 /**
  * Proxy para a Overpass API (dados OpenStreetMap, gratuitos e abertos).
@@ -48,18 +56,29 @@ ${filters}
   `;
 
   try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 12000);
+    let res: Response | null = null;
+    for (const endpoint of OVERPASS_ENDPOINTS) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 9000);
+      try {
+        const attempt = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain" },
+          body: query,
+          signal: controller.signal,
+        });
+        if (attempt.ok) {
+          res = attempt;
+          break;
+        }
+      } catch {
+        // tenta a próxima instância
+      } finally {
+        clearTimeout(timeout);
+      }
+    }
 
-    const res = await fetch(OVERPASS_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "text/plain" },
-      body: query,
-      signal: controller.signal,
-    });
-    clearTimeout(timeout);
-
-    if (!res.ok) {
+    if (!res) {
       return Response.json({ pois: [], aviso: "Overpass indisponível no momento." }, { status: 200 });
     }
 
