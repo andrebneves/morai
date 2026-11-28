@@ -1,21 +1,60 @@
 "use client";
 
 import {
+  createElement,
   forwardRef,
   useEffect,
   useImperativeHandle,
   useRef,
   useState,
 } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
 import { Map as MapLibreMap, Marker, NavigationControl, setWorkerUrl, type GeoJSONSource } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import Supercluster from "supercluster";
 import type { Feature, Point } from "geojson";
-import type { Property, RadarResult } from "@/lib/types";
+import type { POI, POICategory, Property, RadarResult } from "@/lib/types";
 import { formatCompactPrice } from "@/lib/format";
 import { isOportunidade } from "@/lib/radar";
 import { OLINDA_CENTER } from "@/lib/data/olinda-bairros";
 import { STREETS_STYLE, SATELLITE_STYLE } from "@/components/map/mapStyles";
+import { haversineMeters, formatDistance } from "@/lib/geo";
+import { POI_ICONS } from "@/lib/data/poiIcons";
+
+/** Mesmas categorias já destacadas em "O que tem por perto" (NearbyPOISection) — reaproveita a
+ * mesma curadoria em vez de inventar outra lista, pra consistência entre mapa e detalhe do imóvel. */
+const MAP_POI_CATEGORIES: POICategory[] = [
+  "farmacia",
+  "supermercado",
+  "escola",
+  "restaurante",
+  "ponto_onibus",
+  "praia",
+  "academia",
+  "banco",
+];
+
+/** Pré-renderiza cada ícone (mesmo lucide-react usado em NearbyPOISection) pra SVG estático, sob
+ * demanda e com cache — os marcadores deste arquivo usam innerHTML bruto, não JSX, por
+ * performance (ver marcadores de imóvel/cluster abaixo), então não dá pra montar os ícones via
+ * React aqui. Lazy (não no topo do módulo): `renderToStaticMarkup` só pode rodar depois que o
+ * React já está montado — calculado no topo do módulo, quebra o prerender estático do Next.js. */
+const poiIconSvgCache = new Map<POICategory, string>();
+function getPoiIconSvg(categoria: POICategory): string {
+  const cached = poiIconSvgCache.get(categoria);
+  if (cached) return cached;
+  const svg = renderToStaticMarkup(createElement(POI_ICONS[categoria], { size: 13, strokeWidth: 2.4 }));
+  poiIconSvgCache.set(categoria, svg);
+  return svg;
+}
+
+/** Só busca POIs próximos de novo quando o usuário se afasta mais que isso do último ponto
+ * consultado — evita martelar a Overpass API (gratuita, de uso justo) a cada atualização de GPS. */
+const POI_REFETCH_DISTANCE_METERS = 150;
+const POI_SEARCH_RADIUS_METERS = 500;
+/** No máximo essa quantidade de pills simultâneas no mapa — mais que isso polui a tela (ver
+ * referência visual do briefing "Moraí Maps"). */
+const MAX_POI_PILLS = 4;
 
 // O auto-bundling do worker do MapLibre não resolve sob o Turbopack dev-server;
 // usamos o bundle oficial copiado para /public (ver scripts/copy-maplibre-worker.mjs).
@@ -105,6 +144,9 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
   const mapRef = useRef<MapLibreMap | null>(null);
   const markersRef = useRef<Map<string, Marker>>(new Map());
   const userMarkerRef = useRef<Marker | null>(null);
+  const poiMarkersRef = useRef<Map<string, Marker>>(new Map());
+  const poiAnchorRef = useRef<{ lat: number; lng: number } | null>(null);
+  const [nearbyPois, setNearbyPois] = useState<POI[]>([]);
   const clusterIndexRef = useRef<Supercluster<PointProps, ClusterProps> | null>(null);
   const [styleLoaded, setStyleLoaded] = useState(false);
   const hasInitialZoomRef = useRef(false);
@@ -369,6 +411,8 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
     if (!userPosition) {
       userMarkerRef.current?.remove();
       userMarkerRef.current = null;
+      poiAnchorRef.current = null;
+      setNearbyPois([]);
       return;
     }
 
@@ -407,6 +451,100 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
           </div>
         `;
   }, [userPosition, styleLoaded, followHeading]);
+
+  // busca pontos de interesse reais perto da posição atual (Overpass/OpenStreetMap) pra exibir
+  // como pills no mapa (farmácia, escola, praia etc. — ver seção "Moraí Maps" em
+  // DESIGN_SYSTEM.md). Só refaz a busca quando o usuário se afasta o bastante do último ponto
+  // consultado, nunca a cada atualização de GPS — a Overpass é uma API gratuita de uso justo.
+  useEffect(() => {
+    if (!userPosition) return;
+
+    const previous = poiAnchorRef.current;
+    if (previous && haversineMeters(previous, userPosition) < POI_REFETCH_DISTANCE_METERS) return;
+    poiAnchorRef.current = { lat: userPosition.lat, lng: userPosition.lng };
+
+    let cancelled = false;
+    const params = new URLSearchParams({
+      lat: String(userPosition.lat),
+      lng: String(userPosition.lng),
+      radius: String(POI_SEARCH_RADIUS_METERS),
+      categorias: MAP_POI_CATEGORIES.join(","),
+    });
+
+    fetch(`/api/poi?${params.toString()}`)
+      .then((res) => res.json())
+      .then((data: { pois?: POI[] }) => {
+        if (!cancelled) setNearbyPois(data.pois ?? []);
+      })
+      .catch(() => {
+        /* silencioso — pills de POI são um complemento visual, não essencial ao mapa funcionar */
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [userPosition]);
+
+  // renderiza as pills de POI próximo: só o mais próximo de cada categoria, limitado a
+  // MAX_POI_PILLS no total, pra não poluir o mapa.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !styleLoaded) return;
+
+    const nearestByCategory = new Map<POICategory, POI>();
+    for (const poi of nearbyPois) {
+      const current = nearestByCategory.get(poi.categoria);
+      if (!current || poi.distanciaMetros < current.distanciaMetros) {
+        nearestByCategory.set(poi.categoria, poi);
+      }
+    }
+    const toShow = [...nearestByCategory.values()]
+      .sort((a, b) => a.distanciaMetros - b.distanciaMetros)
+      .slice(0, MAX_POI_PILLS);
+
+    const nextKeys = new Set(toShow.map((p) => p.id));
+
+    for (const poi of toShow) {
+      let marker = poiMarkersRef.current.get(poi.id);
+      if (!marker) {
+        const el = document.createElement("div");
+        marker = new Marker({ element: el, anchor: "bottom" }).setLngLat([poi.lng, poi.lat]).addTo(map);
+        poiMarkersRef.current.set(poi.id, marker);
+      }
+
+      const el = marker.getElement();
+      el.className = "maplibregl-marker pointer-events-none select-none";
+      el.innerHTML = `
+        <div style="display:inline-flex;flex-direction:column;align-items:center;animation:morai-pin-pop .35s cubic-bezier(.34,1.56,.64,1);">
+          <div style="
+            display:inline-flex;align-items:center;gap:6px;
+            background:#F5F7F2;color:#003D32;
+            padding:6px 12px 6px 8px;border-radius:999px;
+            box-shadow:0 4px 10px rgba(6,42,36,0.18);
+            white-space:nowrap;
+          ">
+            <span style="
+              display:flex;align-items:center;justify-content:center;
+              width:22px;height:22px;border-radius:999px;flex-shrink:0;
+              background:rgba(0,61,50,0.08);color:#003D32;
+            ">${getPoiIconSvg(poi.categoria)}</span>
+            <span style="display:flex;flex-direction:column;line-height:1.15;">
+              <span style="font-size:11.5px;font-weight:700;">${poi.nome}</span>
+              <span style="font-size:10px;font-weight:500;color:rgba(0,61,50,0.6);">${formatDistance(poi.distanciaMetros)}</span>
+            </span>
+          </div>
+          <div style="width:6px;height:6px;margin-top:3px;border-radius:999px;background:#003D32;border:1.5px solid #F5F7F2;"></div>
+        </div>
+      `;
+    }
+
+    for (const [id, marker] of poiMarkersRef.current.entries()) {
+      if (!nextKeys.has(id)) {
+        marker.remove();
+        poiMarkersRef.current.delete(id);
+      }
+    }
+  }, [nearbyPois, styleLoaded]);
 
   // câmera "modo GPS": segue a posição e gira pra manter a direção de deslocamento pra cima.
   // Na primeíssima localização recebida (app recém-aberto), além de centralizar também damos

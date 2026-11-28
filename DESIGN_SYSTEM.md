@@ -149,6 +149,32 @@ recortadas de 3 pranchas originais) — importada para `design/map-assets/` (man
 - O estilo satélite (`SATELLITE_STYLE`, imagens Esri) não foi alterado — é uma camada alternativa, não o
   modo padrão.
 
+### Pills de POI próximo (briefing visual "Moraí Maps", 2026-11-27)
+
+O usuário mandou 3 mockups mostrando um estilo bem mais ilustrado/denso que o mapa vetorial real
+permite (árvore/prédio cobrindo cada quarteirão — inviável a partir de dados reais do OSM, que não
+tem posição de árvore individual, sem um projeto de tiles raster customizados à parte). Da parte
+viável, a primeira peça implementada foi os **pills de POI próximo com ícone + nome + distância**
+(ex. "Farmácia · 300 m"), iguais ao mockup 1.
+
+- `src/components/map/MapView.tsx`: busca POIs reais perto da posição atual via `/api/poi`
+  (Overpass/OpenStreetMap, a mesma API já usada em `NearbyPOISection` no detalhe do imóvel) e
+  renderiza até `MAX_POI_PILLS` (4) como marcadores HTML — só o mais próximo de cada categoria em
+  `MAP_POI_CATEGORIES` (mesma curadoria de `NearbyPOISection`: farmácia, supermercado, escola,
+  restaurante, ponto de ônibus, praia, academia, banco).
+- **Throttle obrigatório**: só busca de novo quando o usuário anda mais de
+  `POI_REFETCH_DISTANCE_METERS` (150m) desde a última consulta — a Overpass é uma API gratuita de
+  uso justo, não dá pra consultar a cada atualização de GPS. Testado injetando POIs falsos (mock de
+  `fetch`) porque a Overpass pública esteve indisponível durante o teste local.
+  - Ícones reaproveitam os mesmos componentes lucide-react de `POI_ICONS`
+    (`src/lib/data/poiIcons.ts`), pré-renderizados pra SVG estático sob demanda
+    (`renderToStaticMarkup`) e com cache — **importante**: isso não pode rodar no topo do módulo
+    (quebra o prerender estático do Next.js com "Cannot read properties of null (reading
+    'useContext')"), só dentro de uma função chamada em tempo de render/efeito no cliente.
+  - Pills somem sozinhas quando a localização fica indisponível (`userPosition` nulo).
+- **Não implementado**: as pills não são clicáveis (`pointer-events: none`, só informativas, iguais
+  ao mockup) e não mostram todas as categorias — isso é intencional, pra não poluir o mapa.
+
 ## Animações
 
 - `sheet-up` — entrada do bottom sheet.
