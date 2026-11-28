@@ -330,20 +330,9 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
             </div>
           `
             : `
-            <div style="transform:${selected ? "scale(1.15)" : "scale(1)"};transition:transform .15s ease;animation:morai-pin-pop .35s cubic-bezier(.34,1.56,.64,1);display:inline-flex;flex-direction:column;align-items:center;">
-              <div style="
-                display:flex;align-items:center;justify-content:center;
-                width:22px;height:22px;border-radius:999px;
-                background:${selected ? "#C5FF35" : "#003D32"};
-                border:2px solid ${opportunity ? "#C5FF35" : "rgba(245,247,242,0.75)"};
-                box-shadow:0 4px 10px rgba(6,42,36,0.3);
-              ">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 11.5L12 4l9 7.5" stroke="${selected ? "#003D32" : "#F5F7F2"}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M5.5 10v8.5a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V10" stroke="${selected ? "#003D32" : "#F5F7F2"}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div style="width:0;height:0;margin-top:-1px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid ${selected ? "#C5FF35" : "#003D32"};"></div>
+            <div style="position:relative;transform:${selected ? "scale(1.15)" : "scale(1)"};transform-origin:bottom center;transition:transform .15s ease;animation:morai-pin-pop .35s cubic-bezier(.34,1.56,.64,1);display:inline-flex;">
+              <img src="/map-assets/markers/${selected ? "selecionado" : "imovel"}.png" alt="" width="30" height="37" style="display:block;filter:drop-shadow(0 4px 6px rgba(6,42,36,0.3));" />
+              ${opportunity ? '<span style="position:absolute;top:-2px;right:-2px;width:9px;height:9px;border-radius:999px;background:#C5FF35;border:1.5px solid #F5F7F2;"></span>' : ""}
             </div>
           `;
           el.onclick = (e) => {

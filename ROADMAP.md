@@ -49,10 +49,11 @@
   em [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)
 - **"Moraí Maps" — paleta própria e ícones de POI ilustrados**: paleta "Moraí Classic" (mar turquesa,
   areia natural, construções bege/pastel) e 20 classes de POI (farmácia, hospital, escola, igreja,
-  parque etc.) renderizando com ilustração isométrica própria em vez do ícone genérico padrão — ver
-  seção dedicada em [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md). Biblioteca completa (231 ilustrações) em
-  `design/map-assets/`; categorias que não são POI genérico (marcadores, marcos, tipos de imóvel,
-  vegetação) ficam no backlog da mesma seção.
+  parque etc.) renderizando com ilustração isométrica própria em vez do ícone genérico padrão, mais os
+  marcadores de imóvel (pin padrão/selecionado) com a mesma ilustração — ver seção dedicada em
+  [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md). Biblioteca completa (231 ilustrações) em `design/map-assets/`;
+  categorias que não servem pra isso (marco histórico, tipos de imóvel, vegetação, rota/raio como
+  linha/círculo) ficam no backlog da mesma seção.
 - "Moraí Drive" — mockup conceitual de integração CarPlay/Android Auto (claramente identificado como
   não-funcional/conceitual)
 - PWA completo: manifest, service worker (cache network-first + stale-while-revalidate), ícones

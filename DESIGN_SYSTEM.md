@@ -121,9 +121,21 @@ recortadas de 3 pranchas originais) — importada para `design/map-assets/` (man
     o resto continua ancorado ao centro, igual ao padrão.
 - **Backlog, não implementado** (mesma biblioteca, categorias que não são POIs genéricos do OSM e
   precisam de uma abordagem diferente — ver `design/map-assets/manifest.json` para a lista completa):
-  - `18_marcadores/` (imóvel, selecionado, localização, rota, raio de busca, destaque): substituiria os
-    marcadores HTML/CSS atuais do `MapView.tsx`, não os ícones de POI — exige mexer na criação dos
-    `Marker` do MapLibre, não no estilo.
+  - `18_marcadores/imovel.png` e `18_marcadores/selecionado.png` — **implementado**: o pin simples do
+    imóvel (zoom abaixo de `PRICE_LABEL_MIN_ZOOM`, sem etiqueta de preço) usa essas ilustrações em vez
+    do ícone SVG de casa desenhado à mão, nas cores oficiais (verde-escuro/lima) — ver
+    `src/components/map/MapView.tsx`. A etiqueta de preço (zoom alto) não mudou, pois o preço é texto
+    dinâmico, não dá pra vir de um PNG estático.
+  - `18_marcadores/localizacao.png` — **não usado**: é um pin estático sem capacidade de indicar
+    direção; o marcador de posição do usuário precisa girar pra mostrar o rumo (seta tipo GPS/Waze),
+    então o círculo+seta SVG atual continua sendo a implementação certa — essa imagem não serve pra
+    substituí-lo sem perder essa função.
+  - `18_marcadores/rota.png` e `18_marcadores/raio_busca.png` — **não são marcadores de ponto**: a
+    arte é uma linha tracejada e círculos concêntricos (ilustração/legenda do conceito, não um ícone
+    pra plotar numa coordenada) — não implementado.
+  - `18_marcadores/destaque.png` (pin laranja com estrela): não implementado — não existe hoje um
+    conceito de "imóvel em destaque/patrocinado" diferente de "oportunidade" (que já tem seu próprio
+    tratamento visual); introduzir esse estado seria uma funcionalidade nova, não pedida.
   - `08_marcos` (Alto da Sé, Forte de Casa Caiada, Marco Zero): não são uma classe genérica do OSM;
     precisam de uma camada própria com coordenadas reais verificadas (não inventar coordenadas).
   - `04_imoveis`/`16_urbanismo` (ícones por tipo de imóvel): mais prováveis de servir o card de imóvel
