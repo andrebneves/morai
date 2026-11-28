@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { POI, POICategory } from "@/lib/types";
+import { fetchNearbyPOIs } from "@/lib/overpass";
 
 export function useNearbyPOIs(
   lat: number,
@@ -17,14 +18,10 @@ export function useNearbyPOIs(
     let cancelled = false;
     setLoading(true);
 
-    const params = new URLSearchParams({ lat: String(lat), lng: String(lng), radius: String(radius) });
-    if (categorias?.length) params.set("categorias", categorias.join(","));
-
-    fetch(`/api/poi?${params.toString()}`)
-      .then((res) => res.json())
+    fetchNearbyPOIs(lat, lng, radius, categorias)
       .then((data) => {
         if (cancelled) return;
-        setPois(data.pois ?? []);
+        setPois(data.pois);
         setAviso(data.aviso ?? null);
       })
       .catch(() => {

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { OLINDA_BAIRROS } from "@/lib/data/olinda-bairros";
 import { getAllProperties } from "@/lib/data/properties";
 import type { POICategory, Property } from "@/lib/types";
+import { fetchNearbyPOIs } from "@/lib/overpass";
 
 interface Prioridade {
   key: string;
@@ -74,19 +75,12 @@ export default function BairroIdealPage() {
 
       if (poiCriterios.length > 0) {
         try {
-          const params = new URLSearchParams({
-            lat: String(bairro.lat),
-            lng: String(bairro.lng),
-            radius: String(distancia),
-            categorias: categoriasUnicas.join(","),
-          });
-          const res = await fetch(`/api/poi?${params.toString()}`);
-          const data = await res.json();
-          const pois = data.pois ?? [];
+          const data = await fetchNearbyPOIs(bairro.lat, bairro.lng, distancia, categoriasUnicas);
+          const pois = data.pois;
           if (data.aviso) falhasPoi++;
 
           for (const c of poiCriterios) {
-            const encontrado = pois.some((p: { categoria: string }) => p.categoria === c.poiCategoria);
+            const encontrado = pois.some((p) => p.categoria === c.poiCategoria);
             if (encontrado) atendidos++;
             detalhes.push({
               label: c.label,

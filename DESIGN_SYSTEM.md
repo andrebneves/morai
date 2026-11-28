@@ -157,15 +157,33 @@ tem posição de árvore individual, sem um projeto de tiles raster customizados
 viável, a primeira peça implementada foi os **pills de POI próximo com ícone + nome + distância**
 (ex. "Farmácia · 300 m"), iguais ao mockup 1.
 
-- `src/components/map/MapView.tsx`: busca POIs reais perto da posição atual via `/api/poi`
-  (Overpass/OpenStreetMap, a mesma API já usada em `NearbyPOISection` no detalhe do imóvel) e
-  renderiza até `MAX_POI_PILLS` (4) como marcadores HTML — só o mais próximo de cada categoria em
-  `MAP_POI_CATEGORIES` (mesma curadoria de `NearbyPOISection`: farmácia, supermercado, escola,
-  restaurante, ponto de ônibus, praia, academia, banco).
+- `src/components/map/MapView.tsx`: busca POIs reais perto da posição atual via
+  `src/lib/overpass.ts` (Overpass/OpenStreetMap, a mesma API usada em `NearbyPOISection` no detalhe
+  do imóvel e em "Meu Bairro Ideal") e renderiza até `MAX_POI_PILLS` (4) como marcadores HTML — só o
+  mais próximo de cada categoria em `MAP_POI_CATEGORIES` (mesma curadoria de `NearbyPOISection`:
+  farmácia, supermercado, escola, restaurante, ponto de ônibus, praia, academia, banco).
+- **Por que a busca roda no navegador do usuário, e não num proxy no nosso servidor** (não é mais
+  `/api/poi`, essa rota foi removida): confirmamos por teste direto que a instância principal da
+  Overpass (`overpass-api.de`) rejeita com `406` requisições vindas de IP de servidor/nuvem — o
+  mesmo pedido falhou tanto de uma função serverless da Vercel quanto de um ambiente de
+  desenvolvimento em nuvem, e funcionou normalmente quando disparado a partir do navegador. Por
+  isso `fetchNearbyPOIs` roda inteiramente no cliente.
+- **Limitação conhecida e aceita (não é bug): a Overpass pública é lenta sob uso intenso da mesma
+  origem.** Durante a depuração desse recurso, bastaram ~10 consultas de teste em poucos minutos a
+  partir do mesmo navegador pra fazer a mesma consulta (que normalmente responde em menos de 2s)
+  levar 30-40s ou não responder — comportamento típico de limitação de uso justo de APIs públicas
+  gratuitas, não um erro de sintaxe da consulta nem de IP bloqueado dessa vez. Um usuário real no
+  celular, fazendo uma consulta isolada a cada ~150m andados, não deve esbarrar nisso na prática,
+  mas é uma reserva honesta a fazer: **essa é uma API gratuita e best-effort, sem SLA** (projeto não
+  contrata serviço pago nessa fase — ver `CLAUDE.md`), então as pills podem ocasionalmente demorar
+  alguns segundos a mais ou simplesmente não aparecer se a Overpass estiver sobrecarregada no
+  momento — o app já trata isso sem quebrar (pills são complemento visual, nunca bloqueiam o mapa).
+  As consultas agrupam os pares chave/valor OSM por chave (`amenity`, `shop` etc.) com alternância
+  via regex em vez de uma cláusula `around` por categoria, e o timeout por instância subiu de 9s
+  pra 18s pra dar mais margem a respostas legitimamente mais lentas.
 - **Throttle obrigatório**: só busca de novo quando o usuário anda mais de
   `POI_REFETCH_DISTANCE_METERS` (150m) desde a última consulta — a Overpass é uma API gratuita de
-  uso justo, não dá pra consultar a cada atualização de GPS. Testado injetando POIs falsos (mock de
-  `fetch`) porque a Overpass pública esteve indisponível durante o teste local.
+  uso justo, não dá pra consultar a cada atualização de GPS.
   - Ícones reaproveitam os mesmos componentes lucide-react de `POI_ICONS`
     (`src/lib/data/poiIcons.ts`), pré-renderizados pra SVG estático sob demanda
     (`renderToStaticMarkup`) e com cache — **importante**: isso não pode rodar no topo do módulo

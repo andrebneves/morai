@@ -20,6 +20,7 @@ import { OLINDA_CENTER } from "@/lib/data/olinda-bairros";
 import { STREETS_STYLE, SATELLITE_STYLE } from "@/components/map/mapStyles";
 import { haversineMeters, formatDistance } from "@/lib/geo";
 import { POI_ICONS } from "@/lib/data/poiIcons";
+import { fetchNearbyPOIs } from "@/lib/overpass";
 
 /** Mesmas categorias já destacadas em "O que tem por perto" (NearbyPOISection) — reaproveita a
  * mesma curadoria em vez de inventar outra lista, pra consistência entre mapa e detalhe do imóvel. */
@@ -464,17 +465,10 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
     poiAnchorRef.current = { lat: userPosition.lat, lng: userPosition.lng };
 
     let cancelled = false;
-    const params = new URLSearchParams({
-      lat: String(userPosition.lat),
-      lng: String(userPosition.lng),
-      radius: String(POI_SEARCH_RADIUS_METERS),
-      categorias: MAP_POI_CATEGORIES.join(","),
-    });
 
-    fetch(`/api/poi?${params.toString()}`)
-      .then((res) => res.json())
-      .then((data: { pois?: POI[] }) => {
-        if (!cancelled) setNearbyPois(data.pois ?? []);
+    fetchNearbyPOIs(userPosition.lat, userPosition.lng, POI_SEARCH_RADIUS_METERS, MAP_POI_CATEGORIES)
+      .then((data) => {
+        if (!cancelled) setNearbyPois(data.pois);
       })
       .catch(() => {
         /* silencioso — pills de POI são um complemento visual, não essencial ao mapa funcionar */
