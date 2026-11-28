@@ -141,12 +141,16 @@ níveis de prioridade definida pelo próprio briefing (ver seção "Direção de
 navegação inferior) foi implementada nesta rodada. Registrado aqui o que falta, exatamente nos
 termos do briefing, pra priorização item a item nas próximas rodadas:
 
-- **Prioridade 2 (parcial — feito: marcador selecionado em lima, botões flutuantes reorganizados
-  com filtros entre eles, chips de filtro rápido funcionais)**: falta o estilo cartográfico
-  "Moraí Claro" dedicado (hoje o mapa usa o estilo "Moraí Toy" já existente, não o especificado no
-  briefing — essa é a maior pendência da Prioridade 2, o próprio briefing pede atenção especial a
-  ela) e o redesenho do cartão inferior do imóvel (hoje ainda no visual anterior ao briefing,
-  exceto o botão "Dirigir até lá" já corrigido pra verde-escuro)
+- **Prioridade 2 (parcial — feito: paleta cartográfica "Moraí Classic", ícones de POI ilustrados,
+  pills de POI próximo, marcador/rota/localização do usuário em azul (convenção universal de GPS),
+  nomes de bairro e marcos históricos reais direto no mapa — ver "Pills de POI próximo" e "Moraí
+  Maps" em [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md))**: falta ainda o redesenho do cartão inferior do
+  imóvel (hoje ainda no visual anterior ao briefing, exceto o botão "Dirigir até lá" já corrigido
+  pra verde-escuro) e **a maior pendência real da Prioridade 2** — o mapa-base em si ainda é um
+  mapa vetorial real (MapLibre/OpenFreeMap) estilizado por cor, não a textura densa e ilustrada
+  (construções como blocos pintados, vegetação como textura contínua, praia/mar ilustrados) dos
+  mockups mais recentes (2026-11-28); isso não dá pra chegar só ajustando cor do estilo vetorial
+  atual — precisa de uma decisão de abordagem (ver "Direção de arte" em DESIGN_SYSTEM.md)
 - **Prioridade 3**: configuração do Modo Passeio, alertas de proximidade e filtros avançados — telas
   já funcionais, ainda no visual anterior ao briefing
 - **Prioridade 4**: detalhes do imóvel, favoritos, comparação e calculadora de custo real de morar —

@@ -13,14 +13,32 @@ import { Map as MapLibreMap, Marker, NavigationControl, setWorkerUrl, type GeoJS
 import "maplibre-gl/dist/maplibre-gl.css";
 import Supercluster from "supercluster";
 import type { Feature, Point } from "geojson";
+import { Church, Landmark, Binoculars, Castle } from "lucide-react";
 import type { POI, POICategory, Property, RadarResult } from "@/lib/types";
 import { formatCompactPrice } from "@/lib/format";
 import { isOportunidade } from "@/lib/radar";
-import { OLINDA_CENTER } from "@/lib/data/olinda-bairros";
+import { OLINDA_CENTER, OLINDA_BAIRROS } from "@/lib/data/olinda-bairros";
+import { OLINDA_MARCOS, type MarcoIcone } from "@/lib/data/olinda-marcos";
 import { STREETS_STYLE, SATELLITE_STYLE } from "@/components/map/mapStyles";
 import { haversineMeters, formatDistance } from "@/lib/geo";
 import { POI_ICONS } from "@/lib/data/poiIcons";
 import { fetchNearbyPOIs } from "@/lib/overpass";
+
+const MARCO_ICONS: Record<MarcoIcone, typeof Church> = {
+  igreja: Church,
+  mirante: Binoculars,
+  mosteiro: Landmark,
+  forte: Castle,
+};
+
+const marcoIconSvgCache = new Map<MarcoIcone, string>();
+function getMarcoIconSvg(icone: MarcoIcone): string {
+  const cached = marcoIconSvgCache.get(icone);
+  if (cached) return cached;
+  const svg = renderToStaticMarkup(createElement(MARCO_ICONS[icone], { size: 14, strokeWidth: 2.2, color: "#2E4A2A" }));
+  marcoIconSvgCache.set(icone, svg);
+  return svg;
+}
 
 /** Mesmas categorias já destacadas em "O que tem por perto" (NearbyPOISection) — reaproveita a
  * mesma curadoria em vez de inventar outra lista, pra consistência entre mapa e detalhe do imóvel. */
@@ -147,6 +165,8 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
   const userMarkerRef = useRef<Marker | null>(null);
   const poiMarkersRef = useRef<Map<string, Marker>>(new Map());
   const poiAnchorRef = useRef<{ lat: number; lng: number } | null>(null);
+  const bairroMarkersRef = useRef<Marker[]>([]);
+  const marcoMarkersRef = useRef<Marker[]>([]);
   const [nearbyPois, setNearbyPois] = useState<POI[]>([]);
   const clusterIndexRef = useRef<Supercluster<PointProps, ClusterProps> | null>(null);
   const [styleLoaded, setStyleLoaded] = useState(false);
@@ -436,17 +456,20 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
     }
 
     const el = userMarkerRef.current.getElement();
+    // Azul (não o verde da marca) de propósito: é a cor universal de "sua localização" em
+    // apps de navegação (Google Maps, Waze, Apple Maps) — pedido explícito do briefing visual
+    // pra reforçar a leitura de GPS/navegação em vez de portal imobiliário.
     el.innerHTML =
       heading === null
         ? `
-          <div class="absolute h-10 w-10 rounded-full bg-emerald/30 animate-pulse-ring"></div>
-          <div class="relative h-4 w-4 rounded-full bg-emerald border-2 border-white shadow-md"></div>
+          <div class="absolute h-10 w-10 rounded-full animate-pulse-ring" style="background:rgba(30,136,229,0.25);"></div>
+          <div class="relative h-4 w-4 rounded-full border-2 border-white shadow-md" style="background:#1E88E5;"></div>
         `
         : `
-          <div class="absolute h-12 w-12 rounded-full bg-emerald/25 animate-pulse-ring"></div>
+          <div class="absolute h-12 w-12 rounded-full animate-pulse-ring" style="background:rgba(30,136,229,0.22);"></div>
           <div style="transform:rotate(${arrowRotation}deg);transition:transform .2s linear;">
             <svg width="30" height="30" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10.5" fill="#00E58A" stroke="white" stroke-width="2"/>
+              <circle cx="12" cy="12" r="10.5" fill="#1E88E5" stroke="white" stroke-width="2"/>
               <path d="M12 5.5 L16.5 15.5 L12 13 L7.5 15.5 Z" fill="white"/>
             </svg>
           </div>
@@ -598,21 +621,91 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(function MapView(
       type: "geojson",
       data: { type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: routeCoordinates! } },
     });
+    // Azul tracejado (mesma convenção universal de "rota ativa" em apps de navegação, ver
+    // comentário no marcador de localização acima) — casing branco embaixo pra legibilidade
+    // sobre qualquer fundo (mar, areia, construção).
     map.addLayer({
       id: "morai-route-casing",
       type: "line",
       source: ROUTE_SOURCE_ID,
       layout: { "line-join": "round", "line-cap": "round" },
-      paint: { "line-color": "#003D32", "line-width": 7, "line-opacity": 0.55 },
+      paint: { "line-color": "#FFFFFF", "line-width": 7, "line-opacity": 0.85 },
     });
     map.addLayer({
       id: "morai-route-line",
       type: "line",
       source: ROUTE_SOURCE_ID,
       layout: { "line-join": "round", "line-cap": "round" },
-      paint: { "line-color": "#00E58A", "line-width": 4 },
+      paint: {
+        "line-color": "#1E88E5",
+        "line-width": 4,
+        "line-dasharray": [0.1, 1.6],
+      },
     });
   }, [routeCoordinates, styleLoaded]);
+
+  // Nomes de bairro direto no mapa (sem pill, texto em negrito com sombra suave — igual ao
+  // briefing visual) a partir de dados reais já usados em "Meu Bairro Ideal"
+  // (src/lib/data/olinda-bairros.ts, geocodificados via Nominatim). Estático: cria uma vez por
+  // carregamento de estilo (ex.: depois de alternar satélite/ruas, que apaga marcadores soltos
+  // não — os Markers do MapLibre não são apagados pelo setStyle — mas recriar é inofensivo e
+  // simples de manter consistente com o resto do arquivo).
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !styleLoaded || bairroMarkersRef.current.length > 0) return;
+
+    for (const bairro of OLINDA_BAIRROS) {
+      const el = document.createElement("div");
+      el.className = "maplibregl-marker pointer-events-none select-none";
+      el.innerHTML = `
+        <span style="
+          font-weight:800;font-size:13px;color:#2E4A2A;white-space:nowrap;
+          text-shadow:0 1px 0 rgba(255,251,242,0.9),0 0 6px rgba(255,251,242,0.9);
+        ">${bairro.nome}</span>
+      `;
+      bairroMarkersRef.current.push(
+        new Marker({ element: el, anchor: "left" }).setLngLat([bairro.lng, bairro.lat]).addTo(map),
+      );
+    }
+
+    return () => {
+      for (const marker of bairroMarkersRef.current) marker.remove();
+      bairroMarkersRef.current = [];
+    };
+  }, [styleLoaded]);
+
+  // Marcos históricos reais de Olinda (ícone + rótulo, sem pill — ver
+  // src/lib/data/olinda-marcos.ts e as coordenadas verificadas lá documentadas).
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !styleLoaded || marcoMarkersRef.current.length > 0) return;
+
+    for (const marco of OLINDA_MARCOS) {
+      const el = document.createElement("div");
+      el.className = "maplibregl-marker pointer-events-none select-none";
+      el.innerHTML = `
+        <div style="display:flex;align-items:center;gap:4px;">
+          <span style="
+            display:flex;align-items:center;justify-content:center;
+            width:20px;height:20px;border-radius:999px;flex-shrink:0;
+            background:rgba(255,251,242,0.85);box-shadow:0 1px 3px rgba(0,0,0,0.15);
+          ">${getMarcoIconSvg(marco.icone)}</span>
+          <span style="
+            font-weight:700;font-size:11.5px;color:#2E4A2A;white-space:nowrap;
+            text-shadow:0 1px 0 rgba(255,251,242,0.9),0 0 6px rgba(255,251,242,0.9);
+          ">${marco.nome}</span>
+        </div>
+      `;
+      marcoMarkersRef.current.push(
+        new Marker({ element: el, anchor: "left" }).setLngLat([marco.lng, marco.lat]).addTo(map),
+      );
+    }
+
+    return () => {
+      for (const marker of marcoMarkersRef.current) marker.remove();
+      marcoMarkersRef.current = [];
+    };
+  }, [styleLoaded]);
 
   return <div ref={containerRef} className="h-full w-full" />;
 });

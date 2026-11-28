@@ -232,6 +232,35 @@ O próprio briefing definiu 5 níveis de prioridade pro redesign, pra não tenta
 Itens 2–5 ficam registrados como próxima fase no [ROADMAP.md](ROADMAP.md), um de cada vez, em vez de
 uma reforma visual completa de uma vez só (risco de regressão alto sem revisar tela por tela).
 
+### Novos mockups e o que ainda falta (2026-11-28)
+
+O usuário trouxe 8 novos mockups e foi direto: **"QUERO QUE ELE TENHA ESSA APARÊNCIA."** Comparando
+com o app real, dava pra separar dois tipos de diferença — e só o primeiro tipo foi resolvido nesta
+rodada:
+
+- **Elementos que são dado real estilizado de um jeito específico** (achável sem inventar geografia):
+  marcador/rota/localização do usuário em azul em vez de verde (convenção universal de GPS — Google
+  Maps, Waze, Apple Maps — reforça "app de navegação" mais que a cor da marca), nomes de bairro direto
+  no mapa sem fundo (dado real já existente em `olinda-bairros.ts`), marcos históricos reais com ícone
+  e rótulo também sem fundo (`src/lib/data/olinda-marcos.ts` — coordenadas de Catedral da Sé, Alto da
+  Sé, Mosteiro de São Bento e Forte de São Francisco, verificadas cruzando Wikidata/Wikipédia/Mapcarta,
+  nunca inventadas), e selo "Rota ativa" no cabeçalho quando o GPS do Moraí está guiando até um imóvel
+  (mockup dizia "Passeio ativo", mas o nome voltado ao usuário já definido pro projeto é **Minha
+  Busca** — ver seção "O Moraí É o modo passeio" abaixo — então o selo usa um texto diferente do
+  mockup de propósito, pra não reintroduzir um nome já descartado). Os pills de preço e de POI próximo
+  já implementados antes já batiam de perto com o estilo do mockup (pill escuro com ponteiro, pill
+  branco com ícone+distância) e não precisaram de mudança.
+- **O que NÃO dá pra fazer só reestilizando o mapa vetorial atual** (e é a maior pendência real, acima
+  de qualquer outro item da Prioridade 2): os mockups mostram um mapa-base ilustrado/pintado — prédios
+  como blocos de textura cobrindo o quarteirão inteiro, árvores como manchas verdes densas e
+  contínuas, praia e mar com ondas ilustradas — bem diferente de um mapa vetorial real (MapLibre +
+  OpenFreeMap) estilizado por cor, por mais que se ajuste fill-color/fill-pattern. Dá pra chegar mais
+  perto usando fill-pattern com ícone repetido sobre polígonos REAIS de vegetação/água do OSM (sem
+  inventar onde tem árvore), mas não fica idêntico a um mapa pintado à mão — isso exigiria ou (a) um
+  tileset ilustrado pré-renderizado feito sob encomenda (serviço pago ou um pipeline de renderização
+  próprio, nenhum dos dois contratado nessa fase) ou (b) aceitar uma aproximação via estilo vetorial
+  mais pesado. Decisão em aberto com o usuário sobre qual caminho seguir.
+
 ## "O Moraí É o modo passeio" — alteração fundamental de conceito (briefing 2026-11-27)
 
 Um segundo briefing, explicitamente dito como substituto de qualquer instrução anterior que tratasse

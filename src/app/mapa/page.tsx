@@ -134,7 +134,17 @@ export default function MapaPage() {
 
       {/* Top overlay */}
       <div className="absolute inset-x-0 top-0 z-20">
-        <MoraiHeader loading={loading}>
+        <MoraiHeader
+          loading={loading}
+          badge={
+            passeio.destino && (
+              <span className="flex items-center gap-1 rounded-full bg-lime px-2.5 py-1 text-[11px] font-bold text-dark-green">
+                <Navigation className="h-3 w-3" />
+                Rota ativa
+              </span>
+            )
+          }
+        >
           <SearchBar
             onSelectResult={(r) => mapRef.current?.flyTo(r.lat, r.lng, r.zoom)}
             purpose={filters.finalidade}
